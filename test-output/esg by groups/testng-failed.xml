@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [esg by groups]">
+  <test thread-count="5" name="GRP-Automated_Interconnect_Workflow(failed)">
+    <groups>
+      <run>
+        <include name="Automated_Interconnect_Workflow"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.esg.executableclasses.UserDefinedWorkflowExecutableClass">
+        <methods>
+          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_EnrollmentStep_3"/>
+          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_EnrollmentStep_2"/>
+          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_Pre_Engineering"/>
+          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_Pre_InspectionStep"/>
+          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_EnrollmentStep_1"/>
+          <include name="Initialization"/>
+          <include name="Report"/>
+          <include name="getStatusWithScreenshot"/>
+        </methods>
+      </class> <!-- com.esg.executableclasses.UserDefinedWorkflowExecutableClass -->
+    </classes>
+  </test> <!-- GRP-Automated_Interconnect_Workflow(failed) -->
+</suite> <!-- Failed suite [esg by groups] -->
