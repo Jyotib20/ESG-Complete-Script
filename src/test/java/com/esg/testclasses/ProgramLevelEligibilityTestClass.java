@@ -261,17 +261,23 @@ public static void Enrollment() {
 		clickWebelement("ProgramLevel", "Skip");
 		enterTextboxValue("ProgramLevel", "AccountNmr", "Esg Values", "Program Level", 22, 1);
 		clickWebelement("ProgramLevel", "Search");
-		Validation("Would you like to overwrite the Customer Information with the selected Account?");
-		ValidateWithElement("ProgramLevel", "WarningFrame2", "Overwrite Customer", "Would you like to overwrite the Customer Information with the selected Account?", "Would you like to overwrite the Customer Information with the selected Account?", "Warning message is Validated", "Failed to validate the Warning message");
+		implicitlywait(3);
+		
+	//	Validation("Would you like to overwrite the Customer Information with the selected Account?");
+		//VarifyElementForExistingValueWithText("ProgramLevel", "WarningFrame2","Esg Values", "Program Level", 30, 1);
+		VarifyElementForExistingValueWithAttribute("ProgramLevel", "WarningFrame2","Esg Values", "Program Level", 30, 1);
+		//VarifyElementForExistingValueWithCSSValue(filename, webelement, ExcelFname, Sheetname, Rowno, Colno);
+		//VarifyElementForExistingValueWithCSSValue("ProgramLevel", "WarningFrame2","Esg Values", "Program Level", 30, 1);
+	//	ValidateWithElement("ProgramLevel", "WarningFrame2", "Overwrite Customer", "Would you like to overwrite the Customer Information with the selected Account?", "Would you like to overwrite the Customer Information with the selected Account?", "Warning message is Validated", "Failed to validate the Warning message");
 		//defineLogs("Overwrite Customer", "Would you like to overwrite the Customer Information with the selected Account?", "Would you like to overwrite the Customer Information with the selected Account?", "Warning message is Validated", "Failed to validate the Warning message", "ProgramLevel", "WarningFrame2");
-		clickWebelement("ProgramLevel", "Yes");
+		/*clickWebelement("ProgramLevel", "Yes");
 		Validation("Would you like to update the address information with the information from the premise record?");
 		threadWait(2500);
 		clickWebelement("ProgramLevel", "Yes1");
 		clickWebelement("ProgramLevel", "Cancel");
 		clickWebelement("ProgramLevel", "Save1");
 		threadWait(2500);
-		Clear("ProgramLevel", "AccountNmr");
+		Clear("ProgramLevel", "AccountNmr");*/
 		
 		/*//Account Number = 2 
 		

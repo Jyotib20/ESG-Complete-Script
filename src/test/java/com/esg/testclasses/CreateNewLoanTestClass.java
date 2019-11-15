@@ -1,5 +1,8 @@
 package com.esg.testclasses;
 
+import java.awt.Event;
+import java.awt.event.KeyEvent;
+
 import com.esg.utilities.HelperClass;
 
 public class CreateNewLoanTestClass extends HelperClass {
@@ -22,7 +25,9 @@ public class CreateNewLoanTestClass extends HelperClass {
 		selectDropdownByVisibleText("CreateNewLoan", "BundledLoan", "ESG Values", "Create New Loan", 5, 1);
 		enterTextboxValue("CreateNewLoan", "OriginalLoanAmount", "ESG Values", "Create New Loan", 7, 1);
 		threadWait(2500);
-		/*String Ajax = driver.switchTo().alert().getText();
+	
+		String Ajax = driver.switchTo().alert().getText();
+	
 		if (Ajax.equalsIgnoreCase("AJAXLoadData failed for url: ../Loan/GetLoanTypeById")) {
 			System.out.println("Moved to alert Window");
 			threadWait(2500);
@@ -30,7 +35,7 @@ public class CreateNewLoanTestClass extends HelperClass {
 			
 		} else {
 				System.out.println("No Alert PopUp");
-		}*/
+		}
 		enterTextboxValue("CreateNewLoan", "FinalLoanAmount", "ESG Values", "Create New Loan", 7, 2);
 		threadWait(2500);
 		enterTextboxValue("CreateNewLoan", "OriginalPayBack", "ESG Values", "Create New Loan", 8, 1);

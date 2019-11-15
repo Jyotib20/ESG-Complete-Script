@@ -169,12 +169,12 @@ public class EKPC_CommunitySolarTestClass extends HelperClass {
 	public static void Verify_Enrollment_Application_Info() throws IOException{
 		login2( 2, 0, 2, 1);
 		Search_Inventory_by_EnrollmentNo_and_NavigateToApplication();
-		/*scrollToElement("EKPC_CommunitySolar", "Application_PaymentInformation");
+		scrollToElement("EKPC_CommunitySolar", "Application_PaymentInformation");
 		threadWait(2000);
 		defineLogs("Workflow Step Summary", "Workflow Step Summary", "Workflow Step Summary", "'Payment Information Amount' Validated Successfully", "Failed to Validate 'Payment Information Amount'", "EKPC_CommunitySolar", "VerifyApplication_Amount");
 		defineLogs("Workflow Step Summary", "Workflow Step Summary", "Workflow Step Summary", "'Payment Information Amount' Validated Successfully", "Failed to Validate 'Payment Information Amount'", "EKPC_CommunitySolar", "VerifyApplication_TotalAmount");
 		defineLogs("Workflow Step Summary", "Workflow Step Summary", "Workflow Step Summary", "'Payment Information Amount' Validated Successfully", "Failed to Validate 'Payment Information Amount'", "EKPC_CommunitySolar", "VerifyApplication_PaymentMethod");
-		*/scrollToElement("EKPC_CommunitySolar", "Application_Measure");
+		scrollToElement("EKPC_CommunitySolar", "Application_Measure");
 		clickWebelement("EKPC_CommunitySolar", "Application_Measure");
 		threadWait(5000);
 		defineLogs("Workflow Step Summary", "Workflow Step Summary", "Workflow Step Summary", "'Measure Amount' Validated Successfully", "Failed to Validate 'Measure Amount'", "EKPC_CommunitySolar", "VerifyMeasure_Amount");

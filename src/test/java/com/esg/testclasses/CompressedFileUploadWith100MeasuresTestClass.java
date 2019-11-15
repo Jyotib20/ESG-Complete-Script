@@ -20,7 +20,8 @@ public class CompressedFileUploadWith100MeasuresTestClass extends HelperClass {
 		threadWait(2500);
 		selectDropdownByVisibleText("CompressedFileUploadWith100Measures", "UploadType", "ESG Values", "Compressed File Upload With 100", 2, 1);
 		clickWebelement("CompressedFileUploadWith100Measures", "UploadButton");
-		threadWait(30000);
+		explicitWait(3000, "CompressedFileUploadWith100Measures", "StatusWait");
+		test.log(LogStatus.INFO, "File is uploaded successfully");
 	}
 	public static void Enrollment() {
 		ClickByActionClass("CompressedFileUploadWith100Measures", "MainMenu", "ESG Values", "Compressed File Upload With 100", 3, 1);
@@ -87,7 +88,7 @@ public class CompressedFileUploadWith100MeasuresTestClass extends HelperClass {
 		defineLogs("Howards - ALTN", "Howards - ALTN", "Howards - ALTN", "Payee Name is successfully validated", "Wrong Payee Name is selected", "CompressedFileUploadWith100Measures", "Payee");
 		scrollToElement("CompressedFileUploadWith100Measures", "InitiatepaymentTotalCost");
 		defineLogs("$4,000.00", "$4,000.00", "$4,000.00", "Job Cost Summary Total value is validated", "Job Cost Summary Total is failed to validate", "CompressedFileUploadWith100Measures", "InitiatepaymentTotalCost");
-		/*Close();*/
+		
 		
 	}
 }

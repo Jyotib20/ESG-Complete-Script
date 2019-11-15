@@ -1059,7 +1059,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 		enterValueByActionClass("payeeregression", "MeasureQty", "PayeeregressionData", "Payeeregression", 1, 2);
 		enterTextboxValue("payeeregression", "MeasureTestQty", "PayeeregressionData", "Payeeregression", 2, 2);
 		clickonSave();
-		validationWithWebelement("validation", "VerifyMeasureQty","completeMeasure");
+		validationWithWebelement("validation", "VerifyMeasureQty");
 	}
 	public static void selectPayeeApplicant()
 	{
@@ -1217,10 +1217,10 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void verifyPayeeApplicant(String FilenameForPayeeCheck,String PayeeCheck,int IndexNo)
 	{	
 		defineLogs("Payment Request Date", "Payment Request Date", "Payment Request Date", "Payment Request Date is validated", "Payment Request Date is not validated", "validation", "VerifyPayeeDate");
-		validationWithWebelement("validation", "VerifyPayeeDate", "verifyPayeeInstaller");
+		validationWithWebelement("validation", "VerifyPayeeDate");
 		threadWait(2500);
 		defineLogs("Amount", "Amount", "Amount", "Amount is verified", "Amount is not Verified", "validation", "VarifyAmount");
-		validationWithWebelement("validation", "VarifyAmount", "verifyPayeeInstaller");
+		validationWithWebelement("validation", "VarifyAmount");
 		defineLogs("Payee", "Payee", "Payee", "Payee Name is Verified Successfully", "Payee Name is not Validated", "validation", PayeeCheck);
 		clickWebelement("payeeregression", "PaymentRequestDateLink");
 		if (driver.getPageSource().contains("Address Sequence Number")) {
@@ -1246,7 +1246,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void verifyPayeeAccountHolder(String FilenameForPayeeCheck,String PayeeCheck,int IndexNo)
 	{
 		defineLogs("Payment Request Date", "Payment Request Date", "Payment Request Date", "Payment Request Date is validated", "Payment Request Date is not validated", "validation", "VerifyPayeeDate");
-		validationWithWebelement("validation", "VerifyPayeeDate", "verifyPayeeInstaller");
+		validationWithWebelement("validation", "VerifyPayeeDate");
 		threadWait(2500);
 		defineLogs("Amount", "Amount", "Amount", "Amount is verified", "Amount is not Verified", "validation", "VarifyAmount");
 		defineLogs("Payee", "Payee", "Payee", "Payee Name is Verified Successfully", "Payee Name is not Validated", "validation", PayeeCheck);
@@ -1273,7 +1273,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void verifyPayeeInstaller(String FilenameForPayeeCheck,String PayeeCheck,int IndexNo)
 	{
 		defineLogs("Payment Request Date", "Payment Request Date", "Payment Request Date", "Payment Request Date is validated", "Payment Request Date is not validated", "validation", "VerifyPayeeDate");
-		validationWithWebelement("validation", "VerifyPayeeDate", "verifyPayeeInstaller");
+		validationWithWebelement("validation", "VerifyPayeeDate");
 		threadWait(2500);
 		defineLogs("Amount", "Amount", "Amount", "Amount is verified", "Amount is not Verified", "validation", "VarifyAmount");
 		defineLogs("Payee", "Payee", "Payee", "Payee Name is Verified Successfully", "Payee Name is not Validated", "validation", PayeeCheck);
@@ -1300,7 +1300,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void verifyAlternatePayee(String FilenameForPayeeCheck,String PayeeCheck,int IndexNo)
 	{
 		defineLogs("Payment Request Date", "Payment Request Date", "Payment Request Date", "Payment Request Date is validated", "Payment Request Date is not validated", "validation", "VerifyPayeeDate");
-		validationWithWebelement("validation", "VerifyPayeeDate", "verifyPayeeInstaller");
+		validationWithWebelement("validation", "VerifyPayeeDate");
 		threadWait(2500);
 		defineLogs("Amount", "Amount", "Amount", "Amount is verified", "Amount is not Verified", "validation", "VarifyAmount");
 		defineLogs("Payee", "Payee", "Payee", "Payee Name is Verified Successfully", "Payee Name is not Validated", "validation", PayeeCheck);
@@ -1327,7 +1327,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void verifySecondaryTradeAlly(String FilenameForPayeeCheck,String PayeeCheck,int IndexNo)
 	{
 		defineLogs("Payment Request Date", "Payment Request Date", "Payment Request Date", "Payment Request Date is validated", "Payment Request Date is not validated", "validation", "VerifyPayeeDate");
-		validationWithWebelement("validation", "VerifyPayeeDate", "verifyPayeeInstaller");
+		validationWithWebelement("validation", "VerifyPayeeDate");
 		threadWait(2500);
 		defineLogs("Amount", "Amount", "Amount", "Amount is verified", "Amount is not Verified", "validation", "VarifyAmount");
 		defineLogs("Payee", "Payee", "Payee", "Payee Name is Verified Successfully", "Payee Name is not Validated", "validation", PayeeCheck);
@@ -1354,14 +1354,14 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void verifyPayeeBeforeReopen(String FilenameForPayeeCheck,String PayeeCheck)
 	{
 		defineLogs("Payment Request Date", "Payment Request Date", "Payment Request Date", "Payment Request Date is validated", "Payment Request Date is not validated", "validation", "VerifyPayeeDate");
-		validationWithWebelement("validation", "VerifyPayeeDate", "verifySecondaryTradeAlly");
+		validationWithWebelement("validation", "VerifyPayeeDate");
 		defineLogs("Amount", "Amount", "Amount", "Amount is verified", "Amount is not Verified", "validation", "VarifyAmount");
-		validationWithWebelement("validation", "VarifyAmount", "verifySecondaryTradeAlly");
+		validationWithWebelement("validation", "VarifyAmount");
 		defineLogs("Payee", "Payee", "Payee", "Payee Name is Verified Successfully", "Payee Name is not Validated", "validation", PayeeCheck);
 		clickWebelement("payeeregression", "PaymentRequestDateLink");
 		clickWebelement("payeeregression", "DeleteButton");
 		handlePopup();
-		validationWithWebelement("validation", "VerifyNoRecordsToDisplay", "verifySecondaryTradeAlly");
+		validationWithWebelement("validation", "VerifyNoRecordsToDisplay");
 		clickWebelement("payeeregression", "CloseButton");
 		
 	}

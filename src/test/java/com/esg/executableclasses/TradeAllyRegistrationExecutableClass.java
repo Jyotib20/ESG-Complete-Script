@@ -21,6 +21,7 @@ public class TradeAllyRegistrationExecutableClass extends TradeAllyRegistrationT
 
 	@Test(priority = 1)
 	public static void TradeAlly_Registration_Login() {
+		test = Report.startTest("TradeAlly_Registration_Login");
 		login();
 	}
 

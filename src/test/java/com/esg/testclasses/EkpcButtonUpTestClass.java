@@ -176,7 +176,7 @@ public class EkpcButtonUpTestClass extends HelperClass {
 		} else {
 				System.out.println("Does not display Popup Window");
 		}
-		enterTextboxValue("EKPCButtonUp", "PayeeName", "ESG values", "EKPC ButtonUp", 37, 1);
+		//enterTextboxValue("EKPCButtonUp", "PayeeName", "ESG values", "EKPC ButtonUp", 37, 1);
 		threadWait(2500);
 		clickWebelement("EKPCButtonUp", "GenerateInvoice");
 		handlePopup();

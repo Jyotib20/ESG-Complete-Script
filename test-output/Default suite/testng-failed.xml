@@ -3,24 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.esg.executableclasses.MobileWebAppExecutableClass"/>
+      <class name="com.esg.executableclasses.BenchMarking_ExecutableClass"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.esg.executableclasses.MobileWebAppExecutableClass">
+      <class name="com.esg.executableclasses.BenchMarking_ExecutableClass">
         <methods>
-          <include name="MeasureEligibilityModule"/>
-          <include name="AccountValidationErrorModule"/>
-          <include name="MeasurePropertyValidationErrorModule"/>
-          <include name="OpenURL"/>
-          <include name="PositiveWorkflowModule"/>
-          <include name="ThresholdExceedModule"/>
-          <include name="ProgramLevelEligibityModule"/>
           <include name="Initialization"/>
           <include name="getResult"/>
+          <include name="EECP_PortfolioConfig_Module"/>
+          <include name="Generate"/>
         </methods>
-      </class> <!-- com.esg.executableclasses.MobileWebAppExecutableClass -->
+      </class> <!-- com.esg.executableclasses.BenchMarking_ExecutableClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

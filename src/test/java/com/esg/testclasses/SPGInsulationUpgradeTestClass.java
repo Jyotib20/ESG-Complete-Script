@@ -82,7 +82,7 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 		CustomerSignDate();
 		scrollToElement("SPGInsulationUpgrade", "Submit");
 		clickWebelement("SPGInsulationUpgrade", "Submit");
-		threadWait(25000);
+		threadWait(50000);
 		//Verify the Application submission Confirmation Message
 		defineLogs("Thank you for submitting your application online with City Utilities", "Thank you for submitting your application online with City Utilities", "Thank you for submitting your application online with City Utilities", "The message is verified Successfully", "The message is not verified", "SPGInsulationUpgrade", "ConfirmationMessage");
 		String Copy = driver.findElement(By.xpath("//div[@data-bind='html: ConfirmationMessage']")).getText();

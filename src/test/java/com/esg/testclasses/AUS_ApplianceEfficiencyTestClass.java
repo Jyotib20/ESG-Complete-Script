@@ -182,12 +182,10 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 		defineLogs("Review and Submit", "Review and Submit", "Review and Submit", "'Equipment Information Incentive Amount' Validated Successfully", "Failed to Validate 'Equipment Information Incentive Amount'", "AUSApplianceEfficiency", "EquipmentInformationIncentiveAmount");
 		clickWebelement("AUSApplianceEfficiency", "SubmitButton");
 		TrackEnrollmentNumber("AUSApplianceEfficiency", "EnrollmentNumber");
-		//SwitchToFrame("AUSApplianceEfficiency", "Iframe");
-		//threadWait(2500);
+		/*driver.switchTo().defaultContent();
 		explicitWaitForClickable(3000, "AUSApplianceEfficiency", "CloseOnlineApplication");
-		clickWebelement("AUSApplianceEfficiency", "CloseOnlineApplication");
-		//driver.switchTo().defaultContent();
-		threadWait(5000);
+		clickWebelement("AUSApplianceEfficiency", "CloseOnlineApplication");*/
+		threadWait(10000);
 	}
 	public static void VerifyEnrollment(){
 		enterTextboxValue("AUSApplianceEfficiency", "EnterEnrollmentNo", "ESG Values", "AUS_ApplianceEfficiency", 1, 3);

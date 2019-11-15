@@ -22,17 +22,18 @@ public class SPGInsulationUpgradeExecutableClass extends SPGInsulationUpgradeTes
 	public static void OpenOnlineApplicationStep() {
 		test = Report.startTest("Open Online Application");
 		OpenOnlineApplication();
+	
 }
 	@Test(priority = 2)
 	public static void AtticInsulationModule() throws IOException {
 		test = Report.startTest("Attic Insulation Module");
 		AtticInsulation();
 }
-/*	@Test(priority = 3)
+	@Test(priority = 3)
 	public static void NaturalGasModule() throws IOException {
 		test = Report.startTest("Natural Gas Module");
 		NaturalGas();
-}*/
+}
 	@AfterMethod
 	 public void getResult(ITestResult result) throws IOException
 	    {

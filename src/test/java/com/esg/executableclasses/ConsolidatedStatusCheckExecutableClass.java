@@ -27,8 +27,8 @@ public class ConsolidatedStatusCheckExecutableClass extends ConsolidatedStatusCh
 	public static void Account() {
 		test = Report.startTest("Account");
 		AccountModule();
-	}	@Test(priority = 3)
-	public static void Email() {
+	}/*	@Test(priority = 3)
+/*	public static void Email() {
 		test = Report.startTest("Email");
 		EmailModule();
 	}
@@ -42,7 +42,7 @@ public class ConsolidatedStatusCheckExecutableClass extends ConsolidatedStatusCh
 		test = Report.startTest("Enrollment");
 		EnrollmentModule();
 	}
-	
+	*/
 	@AfterMethod
 	 public void getResult(ITestResult result) throws IOException
 	    {

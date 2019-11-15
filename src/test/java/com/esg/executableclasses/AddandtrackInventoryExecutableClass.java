@@ -25,11 +25,11 @@ package com.esg.executableclasses;
 			test = Report.startTest("Login Page");
 			Login();
 		}
-		/*@Test(priority = 2)
+		@Test(priority = 2)
 		public static void AddInventory() {
 			test = Report.startTest("Add Inventory");
 			AddInventoryStep();
-		}*/
+		}
 		@Test(priority = 3)
 		public static void TrackInventory() {
 			test = Report.startTest("Track Inventory");

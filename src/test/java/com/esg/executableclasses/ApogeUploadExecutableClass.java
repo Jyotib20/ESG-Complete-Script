@@ -20,6 +20,7 @@ public class ApogeUploadExecutableClass extends ApogeUploadTestClass {
 	}
 	@Test(priority = 1)
 	public static void LoginStep() {
+		test = Report.startTest("Login");
 		Login();	
 }
 	@Test(priority = 2)

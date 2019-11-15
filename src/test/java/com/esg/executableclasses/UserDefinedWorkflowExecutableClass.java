@@ -23,6 +23,7 @@ public class UserDefinedWorkflowExecutableClass extends UserDefinedWorkflowTestC
 	
 	@Test(priority = 1)
 	public static void UserDefinedWorkflow_AutomatedWorkflow_Inspection_Login() {
+		test = Report.startTest("User Defined Workflow Automated Workflow Inspection Login");
 		login();
 	}
 

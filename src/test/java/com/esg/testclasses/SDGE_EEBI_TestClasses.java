@@ -8,12 +8,13 @@ public class SDGE_EEBI_TestClasses extends HelperClass {
 	
 public static void login() {
 		
-		login("helper","BaseURL44.0", 1, 0, 1, 1);
+		login("helper","BaseURL", 1, 0, 1, 1);
 	}
 public static void NavigateToEnrollment() {
 		ClickByActionClass("SDGEEEBI", "MainMenu", "ESG Values", "SDGE_EEBI", 1, 1);
 		clickWebelement("SDGEEEBI", "NewEnrollment");
 		selectDropdownByVisibleText("SDGEEEBI", "SelectProgram", "ESG Values", "SDGE_EEBI", 2, 1);
+		explicitWaitForClickable(3000, "SDGEEEBI", "NextButton");
 		clickWebelement("SDGEEEBI", "NextButton");
 		enterTextboxValue("SDGEEEBI", "AccountNumber", "ESG Values", "SDGE_EEBI", 3, 1);
 		clickWebelement("SDGEEEBI", "Go");
@@ -66,8 +67,9 @@ public static void CompleteApplicationWorkflowStep() {
 	clickWebelement("SDGEEEBI", "Tax_Id_Type");
 	enterValueByActionClass("SDGEEEBI", "Tax_Id_Type", "ESG Values", "SDGE_EEBI", 20, 1);
 	Enter(KeyEvent.VK_ENTER);
-	threadWait(2000);
+	scrollToElement("SDGEEEBI", "Tax_Id_or_SSN");
 	enterTextboxValue("SDGEEEBI", "Tax_Id_or_SSN", "ESG Values", "SDGE_EEBI", 21, 1);
+	explicitWaitForClickable(3000, "SDGEEEBI", "Address_Section");
 	clickWebelement("SDGEEEBI", "Address_Section");
 	clickonSave();
 }

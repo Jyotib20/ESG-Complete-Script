@@ -228,7 +228,7 @@ public class ThresholdsTestClass extends HelperClass {
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
 		ClickWebelementByActionClass("Threshold", "ProcessorEmployee");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 12, 1);
+		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 14, 1);
 		Enter(KeyEvent.VK_ENTER);
 		
 		Process_Application();

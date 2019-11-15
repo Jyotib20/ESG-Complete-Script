@@ -19,6 +19,7 @@ public static void Initialization() {
 			}
 @Test(priority=1)
 public static void LetterListSearch_Login() {
+	test=Report.startTest("LetterList Search Login");
 		    login(); 
 		}
 @Test(priority=2)

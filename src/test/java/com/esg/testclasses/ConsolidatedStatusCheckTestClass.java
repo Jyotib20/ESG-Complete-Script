@@ -41,6 +41,7 @@ public class ConsolidatedStatusCheckTestClass extends HelperClass {
 		}
 		driver.switchTo().window(parentWindowHandle);
 		clickWebelement("ConsolidatedStatusCheck", "ConsolidationStatusOk");
+		
 	//Record Module
 		ClickByActionClass("ConsolidatedStatusCheck", "MainMenu", "ESG Values", "Consolidated Status Check", 1, 1);
 	clickWebelement("ConsolidatedStatusCheck", "StatusCheckURL");

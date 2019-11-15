@@ -23,7 +23,7 @@ public class PayeeRegressionExecutableClass extends PayeeRegressionTestClass{
 		test = Report.startTest("Enrollment");
 		login("helper","BaseURL",1, 0, 1, 1);
 	}
-	@Test(priority=2)
+	/*@Test(priority=2)
 	public static void payeeRegression_NoInstall_Standard()
 	{
 		test = Report.startTest("payeeRegression_NoInstall_Standard");
@@ -130,7 +130,7 @@ public class PayeeRegressionExecutableClass extends PayeeRegressionTestClass{
 		payee_SecondaryTradeAlly_InstallStep_Override_To_PrimaryInstaller_Open_ReOpenApplicationAndChangePayee();
 		test.log(LogStatus.INFO, "payeeRegression_InstallStep_Open_ReOpenApplicationAndChangePayee Module is completed");
 		Report.endTest(test);
-	}
+	}*/
 	@Test(priority=8)
 	public static void payeeRegression_InstallStep_Closed_ReOpenApplicationAndChangePayee()
 	{

@@ -31,6 +31,7 @@ import org.testng.Assert;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class BaseClass 
 {
@@ -277,11 +278,12 @@ public static void validationWithTitle(String test,String title)
 		System.out.println("Method was failed");
 	}
 }
-public static void validationWithWebelement(String filename,String webelement,String test) 
+public static void validationWithWebelement(String filename,String webelement) 
 {
 	String element=Xpath(filename, webelement).getText();
 	if( element!= null)
 	{
+		test.log(LogStatus.PASS, "Row for Gilbert Collins is shown is validated = "+ element);
 		System.out.println("Validated Successfully for the element-->   "+element);
 	}
 	else

@@ -119,6 +119,20 @@ public class ExtentReport extends BaseClass {
 	 
 		}
 	}
+	public static void validationWithWebelement(String filename,String webelement,String PassLogs, String FailLogs) 
+	{
+		String element=Xpath(filename, webelement).getText();
+		if( element!= null)
+		{
+			
+			test.log(LogStatus.PASS,PassLogs+".     "+"The Actual Value of the Validated element is  --->   "+element);
+		}
+		else
+		{				
+				
+			test.log(LogStatus.FAIL,FailLogs+".     "+"The Actual Value of the Validated element is  --->   "+element);			 
+		}
+	}
 
 	public static void ReadPopUp() {
 

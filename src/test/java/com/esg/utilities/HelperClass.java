@@ -16,7 +16,6 @@ public class HelperClass extends ExtentReport
 		}   	
 	public static void login(String Relevant_Filename,String Provided_URL,int UsernameRow,int UsernameColumn,int PasswordRow,int PasswordColumn) 
 	{
-		  test = Report.startTest("Login");
 		  ExecutingAgainst("helper", "Version");
 		  OpenBrowser(Relevant_Filename, Provided_URL);
 		  enterTextboxValue("helper", "Username_Xpath", "LoginData", "Login", UsernameRow, UsernameColumn);
@@ -46,12 +45,14 @@ public static void login2(int UsernameRow,int UsernameColumn,int PasswordRow,int
 		linkText("Enrollments").click();
 		clickWebelement("helper", "NewButton");
 		selectDropdownValue("helper", "SelectProgram_Dropdown", "CreateEnrollments", "Enrollments", programRow,programCoulmn);
+		explicitWaitForClickable(3000, "helper", "NextButton");
 		clickWebelement("helper", "NextButton");
 		clickWebelement("helper", "GeneralSearch_Dropdown");		
 		selectDropdownValue("helper", "GeneralSearch_Dropdown", "CreateEnrollments", "Enrollments", 3, 0);
 		enterTextboxValue("helper", "EnterAccountNumber", "CreateEnrollments", "Enrollments", accountRow, accountCoulmn);
 		clickWebelement("helper", "ClickOn_GoButton");
 	    clickWebelement("helper", "ClickOn_CustomerName");	
+	    explicitWaitForClickable(3000, "helper", "NextButton");
 	    clickWebelement("helper", "NextButton");	   
 	    //enterlogs("Enrollment was Created Successfully");
 	    defineLogs("Application - Applicant Information - New", "Application - Applicant Information - New", "Application - Applicant Information - New", "Enrollment was Created Successfully", "Enrollment was not Created", "helper", "Varify_Enrollment");
@@ -139,7 +140,7 @@ public static void login2(int UsernameRow,int UsernameColumn,int PasswordRow,int
 	public static void InstallationDate() {
 		clickWebelement("helper", "InstallationDate");
 		threadWait(2500);
-		clickWebelement("helper", "SelectInstallationDate");
+		clickWebelement("helper", "SelectDate");
 	}
 	public static void CustomerSignDate() {
 		clickWebelement("helper", "InstallationDate");
@@ -152,6 +153,50 @@ public static void login2(int UsernameRow,int UsernameColumn,int PasswordRow,int
 		clickWebelement("helper", "ApplicationDate");
 		clickonSave();
 	}  
-
+	public static void EICompletedDate() {
+		clickWebelement("helper", "EICompleteDate");
+		threadWait(2500);
+		clickWebelement("helper", "SelectDate");
+		
+	}
+	public static void EIConstructionStartDate() {
+		clickWebelement("helper", "ECStartDate");
+		threadWait(2500);
+		clickWebelement("helper", "SelectDate");
+	}
+	public static void AgreementSignDateApplicant() {
+		clickWebelement("helper", "AgreementSignDateApplicant");
+		threadWait(2500);
+		clickWebelement("helper", "SelectDate");
 }	
-	
+	public static void AgreementSignDateManagement() {
+		clickWebelement("helper", "AgreementSignDateManagement");
+		threadWait(2500);
+		clickWebelement("helper", "SelectDate");
+		
+	}
+	public static void clickonclose()
+	{
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+		}
+		scrollToElement("helper", "CloseButton");
+		clickWebelement("helper", "CloseButton");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+		}
+	}
+
+		public static void PurchaseDate() {
+		clickWebelement("helper", "PurchaseDate");
+		threadWait(2500);
+		clickWebelement("helper", "SelectPurchaseDate");
+	}
+		public static void InstallationDate2() {
+			clickWebelement("helper", "InstallationDate2");
+			threadWait(2500);
+			clickWebelement("helper", "SelectDate");
+		}
+}	

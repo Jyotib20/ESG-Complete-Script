@@ -19,6 +19,7 @@ public class EKPC_CommunitySolarExecutableClass extends EKPC_CommunitySolarTestC
 
 	@Test(priority = 1)
 	public static void EKPC_CommunitySolar_Login() {
+		test = Report.startTest("Login");
 		login();
 	}
 

@@ -20,6 +20,8 @@ public static void Initialization() {
 		}
 @Test(priority=1)
 public static void SDGE_EEBI_Login() {
+	
+	  test=Report.startTest("SDGE_EEBI_Login");
 	    login(); 
 	}
 @Test(priority=2)

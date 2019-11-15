@@ -18,6 +18,7 @@ public class AUS_ApplianceEfficiencyExecutableClass extends AUS_ApplianceEfficie
 
 	@Test(priority = 1)
 	public static void AUS_ApplianceEfficiency_Login() {
+		test = Report.startTest("AUS_ApplianceEfficiency_Login");
 		login();
 	}
 
