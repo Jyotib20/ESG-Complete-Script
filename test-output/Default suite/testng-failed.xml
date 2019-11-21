@@ -3,19 +3,25 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.esg.executableclasses.BenchMarking_ExecutableClass"/>
+      <class name="com.esg.executableclasses.Enrollment_Propert_Check_ExecutableClass"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.esg.executableclasses.BenchMarking_ExecutableClass">
+      <class name="com.esg.executableclasses.Enrollment_Propert_Check_ExecutableClass">
         <methods>
-          <include name="Initialization"/>
           <include name="getResult"/>
-          <include name="EECP_PortfolioConfig_Module"/>
-          <include name="Generate"/>
+          <include name="ApplicationFillUp_Module"/>
+          <include name="EnrollmentPropertyFieldsValidationAfterProcess_Module"/>
+          <include name="SetPropertyFieldsValidationAfterProcess_Module"/>
+          <include name="Initialization"/>
+          <include name="SetPropertyFieldsValidation_Module"/>
+          <include name="AddMeasure_Module"/>
+          <include name="ApplicationDetailsValidationAfterSaveModule"/>
+          <include name="CreateNewEnrollmentModule"/>
+          <include name="EnrollmentPropertyFieldsValidation_Module"/>
         </methods>
-      </class> <!-- com.esg.executableclasses.BenchMarking_ExecutableClass -->
+      </class> <!-- com.esg.executableclasses.Enrollment_Propert_Check_ExecutableClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

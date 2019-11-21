@@ -34,6 +34,31 @@ public class SingleFileUploadExecutableClass extends SingleFileUploadTestClass {
 			e.printStackTrace();
 		}
 	}
+	@Test(priority = 3)
+	public static void EnrollmentModule() {
+		test = Report.startTest("Enrollment Module");
+		Enrollment();
+	}
+	@Test(priority = 4)
+	public static void ApplicationValidationModule() {
+		test = Report.startTest("Application Validation Module");
+		ApplicationValidation();
+	}
+	@Test(priority = 5)
+	public static void InstallationValidationModule() {
+		test = Report.startTest("Installation Validation Module");
+		InstallationValidation();
+	}
+	@Test(priority = 6)
+	public static void InvoicingModule() {
+		test = Report.startTest("Invoicing Validation Module");
+		Invoicing();
+	}
+	@Test(priority = 7)
+	public static void GenerateInvoiceModule() {
+		test = Report.startTest("Generate Invoice Module");
+		GenerateInvoice();
+	}
 	@AfterMethod
 	public static void getStatusWithScreenshot(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {

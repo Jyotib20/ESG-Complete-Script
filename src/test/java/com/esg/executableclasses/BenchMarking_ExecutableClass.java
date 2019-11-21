@@ -59,15 +59,15 @@ public class BenchMarking_ExecutableClass extends Benchmarking_TestClass {
 		test = Report.startTest("Verify Last Bill Amount Module");
 		Verify_Last_Bill_Amount();
 	}
-/*	@Test(priority = 8)
-	public static void BenchMarkingOnline1_Module() {
-		test = Report.startTest("BenchMarking Online1 Module");
-		BenchMarkingOnline1();
-	}*/@Test(priority = 9)
+	@Test(priority = 10)
 	public static void BenchmarkingDataRequestPortalModule() {
 		test = Report.startTest("Benchmarking Data Request Portal Module");
 		BenchmarkingDataRequestPortal();
-	}
+	} @Test(priority = 11)
+		public static void BenchmarkingNonaggreedatedModule() {
+			test = Report.startTest("Benchmarking Nonaggreedated Module");
+			BenchmarkingNonaggreedated();
+		}
 	
 	@AfterMethod
 	 public void getResult(ITestResult result) throws IOException

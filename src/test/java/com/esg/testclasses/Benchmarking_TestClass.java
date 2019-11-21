@@ -251,6 +251,7 @@ public class Benchmarking_TestClass extends HelperClass {
 				clickWebelement("BenchMarking", "DeleteConfirmation");
 				validationWithWebelement("BenchMarking", "DeleteNotify", "Notification Message is validated Successfully", "Failed to Validate the Notification Message");
 				clickWebelement("BenchMarking", "HomePage");
+				driver.close();
 			}
 			public static void EECP_PortfolioConfig() {
 				login("helper", "BaseURL", 1, 0, 1, 1);
@@ -309,7 +310,7 @@ public class Benchmarking_TestClass extends HelperClass {
 				clickWebelement("BenchMarking", "TCOk");
 				clickWebelement("BenchMarking", "TCCheckBox");
 				clickWebelement("BenchMarking", "RetriveSharedPropertiesButton");
-				explicitWait(300, "BenchMarking", "RequestFrequencyValidation");
+				explicitWait(3000, "BenchMarking", "RequestFrequencyValidation");
 				VarifyElementForExistingValueWithText("BenchMarking", "RequestFrequencyValidation", "ESG Values", "BenchMarking", 29, 1);
 				VarifyElementForExistingValueWithText("BenchMarking", "DeliveryMethodValidation", "ESG Values", "BenchMarking", 30, 1);
 				VarifyElementForExistingValueWithText("BenchMarking", "PropertyColumnNameValidation", "ESG Values", "BenchMarking", 31, 1);
@@ -419,7 +420,166 @@ public class Benchmarking_TestClass extends HelperClass {
 				
 				//New Enrollment Validation
 				validationWithWebelement("BenchMarking", "NewEnrollmentNumber");
+				driver.close();
 				
+			}
+			public static void BenchmarkingNonaggreedated() {
+					OpenBrowser("BenchMarking", "BecnhmarkingOnlineUrl2");
+					openURL("BenchMarking", "BecnhmarkingOnlineUrl2");
+					//Getting Started Tab
+					clickWebelement("BenchMarking", "BuildingOwner");
+					clickWebelement("BenchMarking", "NextButton");
+					
+					//Customer Information tab
+					explicitWait(300, "BenchMarking", "FirstName");
+					enterTextboxValue("BenchMarking", "FirstName", "ESG Values", "BenchMarking", 16, 1);
+					enterTextboxValue("BenchMarking", "LastName", "ESG Values", "BenchMarking", 17, 1);
+					enterTextboxValue("BenchMarking", "PrimaryPhone", "ESG Values", "BenchMarking", 18, 1);
+					enterTextboxValue("BenchMarking", "EmailAddress", "ESG Values", "BenchMarking", 19, 1);
+					enterTextboxValue("BenchMarking", "Street", "ESG Values", "BenchMarking", 20, 1);
+					enterTextboxValue("BenchMarking", "ZipCode", "ESG Values", "BenchMarking", 22, 1);
+					enterTextboxValue("BenchMarking", "City", "ESG Values", "BenchMarking", 23, 1);
+					enterTextboxValue("BenchMarking", "State", "ESG Values", "BenchMarking", 24, 1);
+					enterTextboxValue("BenchMarking", "Organization", "ESG Values", "BenchMarking", 21, 1);
+					scrollToElement("BenchMarking", "NextButton");
+					clickWebelement("BenchMarking", "NextButton");
+					
+					//Building Information Tab
+					explicitWait(3000, "BenchMarking", "PortfolioManagerUsername");
+					enterTextboxValue("BenchMarking", "PortfolioManagerUsername", "ESG Values", "BenchMarking", 27, 1);
+					selectDropdownByVisibleText("BenchMarking", "RequestType", "ESG Values", "BenchMarking", 90, 1);
+					selectDropdownByVisibleText("BenchMarking", "RequestFrequency", "ESG Values", "BenchMarking", 29, 1);
+					selectDropdownByVisibleText("BenchMarking", "DeliveryMethod", "ESG Values", "BenchMarking", 30, 1);
+					clickWebelement("BenchMarking", "TermsAndCondition");
+					clickWebelement("BenchMarking", "TCOk");
+					clickWebelement("BenchMarking", "TCCheckBox");
+					clickWebelement("BenchMarking", "RetriveSharedPropertiesButton");
+					explicitWait(300, "BenchMarking", "RequestFrequencyValidation");
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestFrequencyValidation", "ESG Values", "BenchMarking", 29, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "DeliveryMethodValidation", "ESG Values", "BenchMarking", 30, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PropertyColumnNameValidation", "ESG Values", "BenchMarking", 31, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioManagerPropertyIDValidation", "ESG Values", "BenchMarking", 32, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressColumnNameValidation", "ESG Values", "BenchMarking", 33, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestTypeColumnNameValidation", "ESG Values", "BenchMarking", 34, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifiyAddressnameValidation", "ESG Values", "BenchMarking", 35, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersColumnNameValidation", "ESG Values", "BenchMarking", 36, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "Property1Validation", "ESG Values", "BenchMarking", 37, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "Property2Validation", "ESG Values", "BenchMarking", 38, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "Property3Validation", "ESG Values", "BenchMarking", 39, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "Property4Validation", "ESG Values", "BenchMarking", 40, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "Property5Validation", "ESG Values", "BenchMarking", 41, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "1stSecondaryBuildingValidation", "ESG Values", "BenchMarking", 42, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "2stSecondaryBuildingValidation", "ESG Values", "BenchMarking", 43, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID1", "ESG Values", "BenchMarking", 44, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID2", "ESG Values", "BenchMarking", 45, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID3", "ESG Values", "BenchMarking", 46, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID4", "ESG Values", "BenchMarking", 47, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID5", "ESG Values", "BenchMarking", 48, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID6", "ESG Values", "BenchMarking", 49, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "PortfolioPropertyID7", "ESG Values", "BenchMarking", 50, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation1", "ESG Values", "BenchMarking", 51, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation2", "ESG Values", "BenchMarking", 52, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation3", "ESG Values", "BenchMarking", 53, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation4", "ESG Values", "BenchMarking", 54, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation5", "ESG Values", "BenchMarking", 55, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation6", "ESG Values", "BenchMarking", 56, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AddressValidation7", "ESG Values", "BenchMarking", 57, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestTypeValidation1", "ESG Values", "BenchMarking", 90, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestTypeValidation2", "ESG Values", "BenchMarking", 90, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestTypeValidation3", "ESG Values", "BenchMarking", 90, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestTypeValidation4", "ESG Values", "BenchMarking", 90, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestTypeValidation5", "ESG Values", "BenchMarking", 90, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation1", "ESG Values", "BenchMarking", 59, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation2", "ESG Values", "BenchMarking", 59, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation3", "ESG Values", "BenchMarking", 59, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation4", "ESG Values", "BenchMarking", 67, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation5", "ESG Values", "BenchMarking", 59, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation6", "ESG Values", "BenchMarking", 59, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "VerifyAddressValidation7", "ESG Values", "BenchMarking", 59, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation1", "ESG Values", "BenchMarking", 91, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation2", "ESG Values", "BenchMarking", 92, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation3", "ESG Values", "BenchMarking", 93, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation4", "ESG Values", "BenchMarking", 94, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation5", "ESG Values", "BenchMarking", 95, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation6", "ESG Values", "BenchMarking", 96, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "MetersValidation7", "ESG Values", "BenchMarking", 97, 1);
+					scrollToElement("BenchMarking", "NextButton");
+					clickWebelement("BenchMarking", "NextButton");
+					
+					//Authorization Tab
+					explicitWait(300, "BenchMarking", "PropertyValidation");
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNameValidation1", "ESG Values", "BenchMarking", 100, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNameValidation2", "ESG Values", "BenchMarking", 101, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNameValidation3", "ESG Values", "BenchMarking", 102, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNameValidation4", "ESG Values", "BenchMarking", 103, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyIDValidation1", "ESG Values", "BenchMarking", 104, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyIDValidation2", "ESG Values", "BenchMarking", 105, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyIDValidation3", "ESG Values", "BenchMarking", 106, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyIDValidation4", "ESG Values", "BenchMarking", 107, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyAddressValidation1", "ESG Values", "BenchMarking", 108, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyAddressValidation2", "ESG Values", "BenchMarking", 109, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyAddressValidation3", "ESG Values", "BenchMarking", 110, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyAddressValidation4", "ESG Values", "BenchMarking", 111, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyRequestTypeValidation1", "ESG Values", "BenchMarking", 112, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyRequestTypeAddressValidation2", "ESG Values", "BenchMarking", 112, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyRequestTypeAddressValidation3", "ESG Values", "BenchMarking", 112, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyRequestTypeAddressValidation4", "ESG Values", "BenchMarking", 112, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNoAccountValidation1", "ESG Values", "BenchMarking", 113, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNoAccountValidation2", "ESG Values", "BenchMarking", 114, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNoAccountValidation3", "ESG Values", "BenchMarking", 115, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "NAPropertyNoAccountValidation4", "ESG Values", "BenchMarking", 116, 1);
+					scrollToElement("BenchMarking", "NextButton");
+					clickWebelement("BenchMarking", "NextButton");
+					
+					//Review and Submit Tab
+				//	VarifyElementForExistingValueWithText("BenchMarking", "RequestorApplicationName", "ESG Values", "BenchMarking", 77, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestorPhoneNumber", "ESG Values", "BenchMarking", 78, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestorEmailId", "ESG Values", "BenchMarking", 79, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestorBusinessAddress", "ESG Values", "BenchMarking", 82, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestorBusinessCity", "ESG Values", "BenchMarking", 83, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RequestorState", "ESG Values", "BenchMarking", 84, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "AdditionalInformation", "ESG Values", "BenchMarking", 86, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "DeliveryMethodValidation1", "ESG Values", "BenchMarking", 87, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPropertNameValidation", "ESG Values", "BenchMarking", 31, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPortfolioManagerValidation", "ESG Values", "BenchMarking", 32, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSAddressValidation", "ESG Values", "BenchMarking", 33, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSRequestTypevalidation", "ESG Values", "BenchMarking", 34, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSVerifiedAccessValidation", "ESG Values", "BenchMarking", 35, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSMetersValidation", "ESG Values", "BenchMarking", 36, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPropertyName1", "ESG Values", "BenchMarking", 119, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPropertyName2", "ESG Values", "BenchMarking", 120, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPropertyName3", "ESG Values", "BenchMarking", 121, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPropertyName4", "ESG Values", "BenchMarking", 122, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPropertyName5", "ESG Values", "BenchMarking", 123, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPortfolioID1", "ESG Values", "BenchMarking", 124, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPortfolioID2", "ESG Values", "BenchMarking", 125, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPortfolioID3", "ESG Values", "BenchMarking", 126, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPortfolioID4", "ESG Values", "BenchMarking", 127, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSPortfolioID5", "ESG Values", "BenchMarking", 128, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSAddress1", "ESG Values", "BenchMarking", 129, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSAddress2", "ESG Values", "BenchMarking", 130, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSAddress3", "ESG Values", "BenchMarking", 131, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSAddress4", "ESG Values", "BenchMarking", 132, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSAddress5", "ESG Values", "BenchMarking", 133, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSRequest1", "ESG Values", "BenchMarking", 134, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSRequest2", "ESG Values", "BenchMarking", 134, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSRequest3", "ESG Values", "BenchMarking", 134, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSVerifiedField1", "ESG Values", "BenchMarking", 135, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSVerifiedField2", "ESG Values", "BenchMarking", 135, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSVerifiedField3", "ESG Values", "BenchMarking", 135, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSVerifiedField4", "ESG Values", "BenchMarking", 135, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSVerifiedField5", "ESG Values", "BenchMarking", 135, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSMeters1", "ESG Values", "BenchMarking", 136, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSMeters2", "ESG Values", "BenchMarking", 137, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSMeters3", "ESG Values", "BenchMarking", 138, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSMeters4", "ESG Values", "BenchMarking", 139, 1);
+					VarifyElementForExistingValueWithText("BenchMarking", "RSMeters5", "ESG Values", "BenchMarking", 140, 1);
+					scrollToElement("BenchMarking", "SubmitButton");
+					clickWebelement("BenchMarking", "SubmitButton");
+					
+					//New Enrollment Validation
+					validationWithWebelement("BenchMarking", "NewEnrollmentNumber");
+					
 			}
 			
 			
