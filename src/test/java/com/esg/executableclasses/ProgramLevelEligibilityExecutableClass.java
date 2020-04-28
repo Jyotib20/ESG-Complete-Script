@@ -21,7 +21,7 @@ public class ProgramLevelEligibilityExecutableClass extends ProgramLevelEligibil
 	
 	initialization();
 	}
-	/*@Test(priority = 1)
+	@Test(priority = 1)
 	public static void OnlineApplication() throws AWTException, InterruptedException {
 		test = Report.startTest("Online Application");
 		Online();
@@ -35,7 +35,7 @@ public class ProgramLevelEligibilityExecutableClass extends ProgramLevelEligibil
 	public static void BackendWithCustomer1() throws AWTException {
 		test = Report.startTest("Backend With Customer");
 		BackendWithCustomer();
-	}*/
+	}
 	@Test(priority = 4)
 	public static void BackendWithoutCustomer1() throws InterruptedException, AWTException {
 		test = Report.startTest("Backend Without Customer");

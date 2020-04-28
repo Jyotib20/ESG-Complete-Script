@@ -21,9 +21,9 @@ public class UserDefinedWorkflowExecutableClass extends UserDefinedWorkflowTestC
 	//----- Automated Workflow Inspection-----
 
 	
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 	public static void UserDefinedWorkflow_AutomatedWorkflow_Inspection_Login() {
-		test = Report.startTest("User Defined Workflow Automated Workflow Inspection Login");
+		
 		login();
 	}
 
@@ -32,6 +32,7 @@ public class UserDefinedWorkflowExecutableClass extends UserDefinedWorkflowTestC
 		test = Report.startTest("UserDefinedWorkflow_AutomatedWorkflow_Inspection_EnrollmentStep_1");
 		NavigateToEnrollment(3, 1, 4, 1);
 		Complete_ApplicationWorkflowStep_AutomatedWorkflow_Inspection();
+		
 	}
 
 	@Test(priority = 3)
@@ -95,7 +96,7 @@ public class UserDefinedWorkflowExecutableClass extends UserDefinedWorkflowTestC
 		Close();
 	}
 
-	//----- Automated WOrkflow Custom Commercial -----
+	//----- Automated Workflow Custom Commercial -----
 
 	@Test(priority = 10)
 	public static void UserDefinedWorkflow_AutomatedWorkflow_Custom_Commercial_Login() {
@@ -190,7 +191,7 @@ public class UserDefinedWorkflowExecutableClass extends UserDefinedWorkflowTestC
 		Complete_InitiatePayment_WorkflowStep_AutomatedWorkflow_Installation_and_Inspection();
 		GenaratePayment_AutomatedWorkflow_Installation_and_Inspection();
 		Close();
-	}
+	}*/
 
 	// -----Automated Interconnect Workflow -----
 

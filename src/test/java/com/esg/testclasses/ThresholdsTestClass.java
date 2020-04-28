@@ -15,9 +15,11 @@ public class ThresholdsTestClass extends HelperClass {
 
 	public static void NavigateToEnrollment(int Progrow, int progcolumn, int Accountnorow, int Accountnocolumn, String Required_Customer) {
 		threadWait(2000);
-		ClickByActionClass("Threshold", "MainMenu", "ESG Values", "Thresholds", 1, 1);
+		//enterTextboxValue("Threshold", "MainMenu", "ESG Values", "Thresholds", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("Threshold", "NewEnrollment");
-		selectDropdownByVisibleText("Threshold", "SelectProgram", "ESG Values", "Thresholds", Progrow, progcolumn);
+		selectDropdown("Threshold", "SelectProgram","SelectProgram", "ESG Values", "Thresholds", Progrow, progcolumn);
 		clickWebelement("Threshold", "NextButton");
 		enterTextboxValue("Threshold", "AccountNumber", "ESG Values", "Thresholds", Accountnorow, Accountnocolumn);
 		clickWebelement("Threshold", "Go");
@@ -26,6 +28,9 @@ public class ThresholdsTestClass extends HelperClass {
 	}
 
 	public static void Process_Application() {
+		scrollToElement("Threshold", "ApplicantInformation");
+		clickWebelement("Threshold", "ApplicantInformation");
+		clickonSave();
 		clickonProcess();
 	}
 
@@ -70,16 +75,22 @@ public class ThresholdsTestClass extends HelperClass {
 		clickWebelement("Threshold", "Post_Inspection_WorkflowStep");
 		threadWait(2000);
 		selectActualVisitDate();
-		clickWebelement("Threshold", "Post_Inspection_FailedQty");
-		enterValueByActionClass("Threshold", "Post_Inspection_FailedQty", "ESG Values", "Thresholds", 4, 1);
-		try {
-			Xpath("Threshold", "Post_Inspection_2ndFailedQty").isDisplayed();
-			clickWebelement("Threshold", "Post_Inspection_2ndFailedQty");
-			enterValueByActionClass("Threshold", "Post_Inspection_2ndFailedQty", "ESG Values", "Thresholds", 4, 1);
+		clickWebelement("Threshold", "ClickOn_FCT");
+		enterTextboxValue("Threshold", "Post_Inspection_FailedQty", "ESG Values", "Thresholds", 4, 1);
+		if (Xpath("Threshold", "Post_Inspection_2ndFailedQty").isDisplayed()) {
+			clickWebelement("Threshold", "ClickOnIM");
+			enterTextboxValue("Threshold", "Post_Inspection_2ndFailedQty", "ESG Values", "Thresholds", 4, 1);
+		} else {
+			System.out.println("2nd Measure is not added");
+		}
+		/*try {
+		Xpath("Threshold", "Post_Inspection_2ndFailedQty").isDisplayed();
+			clickWebelement("Threshold", "ClickOnIM");
+			enterTextboxValue("Threshold", "Post_Inspection_2ndFailedQty", "ESG Values", "Thresholds", 4, 1);
 			
 		} catch (Exception e) {
 			System.out.println("2nd Measure is not added");
-		}
+		}*/
 		clickonProcess();
 		}
 	
@@ -142,6 +153,7 @@ public class ThresholdsTestClass extends HelperClass {
 	}
 	
     public static void NavigateAndOpenAddMeasurewindow() {
+    	scrollToElement("Threshold", "Measure");
     	clickWebelement("Threshold", "Measure");
 		threadWait(2000);
 		clickWebelement("Threshold", "AddMeasureImage");
@@ -170,7 +182,7 @@ public class ThresholdsTestClass extends HelperClass {
 		clickWebelement("Threshold", "SaveMeasure");
 		threadWait(2000);
 		clickWebelement("Threshold", "ClickOn_FCT");
-		enterValueByActionClass("Threshold", "FCT_EnterMeasureQty", "ESG Values", "Thresholds", 6, 1);
+		enterTextboxValue("Threshold", "FCT_EnterMeasureQty", "ESG Values", "Thresholds", 6, 1);
 		threadWait(3000);
 		Process_Application();
 		Verify_PreInspection_KickOff();
@@ -189,7 +201,7 @@ public class ThresholdsTestClass extends HelperClass {
 		clickWebelement("Threshold", "SaveMeasure");
 		threadWait(2000);
 		clickWebelement("Threshold", "ClickOn_FCT");
-		enterValueByActionClass("Threshold", "FCT_EnterMeasureQty", "ESG Values", "Thresholds", 6, 1);
+		enterTextboxValue("Threshold", "FCT_EnterMeasureQty", "ESG Values", "Thresholds", 6, 1);
 		threadWait(3000);
 		Process_Application();
 		Verify_PreInspection_KickOff();
@@ -208,7 +220,7 @@ public class ThresholdsTestClass extends HelperClass {
 		clickWebelement("Threshold", "SaveMeasure");
 		threadWait(2000);
 		clickWebelement("Threshold", "ClickOn_FCT");
-		enterValueByActionClass("Threshold", "FCT_EnterMeasureQty", "ESG Values", "Thresholds", 6, 1);
+		enterTextboxValue("Threshold", "FCT_EnterMeasureQty", "ESG Values", "Thresholds", 6, 1);
 		threadWait(3000);
 		Process_Application();
 		Verify_PreInspection_KickOff();
@@ -223,14 +235,15 @@ public class ThresholdsTestClass extends HelperClass {
 		
 		NavigateToEnrollment(7, 1, 8, 1,"Customer_QAReview");
 		
-		ClickWebelementByActionClass("Threshold", "ProcessorTradeAlly");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 10, 1);
-		Enter(KeyEvent.VK_ENTER);
+		//clickWebelement("Threshold", "ProcessorTradeAlly");
+		selectDropdown("Threshold", "ProcessorTradeAlly", "SearchFromList", "ESG Values", "Thresholds", 10, 1);
+		//Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Threshold", "ProcessorEmployee");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 14, 1);
-		Enter(KeyEvent.VK_ENTER);
+		//clickWebelement("Threshold", "ProcessorEmployee");
+		selectDropdown("Threshold", "ProcessorEmployee", "SearchFromList", "ESG Values", "Thresholds", 14, 1);
+		//Enter(KeyEvent.VK_ENTER);
 		
+		clickonSave();
 		Process_Application();
 		Verify_QAReview_KickOff();
 	}
@@ -239,14 +252,14 @@ public class ThresholdsTestClass extends HelperClass {
 		
 		NavigateToEnrollment(7, 1, 8, 1,"Customer_QAReview");
 		
-		ClickWebelementByActionClass("Threshold", "ProcessorTradeAlly");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 10, 1);
+		clickWebelement("Threshold", "ProcessorTradeAlly");
+		enterTextboxValue("Threshold", "SearchFromList", "ESG Values", "Thresholds", 10, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Threshold", "ProcessorEmployee");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 13, 1);
+		clickWebelement("Threshold", "ProcessorEmployee");
+		enterTextboxValue("Threshold", "SearchFromList", "ESG Values", "Thresholds", 13, 1);
 		Enter(KeyEvent.VK_ENTER);
-		
+		clickonSave();
 		Process_Application();
 		Verify_QAReview_KickOff();
 	}
@@ -255,14 +268,14 @@ public class ThresholdsTestClass extends HelperClass {
 		
 		NavigateToEnrollment(7, 1, 8, 1,"Customer_QAReview");
 		
-		ClickWebelementByActionClass("Threshold", "ProcessorTradeAlly");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 10, 1);
+		clickWebelement("Threshold", "ProcessorTradeAlly");
+		enterTextboxValue("Threshold", "SearchFromList", "ESG Values", "Thresholds", 10, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Threshold", "ProcessorEmployee");
-		enterValueByActionClass("Threshold", "SearchFromList", "ESG Values", "Thresholds", 14, 1);
+		clickWebelement("Threshold", "ProcessorEmployee");
+		enterTextboxValue("Threshold", "SearchFromList", "ESG Values", "Thresholds", 14, 1);
 		Enter(KeyEvent.VK_ENTER);
-		
+		clickonSave();
 		Process_Application();
 		Verify_QAReview_KickOff();
 	}

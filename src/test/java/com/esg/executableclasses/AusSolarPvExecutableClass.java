@@ -17,6 +17,7 @@ public static void Initialization() {
 	}
 @Test(priority=1)
 public static void AusSolarPV_Login() {
+	test=Report.startTest("AusSolarPV_Login EECP");
     login(); 
 }
 @Test(priority=2)

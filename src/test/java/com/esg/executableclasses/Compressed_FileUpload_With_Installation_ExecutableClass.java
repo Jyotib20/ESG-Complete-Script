@@ -31,7 +31,6 @@ public class Compressed_FileUpload_With_Installation_ExecutableClass extends Com
 		try {
 			UploadFile();
 		} catch (AWTException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

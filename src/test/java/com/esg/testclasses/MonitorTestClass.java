@@ -7,9 +7,11 @@ public class MonitorTestClass extends HelperClass{
 	public static void LoginAndOpenApplication() {
 		
 		login("Helper","BaseURL", 1, 0, 1, 1);
-		ClickByActionClass("Monitor", "MainMenu", "ESG Values", "Monitor", 1, 1);
+		enterTextboxValue("Monitor", "MainMenu", "ESG Values", "Monitor", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("Monitor", "NewButton");
-		selectDropdownByVisibleText("Monitor", "SelectProgram", "ESG Values", "Monitor", 2, 1);
+		selectDropdown("Monitor", "SelectProgram","Next Button", "ESG Values", "Monitor", 2, 1);
 		clickWebelement("Monitor", "NextButton");
 		enterTextboxValue("Monitor", "SearchType", "ESG Values", "Monitor", 3, 1);
 		clickWebelement("Monitor", "SearchGo");
@@ -22,7 +24,7 @@ public class MonitorTestClass extends HelperClass{
 		threadWait(2500);
 		clickWebelement("Monitor", "MeasureName");
 		threadWait(2500);
-		enterValueByActionClass("Monitor", "MeasurePQty", "ESG Values", "Monitor", 4, 1);
+		enterTextboxValue("Monitor", "MeasurePQty", "ESG Values", "Monitor", 4, 1);
 		threadWait(2500);
 		clickWebelement("Monitor", "Save");
 		scrollToElement("Monitor", "Application");
@@ -30,7 +32,7 @@ public class MonitorTestClass extends HelperClass{
 		threadWait(2500);
 		scrollToElement("Monitor", "TradeAllyEmployee");
 		clickWebelement("Monitor", "TradeAllyEmployee");
-		selectDropdownByVisibleText("Monitor", "SelectTradeAllyEmployee", "ESG Values", "Monitor", 5, 1);
+		selectDropdown("Monitor", "SelectTradeAllyEmployee","TradeAllyEmployee", "ESG Values", "Monitor", 5, 1);
 		clickWebelement("Monitor", "TradeAllySave");
 		scrollToElement("Monitor", "ApplicationSave");
 		clickWebelement("Monitor", "ApplicationSave");
@@ -45,9 +47,11 @@ public class MonitorTestClass extends HelperClass{
 		defineLogs("Enrollment Profile - Monitors", "Monitor 5 Recipient Test: Group", "Monitor 5 Recipient Test: Group", "Workflow step of Monitor 5 is validated", "Workflow step of Monitor 5 is not verified", "Monitor", "VerifyMonitor5");
 	}
 	public static void Monitor2() {
-		ClickByActionClass("Monitor", "MainMenu", "ESG Values", "Monitor", 1, 1);
+		//enterTextboxValue("Monitor", "MainMenu", "ESG Values", "Monitor", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("Monitor", "NewButton");
-		selectDropdownByVisibleText("Monitor", "SelectProgram", "ESG Values", "Monitor", 2, 1);
+		selectDropdown("Monitor", "SelectProgram","SelectProgram", "ESG Values", "Monitor", 2, 1);
 		clickWebelement("Monitor", "NextButton");
 		enterTextboxValue("Monitor", "SearchType", "ESG Values", "Monitor", 3, 1);
 		clickWebelement("Monitor", "SearchGo");
@@ -58,7 +62,7 @@ public class MonitorTestClass extends HelperClass{
 		threadWait(2500);
 		clickWebelement("Monitor", "MeasureName");
 		threadWait(2500);
-		enterValueByActionClass("Monitor", "MeasurePQty", "ESG Values", "Monitor", 4, 1);
+		enterTextboxValue("Monitor", "MeasurePQty", "ESG Values", "Monitor", 4, 1);
 		threadWait(2500);
 		clickWebelement("Monitor", "Save");
 		scrollToElement("Monitor", "Application");
@@ -68,7 +72,7 @@ public class MonitorTestClass extends HelperClass{
 		scrollToElement("Monitor", "TradeAllyEmployee");
 		clickWebelement("Monitor", "TradeAllyEmployee");
 		handlePopup();
-		selectDropdownByVisibleText("Monitor", "SelectTradeAllyEmployee", "ESG Values", "Monitor", 6, 1);
+		selectDropdown("Monitor", "SelectTradeAllyEmployee","SelectTradeAllyEmployee", "ESG Values", "Monitor", 6, 1);
 		clickWebelement("Monitor", "TradeAllySave");
 		scrollToElement("Monitor", "ApplicationSave");
 		clickWebelement("Monitor", "ApplicationSave");
@@ -76,9 +80,9 @@ public class MonitorTestClass extends HelperClass{
 		defineLogs("Pre-Inspection", "Pre-Inspection", "Pre-Inspection", "PreInspection Workflow step has been generated", "PreInspection workflow step is not generated", "Monitor", "preinspectionStep");
 		clickWebelement("Monitor", "preinspectionStep");
 		selectActualReviewDate();
-		selectDropdownByVisibleText("Monitor", "AssignTo", "ESG Values", "Monitor", 8, 1);
+		selectDropdown("Monitor", "AssignTo","AssignTo", "ESG Values", "Monitor", 8, 1);
 		threadWait(5000);
-		selectDropdownByVisibleText("Monitor", "Employee", "ESG Values", "Monitor", 9, 1);
+		selectDropdown("Monitor", "Employee","Employee", "ESG Values", "Monitor", 9, 1);
 		clickWebelement("Monitor", "PreSave");
 		threadWait(2500);
 		clickWebelement("Monitor", "OutcomeOnHold");
@@ -92,9 +96,11 @@ public class MonitorTestClass extends HelperClass{
 		defineLogs("Pre-Inspection", "Monitor 7 Recipient Test: Installer Primary Contac", "Monitor 7 Recipient Test: Installer Primary Contac", "Status of the Monitor 7 Recipient Test: Installer Primary Contact is Validated ", "Status of the Monitor 6 Recipient Test: Installer (pre-inspection) is not Validated", "Monitor", "StatusOfMonitor7");
 	}
 	public static void Monitor3() {
-		ClickByActionClass("Monitor", "MainMenu", "ESG Values", "Monitor", 1, 1);
+		//enterTextboxValue("Monitor", "MainMenu", "ESG Values", "Monitor", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("Monitor", "NewButton");
-		selectDropdownByVisibleText("Monitor", "SelectProgram", "ESG Values", "Monitor", 2, 1);
+		selectDropdown("Monitor", "SelectProgram","SelectProgram", "ESG Values", "Monitor", 2, 1);
 		clickWebelement("Monitor", "NextButton");
 		enterTextboxValue("Monitor", "SearchType", "ESG Values", "Monitor", 3, 1);
 		clickWebelement("Monitor", "SearchGo");
@@ -105,7 +111,7 @@ public class MonitorTestClass extends HelperClass{
 		threadWait(2500);
 		clickWebelement("Monitor", "MeasureName");
 		threadWait(2500);
-		enterValueByActionClass("Monitor", "MeasurePQty", "ESG Values", "Monitor", 4, 1);
+		enterTextboxValue("Monitor", "MeasurePQty", "ESG Values", "Monitor", 4, 1);
 		threadWait(2500);
 		clickWebelement("Monitor", "Save");
 		scrollToElement("Monitor", "Application");
@@ -115,7 +121,7 @@ public class MonitorTestClass extends HelperClass{
 		scrollToElement("Monitor", "TradeAllyEmployee");
 		clickWebelement("Monitor", "TradeAllyEmployee");
 		handlePopup();
-		selectDropdownByVisibleText("Monitor", "SelectTradeAllyEmployee", "ESG Values", "Monitor", 6, 1);
+		selectDropdown("Monitor", "SelectTradeAllyEmployee","SelectTradeAllyEmployee", "ESG Values", "Monitor", 6, 1);
 		clickWebelement("Monitor", "TradeAllySave");
 		scrollToElement("Monitor", "ApplicationSave");
 		clickWebelement("Monitor", "ApplicationSave");
@@ -123,26 +129,26 @@ public class MonitorTestClass extends HelperClass{
 		defineLogs("Pre-Inspection", "Pre-Inspection", "Pre-Inspection", "PreInspection Workflow step has been generated", "PreInspection workflow step is not generated", "Monitor", "preinspectionStep");
 		clickWebelement("Monitor", "preinspectionStep");
 		selectActualReviewDate();
-		selectDropdownByVisibleText("Monitor", "AssignTo", "ESG Values", "Monitor", 8, 1);
+		selectDropdown("Monitor", "AssignTo","AssignTo", "ESG Values", "Monitor", 8, 1);
 		threadWait(5000);
-		selectDropdownByVisibleText("Monitor", "Employee", "ESG Values", "Monitor", 9, 1);
+		selectDropdown("Monitor", "Employee","Employee", "ESG Values", "Monitor", 9, 1);
 		clickWebelement("Monitor", "PreSave");
 		clickWebelement("Monitor", "PreInspectionProcess");
 		defineLogs("Installation", "Installation", "Installation", "Installation Workflow step has been generated", "Installation workflow step is not generated", "Monitor", "Installation");
 		clickWebelement("Monitor", "Installation");
 		selectActualReviewDate();
-		selectDropdownByVisibleText("Monitor", "AssignTo", "ESG Values", "Monitor", 10, 1);
+		selectDropdown("Monitor", "AssignTo","AssignTo", "ESG Values", "Monitor", 10, 1);
 		threadWait(5000);
-		selectDropdownByVisibleText("Monitor", "Employee", "ESG Values", "Monitor", 11, 1);
+		selectDropdown("Monitor", "Employee","Employee", "ESG Values", "Monitor", 11, 1);
 		clickWebelement("Monitor", "PreSave");
 		threadWait(2500);
 		clickWebelement("Monitor", "InstallationProcess");
 		defineLogs("Installation", "Installation", "Installation", "Installation Workflow step has been generated", "Installation workflow step is not generated", "Monitor", "Installation");
 		clickWebelement("Monitor", "Inspection");
 		selectActualReviewDate();
-		selectDropdownByVisibleText("Monitor", "AssignTo", "ESG Values", "Monitor", 10, 1);
+		selectDropdown("Monitor", "AssignTo","AssignTo", "ESG Values", "Monitor", 10, 1);
 		threadWait(5000);
-		selectDropdownByVisibleText("Monitor", "Employee", "ESG Values", "Monitor", 11, 1);
+		selectDropdown("Monitor", "Employee","Employee", "ESG Values", "Monitor", 11, 1);
 		clickWebelement("Monitor", "PreSave");
 		threadWait(2500);
 		clickWebelement("Monitor", "OutcomeOnHold");
@@ -156,6 +162,23 @@ public class MonitorTestClass extends HelperClass{
 		defineLogs("Inspection", "Monitor 8 Recipient Test: Installer (post-inspecti", "Monitor 8 Recipient Test: Installer (post-inspecti", "Status of the Monitor 8 Recipient Test: Installer (post-inspection) is Validated ", "Status of the Monitor 8 Recipient Test: Installer (post-inspection) is not Validated", "Monitor", "StatusOfMonitor6");
 		defineLogs("Inspection", "Monitor 9 Recipient Test: Installer Primary Contac", "Monitor 9 Recipient Test: Installer Primary Contac", "Status of the Monitor 9 Recipient Test: Installer Primary Contact is Validated ", "Status of the Monitor 9 Recipient Test: Installer (pre-inspection) is not Validated", "Monitor", "StatusOfMonitor7");
 Close();
+	}
+	
+	public static void Enrollment_Cancelled_When_Monitor_Triggered_to_Cancel() {
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
+		clickWebelement("Monitor", "NewButton");
+		selectDropdown("Monitor", "SelectProgram", "SelectProgram","ESG Values", "Monitor", 2, 1);
+		clickWebelement("Monitor", "NextButton");
+		enterTextboxValue("Monitor", "SearchType", "ESG Values", "Monitor", 3, 1);
+		clickWebelement("Monitor", "SearchGo");
+		clickWebelement("Monitor", "Customer");
+		clickWebelement("Monitor", "NextGo");
+		threadWait(2500);
+		clickWebelement("Monitor", "OutcomeOnHold");
+		threadWait(5000);
+		clickonSave();
+		//clickWebelement("Monitor", "PreSave");
 	}
 
 }

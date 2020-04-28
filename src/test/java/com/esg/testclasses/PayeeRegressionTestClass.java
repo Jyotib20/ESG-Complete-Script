@@ -1,7 +1,5 @@
 package com.esg.testclasses;
 
-import org.openqa.selenium.Keys;
-
 import com.esg.utilities.HelperClass;
 
 public class PayeeRegressionTestClass extends HelperClass {
@@ -464,6 +462,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 	}
 	public static void payee_Installer_Install_Standard()
 	{
+		
 		selectPayeeInstaller();
 		selectMeasures();
 		completeMeasure();
@@ -1056,7 +1055,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 	public static void completeMeasure() 
 	{
 		clickWebelement("payeeregression", "PayeeTestMeasure");
-		enterValueByActionClass("payeeregression", "MeasureQty", "PayeeregressionData", "Payeeregression", 1, 2);
+		enterTextboxValue("payeeregression", "MeasureQty", "PayeeregressionData", "Payeeregression", 1, 2);
 		enterTextboxValue("payeeregression", "MeasureTestQty", "PayeeregressionData", "Payeeregression", 2, 2);
 		clickonSave();
 		validationWithWebelement("validation", "VerifyMeasureQty");
@@ -1079,7 +1078,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 		clickWebelement("payeeregression", "SelectInstaller");
 		clickWebelement("payeeregression", "PayeeInstallerName");
 		enterTextboxValue("payeeregression","PayeeInstallerName", "PayeeregressionData", "Payeeregression", 3, 2);	
-		clickKeyboardValue("payeeregression", "PayeeInstallerName", Keys.ENTER);
+		clickWebelement("payeeregression", "PayeeInstallerName");
 		clickonSave();
 	}
 	public static void selectPayeeAlternatePayee()
@@ -1100,19 +1099,19 @@ public class PayeeRegressionTestClass extends HelperClass {
 		clickWebelement("payeeregression", "AddButton");
 		clickWebelement("payeeregression", "SelectTradeAlly");
 		enterTextboxValue("payeeregression","SelectTradeAlly", "PayeeregressionData", "Payeeregression", 1, 1);
-		clickKeyboardValue("payeeregression","SelectTradeAlly", Keys.ENTER);
+		clickWebelement("payeeregression","SelectTradeAlly");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		}
 		clickWebelement("payeeregression", "SelectTradeAllyEmployee");
 		enterTextboxValue("payeeregression","SelectTradeAllyEmployee", "PayeeregressionData", "Payeeregression", 2, 1);
-		clickKeyboardValue("payeeregression","SelectTradeAllyEmployee", Keys.ENTER);
+		clickWebelement("payeeregression","SelectTradeAllyEmployee");
 		clickWebelement("payeeregression", "SaveTradeAlly");
 		clickWebelement("payeeregression", "SelectInstaller");
 		clickWebelement("payeeregression", "PayeeInstallerName");
 		enterTextboxValue("payeeregression","PayeeInstallerName", "PayeeregressionData", "Payeeregression", 10, 2);	
-		clickKeyboardValue("payeeregression", "PayeeInstallerName", Keys.ENTER);	
+		clickWebelement("payeeregression", "PayeeInstallerName");	
 		clickWebelement("payeeregression", "ClickOn_ElementToSaveValue");
 		clickonSave();
 	}
@@ -1122,14 +1121,14 @@ public class PayeeRegressionTestClass extends HelperClass {
 		clickWebelement("payeeregression", "AddButton");
 		clickWebelement("payeeregression", "SelectTradeAlly");
 		enterTextboxValue("payeeregression","SelectTradeAlly", "PayeeregressionData", "Payeeregression", 1, 1);
-		clickKeyboardValue("payeeregression","SelectTradeAlly", Keys.ENTER);
+		clickWebelement("payeeregression","SelectTradeAlly");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 		}
 		clickWebelement("payeeregression", "SelectTradeAllyEmployee");
 		enterTextboxValue("payeeregression","SelectTradeAllyEmployee", "PayeeregressionData", "Payeeregression", 2, 1);
-		clickKeyboardValue("payeeregression","SelectTradeAllyEmployee", Keys.ENTER);
+		clickWebelement("payeeregression","SelectTradeAllyEmployee");
 		clickWebelement("payeeregression", "SaveTradeAlly");
 		clickWebelement("payeeregression", "SelectInstaller");
 		clickonSave();
@@ -1183,9 +1182,10 @@ public class PayeeRegressionTestClass extends HelperClass {
 	{
 		clickWebelement("payeeregression", "ManagementReview_WorkflowStep");
 		selectDueDate();
-		clickWebelement("payeeregression", "AssignedTo");
-		enterTextboxValue("payeeregression", "AssignedToSearch", "PayeeregressionData", "Payeeregression", 7, 1);
-		clickKeyboardValue("payeeregression", "AssignedToSearch", Keys.ENTER);
+		//clickWebelement("payeeregression", "AssignedTo");
+		selectDropdown("payeeregression","AssignedTo", "AssignedToSearch", "PayeeregressionData", "Payeeregression", 7, 1);
+		//clickWebelement("payeeregression", "AssignedToSearch");
+		//threadWait(2000);
 		clickonSave();
 		clickonProcess();
 		enterLogs("ManagementReview workflow step was created Successfully");
@@ -1195,7 +1195,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 		scrollToElement("payeeregression", "ClickOn_OverrideSub_Section");
 		clickWebelement("payeeregression", "ClickOn_OverrideSub_Section");
 		scrollToElement("payeeregression", "SelectOverridePayee");
-		selectDropdownByVisibleText("payeeregression", "SelectOverridePayee", "PayeeregressionData", "Payeeregression", selectoverrideRow, selectoverrideColumn);
+		selectDropdown("payeeregression", "SelectOverridePayee","SelectOverridePayee", "PayeeregressionData", "Payeeregression", selectoverrideRow, selectoverrideColumn);
 		clickonSave();
 		scrollToElement("payeeregression", "ClickOn_WorkflowDetailsSub_Section");
 		clickWebelement("payeeregression", "ClickOn_WorkflowDetailsSub_Section");
@@ -1206,7 +1206,7 @@ public class PayeeRegressionTestClass extends HelperClass {
 		scrollToElement("payeeregression", "ClickOn_OverrideSub_Section");
 		clickWebelement("payeeregression", "ClickOn_OverrideSub_Section");
 		scrollToElement("payeeregression", "SelectOverridePayee");
-		selectDropdownByVisibleText("payeeregression", "SelectOverridePayee", "PayeeregressionData", "Payeeregression", selectoverrideRow, selectoverrideColumn);
+		selectDropdown("payeeregression", "SelectOverridePayee","SelectOverridePayee", "PayeeregressionData", "Payeeregression", selectoverrideRow, selectoverrideColumn);
 		clickonSave();
 		scrollToElement("payeeregression", "ApplicantInformationSub_Section");
 		clickWebelement("payeeregression", "ApplicantInformationSub_Section");

@@ -13,8 +13,8 @@ public static void Login() {
 public static void UploadFile() throws AWTException {
 	
 	ClickByActionClass("ApogeUpload", "MainMenu", "ESG Values", "Apoge Upload", 1, 1);
-	selectDropdownByVisibleText("ApogeUpload", "UploadType", "ESG Values", "Apoge Upload", 2, 1);
-	threadWait(2500);
+	selectDropdown("ApogeUpload", "UploadType","", "ESG Values", "Apoge Upload", 2, 1);
+	threadWait(5000);
 	clickWebelement("ApogeUpload", "SelectUpload1");
 	threadWait(5000);
 	UploadFile("ApogeUpload", "Filepath1");
@@ -24,7 +24,7 @@ public static void UploadFile() throws AWTException {
 	UploadFile("ApogeUpload", "Filepath2");
 	threadWait(2500);
 	clickWebelement("ApogeUpload", "UploadButton");
-	explicitWait(300, "ApogeUpload", "CompletedStatus");
+	WaitForElement(300, "ApogeUpload", "CompletedStatus");
 	test.log(LogStatus.PASS, "Files are uploaded Successfully");
 }
 public static void Enrollment() {
@@ -63,18 +63,23 @@ public static void VerifyApogeeWithModifiedFiles() {
 public static void UploadFile2() throws AWTException {
 	
 	ClickByActionClass("ApogeUpload", "MainMenu", "ESG Values", "Apoge Upload", 1, 1);
-	selectDropdownByVisibleText("ApogeUpload", "UploadType", "ESG Values", "Apoge Upload", 2, 1);
-	threadWait(2500);
+	
+	selectDropdown("ApogeUpload", "UploadType","", "ESG Values", "Apoge Upload", 2, 1);
+	//threadWait(2500);
+	WaitForElement(2500, "ApogeUpload", "SelectUpload1");
 	clickWebelement("ApogeUpload", "SelectUpload1");
 	threadWait(5000);
 	UploadFile("ApogeUpload", "Filepath3");
-	threadWait(2500);
+	//threadWait(2500);
+	WaitForElement(2500, "ApogeUpload", "SelectUpload2");
 	clickWebelement("ApogeUpload", "SelectUpload2");
 	threadWait(5000);
 	UploadFile("ApogeUpload", "Filepath4");
-	threadWait(2500);
+	//threadWait(2500);
+	WaitForElement(2500, "ApogeUpload", "UploadButton");
 	clickWebelement("ApogeUpload", "UploadButton");
-	explicitWait(300, "ApogeUpload", "CompletedStatus");
+	WaitForElement(2500, "ApogeUpload", "CompletedStatus");
+	//explicitWait(300, "ApogeUpload", "CompletedStatus");
 	test.log(LogStatus.PASS, "Files are uploaded Successfully");
 }
 public static void Enrollment2() {
@@ -83,7 +88,8 @@ public static void Enrollment2() {
 	threadWait(2500);
 	scrollToElement("ApogeUpload", "SearchButton");
 	clickWebelement("ApogeUpload", "SearchButton");
-	threadWait(5000);
+	threadWait(2500);
+	WaitForElement(2500, "ApogeUpload", "EnrollmentList");
 	clickWebelement("ApogeUpload", "EnrollmentList");
 	defineLogs("Application", "Closed - Work Completed", "Closed - Work Completed", "Workflow step is displayed", "Workflow step is not displayed", "ApogeUpload", "ValidateApplicationstep");
 }
@@ -92,12 +98,12 @@ public static void VerifyApogeeWithoutModifiedFiles() {
 	defineLogs("Application", "Closed - Work Completed", "Closed - Work Completed", "Status of the Application is Validated", "Status of the Application is not Validated", "ApogeUpload", "ApplicationStatus");
 	defineLogs("Enrollment Savings", "1173.0000", "1173.0000", "The Enrollment Savings Value is Verified", "The Enrollment Savings Value is not Verified", "ApogeUpload", "VerifyEnrollmentSavingsKwh");
 	clickWebelement("ApogeUpload", "InstallationLink");
-	threadWait(5000);
+	//threadWait(5000);
+	WaitForElement(2500, "ApogeUpload", "MeasureQTYWitout1");
 	//Verifying the values of Measure Name "Energy Audit - Billing Insights Audit (AuditRec - AuditBi)"
 	defineLogs("1", "1", "1", "Measure I QTY Value is Validated", "Measure I QTY Value is not Validated", "ApogeUpload", "MeasureQTYWitout1");
 	defineLogs("$0.00", "$0.00", "$0.00", "Incentive Amount Value is Validated", "Incentive Amount Value is not Validated", "ApogeUpload", "IncentiveAmountWithout1");
 	defineLogs("0.0000", "0.0000", "0.0000", "Savings KWh Value is Validated", "Savings KWh Value is not Validated", "ApogeUpload", "SavingsKWhWithout1");
-	
 	defineLogs("1", "1", "1", "Measure I QTY Value is Validated", "Measure I QTY Value is not Validated", "ApogeUpload", "MeasureQTYWitout2");
 	defineLogs("$0.00", "$0.00", "$0.00", "Incentive Amount Value is Validated", "Incentive Amount Value is not Validated", "ApogeUpload", "IncentiveAmountWithout2");
 	defineLogs("0.0000", "0.0000", "0.0000", "Savings KWh Value is Validated", "Savings KWh Value is not Validated", "ApogeUpload", "SavingsKWhWithout2");

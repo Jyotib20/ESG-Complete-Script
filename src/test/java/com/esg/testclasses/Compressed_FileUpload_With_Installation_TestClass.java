@@ -13,12 +13,12 @@ public class Compressed_FileUpload_With_Installation_TestClass extends HelperCla
 			threadWait(5000);
 			UploadFile("CompressedFileUploadWithInstallation", "Filepath");
 			threadWait(2500);
-			selectDropdownByVisibleText("CompressedFileUploadWithInstallation", "UploadType", "ESG Values", "CompressedFileUploadInstall", 2, 1);
+			selectDropdown("CompressedFileUploadWithInstallation", "UploadType","", "ESG Values", "CompressedFileUploadInstall", 2, 1);
 			clickWebelement("CompressedFileUploadWithInstallation", "UploadButton");
-			explicitWait(3000, "CompressedFileUploadWithInstallation", "StatusWait");
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "StatusWait");
 			test.log(LogStatus.INFO, "File is uploaded successfully");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "TotalRecords", "ESG Values", "CompressedFileUploadInstall", 59, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SuccessfullEnrollments", "ESG Values", "CompressedFileUploadInstall", 60, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "TotalRecords", "ESG Values", "CompressedFileUploadInstall", 59, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SuccessfullEnrollments", "ESG Values", "CompressedFileUploadInstall", 60, 1);
 		}
 		public static void Enrollment() {
 			ClickByActionClass("CompressedFileUploadWithInstallation", "MainMenu", "ESG Values", "CompressedFileUploadInstall", 3, 1);
@@ -26,58 +26,58 @@ public class Compressed_FileUpload_With_Installation_TestClass extends HelperCla
 			clickWebelement("CompressedFileUploadWithInstallation", "SearchButton");
 			threadWait(5000);
 			clickWebelement("CompressedFileUploadWithInstallation", "EnrollmentList");
-			explicitWait(3000, "CompressedFileUploadWithInstallation", "ApplicationTradeAlly");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "ApplicationTradeAlly", "ESG Values", "CompressedFileUploadInstall", 6, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "ApplicationStatus", "ESG Values", "CompressedFileUploadInstall", 7, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InstallationTradeAlly", "ESG Values", "CompressedFileUploadInstall", 8, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InstallationStatus", "ESG Values", "CompressedFileUploadInstall", 9, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InspectionTradeAlly", "ESG Values", "CompressedFileUploadInstall", 10, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InspectionStatus", "ESG Values", "CompressedFileUploadInstall",11, 1);
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "ApplicationTradeAlly");
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "ApplicationTradeAlly", "ESG Values", "CompressedFileUploadInstall", 6, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "ApplicationStatus", "ESG Values", "CompressedFileUploadInstall", 7, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InstallationTradeAlly", "ESG Values", "CompressedFileUploadInstall", 8, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InstallationStatus", "ESG Values", "CompressedFileUploadInstall", 9, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InspectionTradeAlly", "ESG Values", "CompressedFileUploadInstall", 10, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InspectionStatus", "ESG Values", "CompressedFileUploadInstall",11, 1);
 		}
 		public static void ApplicationValidation() {
 			clickWebelement("CompressedFileUploadWithInstallation", "ApplicationLink");
 			scrollToElement("CompressedFileUploadWithInstallation", "MeasureTab");
 			clickWebelement("CompressedFileUploadWithInstallation", "MeasureTab");
 			/*explicitWait(3000, "CompressedFileUploadWithInstallation", "MeasurePQty");*/
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasurePQty", "ESG Values", "CompressedFileUploadInstall", 14, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveUnitPrice", "ESG Values", "CompressedFileUploadInstall", 15, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveAmount", "ESG Values", "CompressedFileUploadInstall", 16, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKWH", "ESG Values", "CompressedFileUploadInstall",17, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKW", "ESG Values", "CompressedFileUploadInstall",18, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsWinterKW", "ESG Values", "CompressedFileUploadInstall",19, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsSummerKW", "ESG Values", "CompressedFileUploadInstall",20, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsTherms", "ESG Values", "CompressedFileUploadInstall",21, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasurePQty", "ESG Values", "CompressedFileUploadInstall", 14, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveUnitPrice", "ESG Values", "CompressedFileUploadInstall", 15, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveAmount", "ESG Values", "CompressedFileUploadInstall", 16, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKWH", "ESG Values", "CompressedFileUploadInstall",17, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKW", "ESG Values", "CompressedFileUploadInstall",18, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsWinterKW", "ESG Values", "CompressedFileUploadInstall",19, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsSummerKW", "ESG Values", "CompressedFileUploadInstall",20, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsTherms", "ESG Values", "CompressedFileUploadInstall",21, 1);
 			clickWebelement("CompressedFileUploadWithInstallation", "CloseButton");
 
 		}
 		public static void InstallationValidation() {
-			explicitWaitForClickable(3000, "CompressedFileUploadWithInstallation", "InstallationLink");
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "InstallationLink");
 			clickWebelement("CompressedFileUploadWithInstallation", "InstallationLink");
-			explicitWait(3000, "CompressedFileUploadWithInstallation", "MeasurePQty");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasurePQty", "ESG Values", "CompressedFileUploadInstall", 24, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasureIQty", "ESG Values", "CompressedFileUploadInstall", 25, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveUnitPrice", "ESG Values", "CompressedFileUploadInstall", 26, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveAmount", "ESG Values", "CompressedFileUploadInstall", 27, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKWH", "ESG Values", "CompressedFileUploadInstall",28, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKW", "ESG Values", "CompressedFileUploadInstall",29, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsWinterKW", "ESG Values", "CompressedFileUploadInstall",30, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsSummerKW", "ESG Values", "CompressedFileUploadInstall",31, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsTherms", "ESG Values", "CompressedFileUploadInstall",32, 1);
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "MeasurePQty");
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasurePQty", "ESG Values", "CompressedFileUploadInstall", 24, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasureIQty", "ESG Values", "CompressedFileUploadInstall", 25, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveUnitPrice", "ESG Values", "CompressedFileUploadInstall", 26, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "IncentiveAmount", "ESG Values", "CompressedFileUploadInstall", 27, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKWH", "ESG Values", "CompressedFileUploadInstall",28, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsKW", "ESG Values", "CompressedFileUploadInstall",29, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsWinterKW", "ESG Values", "CompressedFileUploadInstall",30, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsSummerKW", "ESG Values", "CompressedFileUploadInstall",31, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "SavingsTherms", "ESG Values", "CompressedFileUploadInstall",32, 1);
 			clickWebelement("CompressedFileUploadWithInstallation", "CloseButton");
 		}
 		public static void JobCostSummaryValidation() {
 			scrollToElement("CompressedFileUploadWithInstallation", "JobCostSummaryTab");
 			clickWebelement("CompressedFileUploadWithInstallation", "JobCostSummaryTab");
-			explicitWait(3000, "CompressedFileUploadWithInstallation", "Payee");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "Payee", "ESG Values", "CompressedFileUploadInstall", 35, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasureName", "ESG Values", "CompressedFileUploadInstall", 36, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasureQty", "ESG Values", "CompressedFileUploadInstall", 37, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "Amount", "ESG Values", "CompressedFileUploadInstall", 38, 1);
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "Payee");
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "Payee", "ESG Values", "CompressedFileUploadInstall", 35, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasureName", "ESG Values", "CompressedFileUploadInstall", 36, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "MeasureQty", "ESG Values", "CompressedFileUploadInstall", 37, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "Amount", "ESG Values", "CompressedFileUploadInstall", 38, 1);
 			clickWebelement("CompressedFileUploadWithInstallation", "CloseButton");
 		}
 		public static void Invoicing() {
 			ClickByActionClass("CompressedFileUploadWithInstallation", "MainMenu", "ESG Values", "CompressedFileUploadInstall", 42, 1);
-			explicitWaitForClickable(3000, "CompressedFileUploadWithInstallation", "NewButton");
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "NewButton");
 			clickWebelement("CompressedFileUploadWithInstallation", "NewButton");
 			clickWebelement("CompressedFileUploadWithInstallation", "NextButton");
 			clickWebelement("CompressedFileUploadWithInstallation", "ProgramDropDown");
@@ -101,27 +101,26 @@ public class Compressed_FileUpload_With_Installation_TestClass extends HelperCla
 		}
 		public static void GenerateInvoice() {
 			explicitWaitForClickable(3000, "CompressedFileUploadWithInstallation", "InvoiceTotal");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InvoiceTotal", "ESG Values", "CompressedFileUploadInstall",46, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "NumberOfEnrollments", "ESG Values", "CompressedFileUploadInstall",47, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "InvoiceTotal", "ESG Values", "CompressedFileUploadInstall",46, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "NumberOfEnrollments", "ESG Values", "CompressedFileUploadInstall",47, 1);
 			
 			//Enrollment tab Validations
 			clickWebelement("CompressedFileUploadWithInstallation", "EnrollmentTab");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentInvoicingAmount", "ESG Values", "CompressedFileUploadInstall",50, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingKWh", "ESG Values", "CompressedFileUploadInstall",51, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingKW", "ESG Values", "CompressedFileUploadInstall",52, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingWinterKW", "ESG Values", "CompressedFileUploadInstall",53, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingSummerKW", "ESG Values", "CompressedFileUploadInstall",54, 1);
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingTherms", "ESG Values", "CompressedFileUploadInstall",55, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentInvoicingAmount", "ESG Values", "CompressedFileUploadInstall",50, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingKWh", "ESG Values", "CompressedFileUploadInstall",51, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingKW", "ESG Values", "CompressedFileUploadInstall",52, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingWinterKW", "ESG Values", "CompressedFileUploadInstall",53, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingSummerKW", "ESG Values", "CompressedFileUploadInstall",54, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "EnrollmentSavingTherms", "ESG Values", "CompressedFileUploadInstall",55, 1);
 			clickWebelement("CompressedFileUploadWithInstallation", "InvoicingDetailsTab");
-			explicitWaitForClickable(3000, "CompressedFileUploadWithInstallation", "GenerateButton");
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "GenerateButton");
 			clickWebelement("CompressedFileUploadWithInstallation", "GenerateButton");
 			handlePopup();
-			explicitWaitForClickable(3000, "CompressedFileUploadWithInstallation", "ApproveButton");
+			WaitForElement(3000, "CompressedFileUploadWithInstallation", "ApproveButton");
 			clickWebelement("CompressedFileUploadWithInstallation", "ApproveButton");
-			VarifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "StatusOftheInvoice", "ESG Values", "CompressedFileUploadInstall",56, 1);
+			VerifyElementForExistingValueWithText("CompressedFileUploadWithInstallation", "StatusOftheInvoice", "ESG Values", "CompressedFileUploadInstall",56, 1);
 		}
 		
 		
 	}
-
 

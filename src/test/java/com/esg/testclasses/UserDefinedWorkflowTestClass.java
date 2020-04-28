@@ -9,20 +9,25 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 
 	public static void login() {
 
+		test = Report.startTest("User Defined Workflow Automated Workflow Inspection Login");
 		login("Helper","BaseURL", 1, 0, 1, 1);
 	}
 
 	public static void NavigateToEnrollment(int Progrow, int progcolumn, int Accountnorow, int Accountnocolumn) {
-		ClickByActionClass("UserDefinedWorkflow", "MainMenu", "ESG Values", "User_Defined_Workflow", 2, 1);
+		//enterTextboxValue("UserDefinedWorkflow", "MainMenu", "ESG Values", "User_Defined_Workflow", 2, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("UserDefinedWorkflow", "NewEnrollment");
-		selectDropdownByVisibleText("UserDefinedWorkflow", "SelectProgram", "ESG Values", "User_Defined_Workflow",
+		selectDropdown("UserDefinedWorkflow", "SelectProgram", "SelectProgram", "ESG Values", "User_Defined_Workflow",
 				Progrow, progcolumn);
 		clickWebelement("UserDefinedWorkflow", "NextButton");
+		WaitForElement(3000,"UserDefinedWorkflow", "AccountNumber");
+		//clickWebelement("UserDefinedWorkflow", "AccountNumber");
 		enterTextboxValue("UserDefinedWorkflow", "AccountNumber", "ESG Values", "User_Defined_Workflow", Accountnorow,
 				Accountnocolumn);
 		clickWebelement("UserDefinedWorkflow", "Go");
 		doubleClickWebelement("UserDefinedWorkflow", "Customer");
-		threadWait(5000);
+		//WaitForElement(120,"UserDefinedWorkflow","VerifyApplication_WorkflowStep");
 	}
 	// -----------------Automated Workflow
 	// Inspection-----------------------------------------
@@ -35,49 +40,55 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"VerifyApplication_WorkflowStep");
 		scrollToElement("UserDefinedWorkflow", "Measure1");
 		clickWebelement("UserDefinedWorkflow", "Measure1");
-		threadWait(3000);
+		WaitForElement(3000,"UserDefinedWorkflow", "VerifyMeasurepage");
 		defineLogs("Application - Measures - New", "Application - Measures - New", "Application - Measures - New",
 				"Navigate to Application - Measure page Successfully",
 				"Failed to navigate to Application - Measure page", "UserDefinedWorkflow", "VerifyMeasurepage");
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
-		enterValueByActionClass("UserDefinedWorkflow", "MeasureQty", "ESG Values", "User_Defined_Workflow", 7, 1);
-		clickonSave();
+		enterTextboxValue("UserDefinedWorkflow", "MeasureQty", "ESG Values", "User_Defined_Workflow", 7, 1);
+		clickonSave();		
+		scrollToElement("UserDefinedWorkflow", "ApplicantInformationTab");
+		clickWebelement("UserDefinedWorkflow", "ApplicantInformationTab");
 		clickonProcess();
-		threadWait(5000);
+		WaitForElement(5000,"UserDefinedWorkflow","Inspection_WorkflowStep");
 	}
 
 	public static void Complete_InspectionWorkflowStep_AutomatedWorkflow_Inspection(int PassedQtyROW,
 			int PassedQtyCOLUMN, int FailedQtyROW, int FailedQtyCOLUMN) {
 		clickWebelement("UserDefinedWorkflow", "Inspection_WorkflowStep");
-		threadWait(3000);
+		WaitForElement(3000,"UserDefinedWorkflow", "AssignTo");
 		defineLogs("Inspection - Unscheduled / Awaiting Results", "Inspection - Unscheduled / Awaiting Results",
 				"Inspection - Unscheduled / Awaiting Results", "Navigate to Inspection Workflow Step Successfully",
 				"Failed to navigate to Inspection Workflow Step", "UserDefinedWorkflow",
 				"VerifyInspection_WorkflowStep");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 1);
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 1);
 		Enter(KeyEvent.VK_ENTER);
-		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 1);
+		threadWait(2000);
+		//WaitForElement(3000,"UserDefinedWorkflow", "Employee");
+		WaitForEmployeeDropdown();
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList" ,"ESG Values", "User_Defined_Workflow", 10, 1);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
-		threadWait(2000);
-		enterValueByActionClass("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", PassedQtyROW,
+		WaitForElement(3000,"UserDefinedWorkflow", "PassedQty");
+		enterTextboxValue("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", PassedQtyROW,
 				PassedQtyCOLUMN);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", FailedQtyROW,
+		enterTextboxValue("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", FailedQtyROW,
 				FailedQtyCOLUMN);
 		clickonSave();
 		try {
 			if (Xpath("UserDefinedWorkflow", "FailedMeasure").isDisplayed()) {
 				clickWebelement("UserDefinedWorkflow", "FailedMeasure");
-				enterValueByActionClass("UserDefinedWorkflow", "RequiredFailCode", "ESG Values",
-						"User_Defined_Workflow", 17, 1);
-				threadWait(1000);
-				Enter(KeyEvent.VK_ENTER);
+				clickWebelement("UserDefinedWorkflow", "RequiredFailCode");
+				//enterTextboxValue("UserDefinedWorkflow", "RequiredFailCode", "ESG Values","User_Defined_Workflow", 17, 1);
 				threadWait(2000);
+				Enter(KeyEvent.VK_DOWN);
+				WaitForElement(1000,"UserDefinedWorkflow", "RequiredFailCode");
+				Enter(KeyEvent.VK_ENTER);
+				WaitForElement(2000,"UserDefinedWorkflow", "RequiredFailCode");
 				test.log(LogStatus.WARNING,
 						"Inspection Workflow Step was Failed and Correction Workflow Step will generate");
 
@@ -91,48 +102,51 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 
 	public static void Complete_CorrectionWorkflowStep_AutomatedWorkflow_Inspection() {
 		clickWebelement("UserDefinedWorkflow", "Correction_WorkflowStep");
-		threadWait(5000);
+		WaitForElement(5000,"UserDefinedWorkflow","VerifyCorrection_WorkflowStep");
 		defineLogs("Correction - Unscheduled / Awaiting Results", "Correction - Unscheduled / Awaiting Results",
 				"Correction - Unscheduled / Awaiting Results", "Navigate to Correction Workflow Step Successfully",
 				"Failed to navigate to Correction Workflow Step", "UserDefinedWorkflow",
 				"VerifyCorrection_WorkflowStep");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 1);
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 1);
 		Enter(KeyEvent.VK_ENTER);
-		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 1);
+		WaitForElement(5000,"UserDefinedWorkflow","Employee");
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 1);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
-		threadWait(2000);
+		WaitForElement(2000,"UserDefinedWorkflow", "CorrectionInfo");
 		clickWebelement("UserDefinedWorkflow", "CorrectionInfo");
-		enterValueByActionClass("UserDefinedWorkflow", "CorrectionInfo", "ESG Values", "User_Defined_Workflow", 18, 1);
+		enterTextboxValue("UserDefinedWorkflow", "CorrectionInfo", "ESG Values", "User_Defined_Workflow", 18, 1);
 		Enter(KeyEvent.VK_DOWN);
-		threadWait(2000);
+		//WaitForElement(2000,"UserDefinedWorkflow", "Reinspection_WorkflowStep");
+		threadWait(3000);
 		clickonProcess();
 	}
 
 	public static void Complete_ReinspectionWorkflowStep_AutomatedWorkflow_Inspection() {
 		clickWebelement("UserDefinedWorkflow", "Reinspection_WorkflowStep");
-		threadWait(3000);
+		WaitForElement(2000,"UserDefinedWorkflow", "VerifyReinspection_WorkflowStep");
 		defineLogs("Reinspection - Unscheduled / Awaiting Results", "Reinspection - Unscheduled / Awaiting Results",
 				"Reinspection - Unscheduled / Awaiting Results", "Navigate to Inspection Workflow Step Successfully",
 				"Failed to navigate to Inspection Workflow Step", "UserDefinedWorkflow",
 				"VerifyReinspection_WorkflowStep");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 1);
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 1);
 		Enter(KeyEvent.VK_ENTER);
-		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 1);
+		threadWait(2000);
+		WaitForElement(2000,"UserDefinedWorkflow", "Employee");
+		
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 1);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
-		threadWait(2000);
-		enterValueByActionClass("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 1);
+		WaitForElement(2000,"UserDefinedWorkflow", "PassedQty");
+		enterTextboxValue("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 1);
+		enterTextboxValue("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 1);
 		clickonSave();
 		clickonProcess();
 	}
@@ -140,30 +154,31 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 	public static void InitiatePaymentWorkflowStep_AutomatedWorkflow_Inspection() {
 		scrollToElement("UserDefinedWorkflow", "PaymentRequest");
 		clickWebelement("UserDefinedWorkflow", "PaymentRequest");
-		threadWait(2000);
+		WaitForElement(2000,"UserDefinedWorkflow", "NewPaymentRequestImage");
 		clickWebelement("UserDefinedWorkflow", "NewPaymentRequestImage");
 		clickWebelement("UserDefinedWorkflow", "CreatePaymentRequest");
+		WaitForElement(2000,"UserDefinedWorkflow", "VerifyPaymentRequest");
 		threadWait(5000);
 		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request created Successfully", "Failed to create Payment Request", "UserDefinedWorkflow",
 				"VerifyPaymentRequest");
-		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
+		/*defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request Payee validated Successfully", "Failed to Validate Payment Request Payee",
-				"UserDefinedWorkflow", "PaymentRequestVarifyPayee");
+				"UserDefinedWorkflow", "PaymentRequestVarifyPayee");*/
 		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request Invoice Amount validated Successfully",
 				"Failed to validate Payment Request Invoice Amount", "UserDefinedWorkflow",
 				"PaymentRequestVarifyInvoiceTotal");
 		clickWebelement("UserDefinedWorkflow", "GeneratePaymentRequest");
 		handlePopup();
-		threadWait(2000);
+		WaitForElement(2000,"UserDefinedWorkflow", "PaymentRequestOriginalAMount");
 		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request Original Amount validated Successfully",
 				"Failed to validate Payment Request Original Amount", "UserDefinedWorkflow",
 				"PaymentRequestOriginalAMount");
 		clickWebelement("UserDefinedWorkflow", "ApprovePaymentRequest");
 		clickWebelement("UserDefinedWorkflow", "closeButton");
-		threadWait(2000);
+		WaitForElement(2000,"UserDefinedWorkflow", "VarifyPaymentRequestDate");
 		defineLogs("Enrollment Summary", "Enrollment Summary", "Enrollment Summary",
 				"Payment Request Date validated Successfully", "Failed to validate Payment Request Date",
 				"UserDefinedWorkflow", "VarifyPaymentRequestDate");
@@ -186,13 +201,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Enrollment was Created and Navigate to Application Workflow Step Successfully",
 				"Failed to navigate to Application Workflow Step", "UserDefinedWorkflow",
 				"VerifyApplication_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorTradeAlly");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 2);
+		WaitForElement(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
+		clickWebelement("UserDefinedWorkflow", "ProcessorTradeAlly");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 2);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorEmployee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 2);
+		clickWebelement("UserDefinedWorkflow", "ProcessorEmployee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 2);
 		Enter(KeyEvent.VK_ENTER);
 		scrollToElement("UserDefinedWorkflow", "Measure");
 		clickWebelement("UserDefinedWorkflow", "Measure");
@@ -202,16 +217,18 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to Application - Measure page", "UserDefinedWorkflow", "VerifyMeasurepage");
 		clickWebelement("UserDefinedWorkflow", "AddMeasureImage");
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "SelectMeasure");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "SaveButton");
+		clickWebelement("UserDefinedWorkflow", "SelectMeasure");
+		clickWebelement("UserDefinedWorkflow", "SaveButton");
 		threadWait(3000);
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
-		enterValueByActionClass("UserDefinedWorkflow", "MeasureQty", "ESG Values", "User_Defined_Workflow", 7, 2);
+		enterTextboxValue("UserDefinedWorkflow", "MeasureQty", "ESG Values", "User_Defined_Workflow", 7, 2);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("UserDefinedWorkflow", "MeasureQty", "ESG Values", "User_Defined_Workflow", 8, 2);
+		enterTextboxValue("UserDefinedWorkflow", "MeasurePropertytest", "ESG Values", "User_Defined_Workflow", 8, 2);
 		clickonSave();
+		scrollToElement("UserDefinedWorkflow", "ApplicantInformationTab");
+		clickWebelement("UserDefinedWorkflow", "ApplicantInformationTab");	
 		clickonProcess();
-		threadWait(5000);
+		//threadWait(5000);
 	}
 
 	public static void Complete_InspectionWorkflowStep_AutomatedWorkflow_OPAL() {
@@ -221,20 +238,20 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Inspection - Unscheduled / Awaiting Results", "Navigate to Inspection Workflow Step Successfully",
 				"Failed to navigate to Inspection Workflow Step", "UserDefinedWorkflow",
 				"VerifyInspection_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 11, 2);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 11, 2);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 12, 2);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 12, 2);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
 		threadWait(2000);
-		enterValueByActionClass("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 2);
+		enterTextboxValue("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 2);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 2);
+		enterTextboxValue("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 2);
 		clickonSave();
 		clickonProcess();
 	}
@@ -369,18 +386,19 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 	// Commercial----------------------------------------
 
 	public static void Complete_Pre_ApplicationWorkflowStep_AutomatedWorkflow_Custom_Commercial() {
-		defineLogs("Pre-application - Applicant Information - New", "Pre-application - Applicant Information - New",
+		/*defineLogs("Pre-application - Applicant Information - New", "Pre-application - Applicant Information - New",
 				"Pre-application - Applicant Information - New",
 				"Enrollment was Created and Navigate to Pre-Application Workflow Step Successfully",
 				"Failed to navigate to Pre-Application Workflow Step", "UserDefinedWorkflow",
-				"VerifyPre_Application_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorTradeAlly");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 3);
+				"VerifyPre_Application_WorkflowStep");*/
+		threadWait(5000);
+		//WaitForElement(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
+		clickWebelement("UserDefinedWorkflow", "ProcessorTradeAlly");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 3);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorEmployee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 3);
+		clickWebelement("UserDefinedWorkflow", "ProcessorEmployee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 3);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -406,13 +424,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"CMPA - Unscheduled / Awaiting Results", "Navigate to CMPA-Workflow Step Successfully",
 				"Failed to navigate to CMPA-Workflow Step", "UserDefinedWorkflow", "VerifyCMPA_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 3);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 3);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 3);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 3);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -428,13 +446,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to 	Reserved/Committed-Workflow Step", "UserDefinedWorkflow",
 				"VerifyReserved_or_Committed_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 3);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList","ESG Values", "User_Defined_Workflow", 9, 3);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 3);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList" ,"ESG Values", "User_Defined_Workflow", 10, 3);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -488,9 +506,9 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 		selectActualVisitDate();
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
 		threadWait(2000);
-		enterValueByActionClass("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 3);
+		enterTextboxValue("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 3);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 3);
+		enterTextboxValue("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 3);
 		clickonProcess();
 	}
 
@@ -560,13 +578,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Enrollment was Created and Navigate to Application Workflow Step Successfully",
 				"Failed to navigate to Application Workflow Step", "UserDefinedWorkflow",
 				"VerifyApplication_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorTradeAlly");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
+		clickWebelement("UserDefinedWorkflow", "ProcessorTradeAlly");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorEmployee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "ProcessorEmployee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -581,13 +599,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to Pre-Inspection Workflow Step", "UserDefinedWorkflow",
 				"VerifyPre_Inspection_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -612,20 +630,20 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Inspection - Unscheduled / Awaiting Results", "Navigate to Inspection Workflow Step Successfully",
 				"Failed to navigate to 	Inspection Workflow Step", "UserDefinedWorkflow",
 				"VerifyInspection_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		clickWebelement("UserDefinedWorkflow", "EnableMeasure");
 		threadWait(2000);
-		enterValueByActionClass("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 4);
+		enterTextboxValue("UserDefinedWorkflow", "PassedQty", "ESG Values", "User_Defined_Workflow", 13, 4);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 4);
+		enterTextboxValue("UserDefinedWorkflow", "FailedQty", "ESG Values", "User_Defined_Workflow", 14, 4);
 		clickonProcess();
 	}
 
@@ -635,13 +653,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 		defineLogs("QA Review - Unscheduled / Awaiting Results", "QA Review - Unscheduled / Awaiting Results",
 				"QA Review - Unscheduled / Awaiting Results", "Navigate to QA Review Workflow Step Successfully",
 				"Failed to navigate to 	QA Review Workflow Step", "UserDefinedWorkflow", "VerifyQAReview_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(6000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		selectReadyForPayment();
@@ -658,13 +676,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Navigate to Initiate Payment Workflow Step Successfully",
 				"Failed to navigate to 	Initiate Payment Workflow Step", "UserDefinedWorkflow",
 				"VerifyInitiatePayment_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		selectActualVisitDate();
 		selectReadyForPayment();
@@ -677,9 +695,9 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request created Successfully", "Failed to create Payment Request", "UserDefinedWorkflow",
 				"VerifyPaymentRequest");
-		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
+		/*defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request Payee validated Successfully", "Failed to Validate Payment Request Payee",
-				"UserDefinedWorkflow", "PaymentRequestVarifyPayee");
+				"UserDefinedWorkflow", "PaymentRequestVarifyPayee");*/
 		defineLogs("Payment Request Summary", "Payment Request Summary", "Payment Request Summary",
 				"Payment Request Invoice Amount validated Successfully",
 				"Failed to validate Payment Request Invoice Amount", "UserDefinedWorkflow",
@@ -713,13 +731,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Enrollment was Created and Navigate to Application Workflow Step Successfully",
 				"Failed to navigate to Application Workflow Step", "UserDefinedWorkflow",
 				"VerifyApplication_WorkflowStep");
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorTradeAlly");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "ProcessorTradeAlly");
+		clickWebelement("UserDefinedWorkflow", "ProcessorTradeAlly");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "ProcessorEmployee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "ProcessorEmployee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -734,13 +752,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to Pre-Inspection Workflow Step", "UserDefinedWorkflow",
 				"VerifyPre_Inspection_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -753,13 +771,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to UD - 1 Workflow Step", "UserDefinedWorkflow",
 				"VerifyInterconnect_UD_1_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -772,13 +790,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to UD - 2 Workflow Step", "UserDefinedWorkflow",
 				"VerifyInterconnect_UD_2_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -791,13 +809,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to UD - 3 Workflow Step", "UserDefinedWorkflow",
 				"VerifyInterconnect_UD_3_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -812,13 +830,13 @@ public class UserDefinedWorkflowTestClass extends HelperClass {
 				"Failed to navigate to Pre-Engineering Workflow Step", "UserDefinedWorkflow",
 				"VerifyPre_Engineering_WorkflowStep");
 		selectActualVisitDate();
-		explicitWaitForClickable(3000, "UserDefinedWorkflow", "AssignTo");
-		ClickWebelementByActionClass("UserDefinedWorkflow", "AssignTo");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
+		WaitForElement(3000, "UserDefinedWorkflow", "AssignTo");
+		clickWebelement("UserDefinedWorkflow", "AssignTo");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 9, 4);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(4000);
-		ClickWebelementByActionClass("UserDefinedWorkflow", "Employee");
-		enterValueByActionClass("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
+		clickWebelement("UserDefinedWorkflow", "Employee");
+		enterTextboxValue("UserDefinedWorkflow", "SearchFromList", "ESG Values", "User_Defined_Workflow", 10, 4);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();

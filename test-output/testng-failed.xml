@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
-    <classes>
-      <class name="com.esg.executableclasses.Enrollment_Propert_Check_ExecutableClass"/>
-    </classes>
-  </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.esg.executableclasses.Enrollment_Propert_Check_ExecutableClass">
+      <class name="com.esg.executableclasses.ThresholdsExecutableClass">
         <methods>
-          <include name="getResult"/>
-          <include name="ApplicationFillUp_Module"/>
-          <include name="EnrollmentPropertyFieldsValidationAfterProcess_Module"/>
-          <include name="SetPropertyFieldsValidationAfterProcess_Module"/>
+          <include name="getStatusWithScreenshot"/>
+          <include name="Report"/>
           <include name="Initialization"/>
-          <include name="SetPropertyFieldsValidation_Module"/>
-          <include name="AddMeasure_Module"/>
-          <include name="ApplicationDetailsValidationAfterSaveModule"/>
-          <include name="CreateNewEnrollmentModule"/>
-          <include name="EnrollmentPropertyFieldsValidation_Module"/>
+          <include name="Thresholds_Inspections"/>
         </methods>
-      </class> <!-- com.esg.executableclasses.Enrollment_Propert_Check_ExecutableClass -->
+      </class> <!-- com.esg.executableclasses.ThresholdsExecutableClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

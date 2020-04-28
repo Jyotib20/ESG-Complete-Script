@@ -4,7 +4,6 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import com.esg.utilities.HelperClass;
-import com.esg.utilities.ReadExcel;
 import com.esg.utilities.WriteExcel;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -39,9 +38,9 @@ public class EKPC_CommunitySolarTestClass extends HelperClass {
 		defineLogs("Inventory Tracking", "Inventory Tracking", "Inventory Tracking",
 				"Navigate to Inventory Tracking Page", "Unable to navigate Inventory Tracking Page",
 				"EKPC_CommunitySolar", "VerifyInventoryTracking");
-		selectDropdownByVisibleText("EKPC_CommunitySolar", "SelectProgram", "ESG Values", "EKPC_Community_Solar", 1, 1);
+		selectDropdown("EKPC_CommunitySolar", "SelectProgram","SelectProgram", "ESG Values", "EKPC_Community_Solar", 1, 1);
 		threadWait(2000);
-		selectDropdownByVisibleText("EKPC_CommunitySolar", "SelectMeasureStatus", "ESG Values", "EKPC_Community_Solar",
+		selectDropdown("EKPC_CommunitySolar", "SelectMeasureStatus","SelectMeasureStatus", "ESG Values", "EKPC_Community_Solar",
 				2, 1);
 		clickWebelement("EKPC_CommunitySolar", "SearchButton");
 		if (driver.getPageSource().contains("No records to display.")) {
@@ -53,10 +52,10 @@ public class EKPC_CommunitySolarTestClass extends HelperClass {
 
 	public static void AddInventory() {
 		clickWebelement("EKPC_CommunitySolar", "AddInventory");
-		selectDropdownByVisibleText("EKPC_CommunitySolar", "SelectProgram", "ESG Values", "EKPC_Community_Solar", 1, 1);
+		selectDropdown("EKPC_CommunitySolar", "SelectProgram","SelectProgram", "ESG Values", "EKPC_Community_Solar", 1, 1);
 		threadWait(3000);
-		selectDropdownByVisibleText("EKPC_CommunitySolar", "Warehouse", "ESG Values", "EKPC_Community_Solar", 6, 1);
-		selectDropdownByVisibleText("EKPC_CommunitySolar", "Measure", "ESG Values", "EKPC_Community_Solar", 7, 1);
+		selectDropdown("EKPC_CommunitySolar", "Warehouse","Warehouse", "ESG Values", "EKPC_Community_Solar", 6, 1);
+		selectDropdown("EKPC_CommunitySolar", "Measure","Measure", "ESG Values", "EKPC_Community_Solar", 7, 1);
 		enterTextboxValue("EKPC_CommunitySolar", "WarrantyPeriod", "ESG Values", "EKPC_Community_Solar", 10, 1);
 		enterTextboxValue("EKPC_CommunitySolar", "SerialNumber", "ESG Values", "EKPC_Community_Solar", 11, 1);
 		threadWait(2000);
@@ -113,7 +112,7 @@ public class EKPC_CommunitySolarTestClass extends HelperClass {
 		clickWebelement("EKPC_CommunitySolar", "Nextbutton");
 		threadWait(3000);
 		// Payment Information
-		selectDropdownByVisibleText("EKPC_CommunitySolar", "PaymentInformation_ChoosePaymentMethod", "ESG Values", "EKPC_Community_Solar", 19, 1);
+		selectDropdown("EKPC_CommunitySolar", "PaymentInformation_ChoosePaymentMethod", "PaymentInformation_ChoosePaymentMethod", "ESG Values", "EKPC_Community_Solar", 19, 1);
 		defineLogs("Choose a Payment Method", "Choose a Payment Method", "Choose a Payment Method",
 				"Navigate to Payment Information Section", "Unable to navigate to Payment Information Section",
 				"EKPC_CommunitySolar", "EquipmentInformation_ChoosePaymentMethod");
@@ -154,7 +153,9 @@ public class EKPC_CommunitySolarTestClass extends HelperClass {
 		     // ReadExcel.UpdateData("ESG Values", "EKPC_Community_Solar", 24, 1,SerialNo);
 	}
 	public static void Search_Inventory_by_EnrollmentNo_and_NavigateToApplication(){
-		ClickByActionClass("EKPC_CommunitySolar", "MainMenu", "ESG Values", "EKPC_Community_Solar", 23, 1);
+		//enterValueByActionClass("EKPC_CommunitySolar", "MainMenu", "ESG Values", "EKPC_Community_Solar", 23, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		threadWait(2000);
 		enterTextboxValue("EKPC_CommunitySolar", "EnterEnrollmentNo", "ESG Values", "EKPC_Community_Solar", 20, 1);
 		threadWait(3000);
@@ -187,11 +188,19 @@ public class EKPC_CommunitySolarTestClass extends HelperClass {
 	}
 	public static void Terminate_Enrollment(){
 		Search_Inventory_by_EnrollmentNo_and_NavigateToApplication();
-		clickWebelement("EKPC_CommunitySolar", "Re_OpenApplication");
-		clickWebelement("EKPC_CommunitySolar", "ClickOnOk");
+		//clickWebelement("EKPC_CommunitySolar", "Re_OpenApplication");
+		//clickWebelement("EKPC_CommunitySolar", "ClickOnOk");
 		threadWait(5000);
-		//enterTextboxValue("EKPC_CommunitySolar", "Termination_Date", "ESG Values", "EKPC_Community_Solar", 25, 1);
-		clickonProcess();
+		enterTextboxValue("EKPC_CommunitySolar", "Termination_Date", "ESG Values", "EKPC_Community_Solar", 25, 1);
+		if (driver.getPageSource().contains("Application - Applicant Information - Work Completed")) {
+			clickWebelement("EKPC_CommunitySolar", "Re_OpenApplication");
+			clickWebelement("EKPC_CommunitySolar", "ClickOnOk");
+			enterTextboxValue("EKPC_CommunitySolar", "Termination_Date", "ESG Values", "EKPC_Community_Solar", 25, 1);
+			clickonProcess();
+		} else {
+			clickonProcess();
+		}
+		
 		defineLogs("Enrollment Summary", "Enrollment Summary", "Enrollment Summary", "'Application Status' Validated Successfully", "Failed to Validate 'Application Status'", "EKPC_CommunitySolar", "VerifyMeasure_EnrollmentStatus");
 	}
 

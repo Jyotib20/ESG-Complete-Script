@@ -18,9 +18,10 @@ public class SPGInsulationUpgradeExecutableClass extends SPGInsulationUpgradeTes
 	
 	initialization();
 	}
-	@Test(priority = 1)
-	public static void OpenOnlineApplicationStep() {
+/*	@Test(priority = 1)
+	public static void OpenOnlineApplicationStep_AtticInsulationModule() {
 		test = Report.startTest("Open Online Application");
+		ExecutingAgainst("helper", "Version");
 		OpenOnlineApplication();
 	
 }
@@ -28,11 +29,20 @@ public class SPGInsulationUpgradeExecutableClass extends SPGInsulationUpgradeTes
 	public static void AtticInsulationModule() throws IOException {
 		test = Report.startTest("Attic Insulation Module");
 		AtticInsulation();
-}
+		//CloseBrowserWindow();
+}*/
 	@Test(priority = 3)
+	public static void OpenOnlineApplicationStep_NaturalGasModule() {
+		test = Report.startTest("Open Online Application");
+		ExecutingAgainst("helper", "Version");
+		OpenOnlineApplication();
+	
+}
+	@Test(priority = 4)
 	public static void NaturalGasModule() throws IOException {
 		test = Report.startTest("Natural Gas Module");
 		NaturalGas();
+		//CloseBrowserWindow();
 }
 	@AfterMethod
 	 public void getResult(ITestResult result) throws IOException

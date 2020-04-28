@@ -32,6 +32,7 @@ public class CreateNewLoanExecutableClass extends CreateNewLoanTestClass{
 	public static void LoanSearch() {
 		test = Report.startTest("Loan Search");
 		LoanSearchMoudle();
+		
 }
 	@AfterMethod
 	 public void getResult(ITestResult result) throws IOException

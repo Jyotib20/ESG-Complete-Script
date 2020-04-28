@@ -49,7 +49,7 @@ public class BenchMarking_ExecutableClass extends Benchmarking_TestClass {
 		test = Report.startTest("Property5 Appartment campus Module");
 		Property5_Appartmentcampus();
 	}
-	@Test(priority = 7)
+	/*@Test(priority = 7)
 	public static void EECP_PortfolioConfig_Module() {
 		test = Report.startTest("EECP Portfolio Configuration Module");
 		EECP_PortfolioConfig();
@@ -68,7 +68,7 @@ public class BenchMarking_ExecutableClass extends Benchmarking_TestClass {
 			test = Report.startTest("Benchmarking Nonaggreedated Module");
 			BenchmarkingNonaggreedated();
 		}
-	
+	*/
 	@AfterMethod
 	 public void getResult(ITestResult result) throws IOException
 	    {

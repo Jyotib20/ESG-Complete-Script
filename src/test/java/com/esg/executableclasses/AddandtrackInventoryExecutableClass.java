@@ -1,12 +1,11 @@
 package com.esg.executableclasses;
 
 	import java.io.IOException;
-
-	import org.testng.ITestResult;
+import org.testng.ITestResult;
 	import org.testng.annotations.AfterMethod;
 	import org.testng.annotations.AfterTest;
 	import org.testng.annotations.BeforeTest;
-	import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 	import com.esg.testclasses.AddandtrackInventoryTestClass;
 	import com.esg.utilities.GetScreenShot;
@@ -21,8 +20,8 @@ package com.esg.executableclasses;
 			initialization();
 		}
 		@Test(priority = 1)
-		public static void LoginPage() {
-			test = Report.startTest("Login Page");
+		public static void LoginMethod() {
+			test = Report.startTest("Login Method");
 			Login();
 		}
 		@Test(priority = 2)

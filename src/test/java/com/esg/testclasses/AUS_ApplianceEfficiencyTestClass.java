@@ -11,9 +11,11 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 		login("Helper","BaseURL", 1, 0, 1, 1);
 	}
 	public static void NavigateToEnrollment() {
-		ClickByActionClass("AUSApplianceEfficiency", "MainMenu", "ESG Values", "AUS_ApplianceEfficiency", 1, 1);
+		//enterTextboxValue("AUSApplianceEfficiency", "MainMenu", "ESG Values", "AUS_ApplianceEfficiency", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("AUSApplianceEfficiency", "NewEnrollment");
-		selectDropdownByVisibleText("AUSApplianceEfficiency", "SelectProgram", "ESG Values", "AUS_ApplianceEfficiency", 2, 1);
+		selectDropdown("AUSApplianceEfficiency", "SelectProgram","SelectProgram", "ESG Values", "AUS_ApplianceEfficiency", 2, 1);
 		threadWait(2000);
 		clickWebelement("AUSApplianceEfficiency", "NextButton");
 		threadWait(7000);
@@ -26,13 +28,13 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 		threadWait(2000);
 		scrollToElement("AUSApplianceEfficiency", "State");
 		clickWebelement("AUSApplianceEfficiency", "AccountNumber");
-		enterValueByActionClass("AUSApplianceEfficiency", "AccountNumber", "ESG Values", "AUS_ApplianceEfficiency", 5, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "AccountNumber", "ESG Values", "AUS_ApplianceEfficiency", 5, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AUSApplianceEfficiency", "StreetNumber", "ESG Values", "AUS_ApplianceEfficiency", 6, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "StreetNumber", "ESG Values", "AUS_ApplianceEfficiency", 6, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AUSApplianceEfficiency", "PostalCode", "ESG Values", "AUS_ApplianceEfficiency", 7, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "PostalCode", "ESG Values", "AUS_ApplianceEfficiency", 7, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AUSApplianceEfficiency", "State", "ESG Values", "AUS_ApplianceEfficiency", 8, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "State", "ESG Values", "AUS_ApplianceEfficiency", 8, 1);
 		threadWait(3000);
 		clickWebelement("AUSApplianceEfficiency", "Next_Button");
 		threadWait(2000);
@@ -40,18 +42,18 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 	}
 	public static void Step2_CustomerInformation() {
 		clickWebelement("AUSApplianceEfficiency", "FirstName");
-		enterValueByActionClass("AUSApplianceEfficiency", "FirstName", "ESG Values", "AUS_ApplianceEfficiency", 12, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "FirstName", "ESG Values", "AUS_ApplianceEfficiency", 12, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AUSApplianceEfficiency", "LastName", "ESG Values", "AUS_ApplianceEfficiency", 13, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "LastName", "ESG Values", "AUS_ApplianceEfficiency", 13, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AUSApplianceEfficiency", "PrimaryPhone", "ESG Values", "AUS_ApplianceEfficiency", 14, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "PrimaryPhone", "ESG Values", "AUS_ApplianceEfficiency", 14, 1);
 		clickWebelement("AUSApplianceEfficiency", "Email");
-		enterValueByActionClass("AUSApplianceEfficiency", "Email", "ESG Values", "AUS_ApplianceEfficiency", 15, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "Email", "ESG Values", "AUS_ApplianceEfficiency", 15, 1);
 		scrollToElement("AUSApplianceEfficiency", "BuildingType");
-		selectDropdownByVisibleText("AUSApplianceEfficiency", "BuildingType", "ESG Values", "AUS_ApplianceEfficiency", 16, 1);
-		selectDropdownByVisibleText("AUSApplianceEfficiency", "OccupancyStatus", "ESG Values", "AUS_ApplianceEfficiency", 17, 1);
-		selectDropdownByVisibleText("AUSApplianceEfficiency", "ConstructionType", "ESG Values", "AUS_ApplianceEfficiency", 18, 1);
-		selectDropdownByVisibleText("AUSApplianceEfficiency", "IsAPermitRequired", "ESG Values", "AUS_ApplianceEfficiency", 19, 1);
+		selectDropdown("AUSApplianceEfficiency", "BuildingType","BuildingType", "ESG Values", "AUS_ApplianceEfficiency", 16, 1);
+		selectDropdown("AUSApplianceEfficiency", "OccupancyStatus","OccupancyStatus", "ESG Values", "AUS_ApplianceEfficiency", 17, 1);
+		selectDropdown("AUSApplianceEfficiency", "ConstructionType","ConstructionType", "ESG Values", "AUS_ApplianceEfficiency", 18, 1);
+		selectDropdown("AUSApplianceEfficiency", "IsAPermitRequired","IsAPermitRequired", "ESG Values", "AUS_ApplianceEfficiency", 19, 1);
 		threadWait(2000);
 		clickWebelement("AUSApplianceEfficiency", "Next_Button");
 		threadWait(2000);
@@ -59,12 +61,12 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 	}
 	public static void Step3_InstallerInformation() {
 		clickWebelement("AUSApplianceEfficiency", "Company");
-		enterValueByActionClass("AUSApplianceEfficiency", "Company", "ESG Values", "AUS_ApplianceEfficiency", 22, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "Company", "ESG Values", "AUS_ApplianceEfficiency", 22, 1);
 		threadWait(2000);
 		Enter(KeyEvent.VK_DOWN);
 		Enter(KeyEvent.VK_ENTER);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AUSApplianceEfficiency", "ContactName", "ESG Values", "AUS_ApplianceEfficiency", 23, 1);
+		enterTextboxValue("AUSApplianceEfficiency", "ContactName", "ESG Values", "AUS_ApplianceEfficiency", 23, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(2000);
 		clickWebelement("AUSApplianceEfficiency", "Next_Button");
@@ -82,9 +84,9 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 		clickWebelement("AUSApplianceEfficiency", "InstallationDateImage");
 		Enter(KeyEvent.VK_ENTER);
 		clickWebelement("AUSApplianceEfficiency", "AddEquipment");
-		explicitWaitForClickable(30, "AUSApplianceEfficiency", "SelectEquipment");
+		WaitForElement(30, "AUSApplianceEfficiency", "SelectEquipment");
 		clickWebelement("AUSApplianceEfficiency", "SelectEquipment");
-		explicitWaitForClickable(30, "AUSApplianceEfficiency", "SelectAirConditioning");
+		WaitForElement(30, "AUSApplianceEfficiency", "SelectAirConditioning");
 		clickWebelement("AUSApplianceEfficiency", "SelectAirConditioning");
 		clickWebelement("AUSApplianceEfficiency", "AddEquipmentButton");
 		clickWebelement("AUSApplianceEfficiency", "OkButton");
@@ -182,9 +184,9 @@ public class AUS_ApplianceEfficiencyTestClass extends HelperClass {
 		defineLogs("Review and Submit", "Review and Submit", "Review and Submit", "'Equipment Information Incentive Amount' Validated Successfully", "Failed to Validate 'Equipment Information Incentive Amount'", "AUSApplianceEfficiency", "EquipmentInformationIncentiveAmount");
 		clickWebelement("AUSApplianceEfficiency", "SubmitButton");
 		TrackEnrollmentNumber("AUSApplianceEfficiency", "EnrollmentNumber");
-		/*driver.switchTo().defaultContent();
-		explicitWaitForClickable(3000, "AUSApplianceEfficiency", "CloseOnlineApplication");
-		clickWebelement("AUSApplianceEfficiency", "CloseOnlineApplication");*/
+		driver.switchTo().defaultContent();
+		WaitForElement(3000, "AUSApplianceEfficiency", "CloseOnlineApplication");
+		clickWebelement("AUSApplianceEfficiency", "CloseOnlineApplication");
 		threadWait(10000);
 	}
 	public static void VerifyEnrollment(){

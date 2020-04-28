@@ -26,19 +26,19 @@ public class EKPC_CommunitySolarExecutableClass extends EKPC_CommunitySolarTestC
 	@Test(priority = 2)
 	public static void EKPC_CommunitySolar_InventoryCheck() {
 		test = Report.startTest("EKPC_CommunitySolar_InventoryCheck");
-		InventoryCheck();
+		//InventoryCheck();
 	}
 
 	@Test(priority = 3)
 	public static void EKPC_CommunitySolar_OnlineApplication() throws IOException {
 		test = Report.startTest("EKPC_CommunitySolar_OnlineApplication");
-		OnlineApplication();
+		//OnlineApplication();
 	}
 	@Test(priority = 4)
 	public static void EKPC_CommunitySolar_Verify_and_ProcessApplication () throws IOException {
 		test = Report.startTest("EKPC_CommunitySolar_Verify_and_ProcessApplication");
-		Verify_Enrollment_Application_Info();
-		SearchInventory_by_SerialNo();
+		//Verify_Enrollment_Application_Info();
+		//SearchInventory_by_SerialNo();
 		Terminate_Enrollment();
 		SearchInventory_by_SerialNo();//Verify Enrollment Terminated or not
 	}

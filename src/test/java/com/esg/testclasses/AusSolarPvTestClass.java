@@ -12,9 +12,11 @@ public class AusSolarPvTestClass extends HelperClass {
 		defineLogs("Logout", "Logout", "Logout", "User was Loggedin Successfully", "User is not able to Login","helper", "Logout_Xpath");
 	}
 	public static void NavigateToEnrollment() {
-		ClickByActionClass("AusSolarPV", "MainMenu", "ESG Values", "Aus_Solar_PV", 1, 1);
+		//enterTextboxValue("AusSolarPV", "MainMenu", "ESG Values", "Aus_Solar_PV", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		clickWebelement("AusSolarPV", "NewEnrollment");
-		selectDropdownByVisibleText("AusSolarPV", "SelectProgram", "ESG Values", "Aus_Solar_PV", 2, 1);
+		selectDropdown("AusSolarPV", "SelectProgram", "SelectProgram", "ESG Values", "Aus_Solar_PV", 2, 1);
 		clickWebelement("AusSolarPV", "NextButton");
 		enterTextboxValue("AusSolarPV", "AccountNumber", "ESG Values", "Aus_Solar_PV", 3, 1);
 		clickWebelement("AusSolarPV", "Go");
@@ -23,11 +25,11 @@ public class AusSolarPvTestClass extends HelperClass {
 		defineLogs("Application - Applicant Information - New", "Application - Applicant Information - New", "Application - Applicant Information - New", "Enrollment was Created Successfully", "Enrollment was not Created", "helper", "Varify_Enrollment");	
 	}
 	public static void CompleteApplicationWorkflowStep() {
-		selectDropdownByVisibleText("AusSolarPV", "BatteryStorage", "ESG Values", "Aus_Solar_PV", 4, 1);
-		selectDropdownByVisibleText("AusSolarPV", "ExistingSystem", "ESG Values", "Aus_Solar_PV", 5, 1);
+		selectDropdown("AusSolarPV", "BatteryStorage", "BatteryStorage", "ESG Values", "Aus_Solar_PV", 4, 1);
+		selectDropdown("AusSolarPV", "ExistingSystem", "ExistingSystem", "ESG Values", "Aus_Solar_PV", 5, 1);
 		enterTextboxValue("AusSolarPV", "kWhcapacity", "ESG Values", "Aus_Solar_PV", 6, 1);
 		scrollToElement("AusSolarPV", "ConstructionType");
-		selectDropdownByVisibleText("AusSolarPV", "ConstructionType", "ESG Values", "Aus_Solar_PV", 7, 1);
+		selectDropdown("AusSolarPV", "ConstructionType","ConstructionType", "ESG Values", "Aus_Solar_PV", 7, 1);
 		enterTextboxValue("AusSolarPV", "TaxAssessorPropertyID", "ESG Values", "Aus_Solar_PV", 8, 1);
 		scrollToElement("AusSolarPV", "Save");
 		clickonSave();
@@ -35,11 +37,11 @@ public class AusSolarPvTestClass extends HelperClass {
 		defineLogs("Year Home Built", "Year Home Built","Year Home Built", "YearHomeBuild field was varified", "YearHomeBuild field was not varified","AusSolarPV", "YearHomeBuild");
 		defineLogs("Address Reported from TCAD/WCAD", "Address Reported from TCAD/WCAD","Address Reported from TCAD/WCAD", "AddressReported field was varified", "AddressReported field was not varified","AusSolarPV", "AddressReported");
 		clickWebelement("AusSolarPV", "TradeAlleyAdd");
-		clickWebelement("AusSolarPV", "Primary");
+		//clickWebelement("AusSolarPV", "Primary");
 		threadWait(5000);
-		selectDropdownByVisibleText("AusSolarPV", "TradeAllyType", "ESG Values", "Aus_Solar_PV", 16, 1);
+		selectDropdown("AusSolarPV", "TradeAllyType", "TradeAllyType", "ESG Values", "Aus_Solar_PV", 16, 1);
 		threadWait(2500);
-		selectDropdownByVisibleText("AusSolarPV", "TradeAlly_Employee", "ESG Values", "Aus_Solar_PV", 17, 1);
+		selectDropdown("AusSolarPV", "TradeAlly_Employee","TradeAlly_Employee", "ESG Values", "Aus_Solar_PV", 17, 1);
 		clickWebelement("AusSolarPV", "TradeAllySave");
 		threadWait(2500);
 		clickWebelement("AusSolarPV", "TradeAllyCheckBox");
@@ -47,79 +49,108 @@ public class AusSolarPvTestClass extends HelperClass {
 		clickWebelement("AusSolarPV", "TradeAllyRemove");
 		clickWebelement("AusSolarPV", "YesOption");
 		clickWebelement("AusSolarPV", "PayeeIntsaller");
+		//clickWebelement("AusSolarPV", "InstallerName");
+		//enterTextboxValue("AusSolarPV", "InstallerName", "ESG Values", "Aus_Solar_PV", 9, 1);
+		//threadWait(2000);
+		//Enter(KeyEvent.VK_ENTER);
+		selectDropdown("AusSolarPV", "InstallerName","InstallerName", "ESG Values", "Aus_Solar_PV", 9, 1);
+		
 		enterTextboxValue("AusSolarPV", "BatteryStorage", "ESG Values", "Aus_Solar_PV", 18, 1);
 		threadWait(2500);
 		clickonSave();
 	}
-	public static void CompleteMeasure() {
+	public static void CompleteMeasure() {	
+		/*clickWebelement("AusSolarPV", "AssignTo");
+		enterTextboxValue("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
+		Enter(KeyEvent.VK_ENTER);
+		clickonSave();
+		//threadWait(3000);
+		clickWebelement("AusSolarPV", "Employee");
+		enterTextboxValue("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
+		Enter(KeyEvent.VK_ENTER);
+		clickonSave();
+		threadWait(3000);*/
 		scrollToElement("AusSolarPV", "MeasureSub");
 		threadWait(2500);
 		clickWebelement("AusSolarPV", "MeasureSub");
 		clickWebelement("AusSolarPV", "Measurecost");
 		threadWait(2500);
-		enterValueByActionClass("AusSolarPV", "MeasurecostInput", "ESG Values", "Aus_Solar_PV", 21, 1);
-		clickWebelement("AusSolarPV", "InverterType1Manufacturing");
-		enterValueByActionClass("AusSolarPV", "InverterType1Manufacturing", "ESG Values", "Aus_Solar_PV", 22, 1);
-		Enter(KeyEvent.VK_ENTER);
+		enterTextboxValue("AusSolarPV", "MeasurecostInput", "ESG Values", "Aus_Solar_PV", 21, 1);
+		//clickWebelement("AusSolarPV", "InverterType1Manufacturing");
+		selectDropdown("AusSolarPV", "InverterType1Manufacturing", "InverterType1Manufacturing", "ESG Values", "Aus_Solar_PV", 22, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "InverterType1Model", "ESG Values", "Aus_Solar_PV", 23, 1);
-		Enter(KeyEvent.VK_ENTER);
+		selectDropdown("AusSolarPV", "InverterType1Model","InverterType1Model", "ESG Values", "Aus_Solar_PV", 23, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);	
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "InverterType1InverterNumber", "ESG Values", "Aus_Solar_PV", 24, 1);
+		enterTextboxValue("AusSolarPV", "InverterType1InverterNumber", "ESG Values", "Aus_Solar_PV", 24, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Isthereanadditionalinvertertype", "ESG Values", "Aus_Solar_PV", 25, 1);
-		Enter(KeyEvent.VK_ENTER);
+		selectDropdown("AusSolarPV", "Isthereanadditionalinvertertype", "Isthereanadditionalinvertertype", "ESG Values", "Aus_Solar_PV", 25, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation1ArrayAzimuth", "ESG Values", "Aus_Solar_PV", 26, 1);
+		enterTextboxValue("AusSolarPV", "Orientation1ArrayAzimuth", "ESG Values", "Aus_Solar_PV", 26, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation1ArrayTilt", "ESG Values", "Aus_Solar_PV", 27, 1);
+		enterTextboxValue("AusSolarPV", "Orientation1ArrayTilt", "ESG Values", "Aus_Solar_PV", 27, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation1PVModuleManufacturer", "ESG Values", "Aus_Solar_PV", 28, 1);
-		Enter(KeyEvent.VK_ENTER);
+		selectDropdown("AusSolarPV", "Orientation1PVModuleManufacturer", "Orientation1PVModuleManufacturer", "ESG Values", "Aus_Solar_PV", 28, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation1PVModuleModel", "ESG Values", "Aus_Solar_PV", 29, 1);
-		Enter(KeyEvent.VK_ENTER);
+		selectDropdown("AusSolarPV", "Orientation1PVModuleModel", "Orientation1PVModuleModel",  "ESG Values", "Aus_Solar_PV", 29, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation1PVModules", "ESG Values", "Aus_Solar_PV", 30, 1);
+		enterTextboxValue("AusSolarPV", "Orientation1PVModules", "ESG Values", "Aus_Solar_PV", 30, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Isthereanadditionalorientation2", "ESG Values", "Aus_Solar_PV", 31, 1);
-		Enter(KeyEvent.VK_ENTER);
-		threadWait(2000);
-		clickWebelement("AusSolarPV", "Isthereanadditionalorientation1");
-		scrollToElement("AusSolarPV", "Orientation2ArrayAzimuth");
-		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation2ArrayAzimuth", "ESG Values", "Aus_Solar_PV", 32, 1);
-		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation2ArrayTilt", "ESG Values", "Aus_Solar_PV", 33, 1);
-		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation2PVModuleManufacturer", "ESG Values", "Aus_Solar_PV", 34, 1);
-		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation2PVModuleModel", "ESG Values", "Aus_Solar_PV", 35, 1);
-		Enter(KeyEvent.VK_ENTER);
-		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation2PVModules", "ESG Values", "Aus_Solar_PV", 36, 1);
-		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "IsThereA3rdOrientation1", "ESG Values", "Aus_Solar_PV", 37, 1);
-		Enter(KeyEvent.VK_ENTER);
-		threadWait(4000);
-		clickWebelement("AusSolarPV", "IsThereA3rdOrientation");
-		Enter(KeyEvent.VK_TAB);
+		selectDropdown("AusSolarPV", "Isthereanadditionalorientation2", "Isthereanadditionalorientation2", "ESG Values", "Aus_Solar_PV", 31, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		threadWait(3000);
+		//clickWebelement("AusSolarPV", "Isthereanadditionalorientation1");
+		//threadWait(3000);
+		//scrollToElement("AusSolarPV", "Orientation2ArrayAzimuth");
+		//Enter(KeyEvent.VK_TAB);
+		clickWebelement("AusSolarPV", "Orientation2ArrayAzimuth");
+		enterTextboxValue("AusSolarPV", "Orientation2ArrayAzimuth", "ESG Values", "Aus_Solar_PV", 32, 1);
 		threadWait(2000);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation3ArrayAzimuth", "ESG Values", "Aus_Solar_PV", 38, 1);
+		enterTextboxValue("AusSolarPV", "Orientation2ArrayTilt", "ESG Values", "Aus_Solar_PV", 33, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation3ArrayTilt", "ESG Values", "Aus_Solar_PV", 39, 1);
+		selectDropdown("AusSolarPV", "Orientation2PVModuleManufacturer", "Orientation2PVModuleManufacturer", "ESG Values", "Aus_Solar_PV", 34, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation3PVModuleManufacturer", "ESG Values", "Aus_Solar_PV", 40, 1);
-		Enter(KeyEvent.VK_ENTER);
+		selectDropdown("AusSolarPV", "Orientation2PVModuleModel", "Orientation2PVModuleModel", "ESG Values", "Aus_Solar_PV", 35, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation3PVModuleModel", "ESG Values", "Aus_Solar_PV", 41, 1);
-		Enter(KeyEvent.VK_ENTER);
+		enterTextboxValue("AusSolarPV", "Orientation2PVModules", "ESG Values", "Aus_Solar_PV", 36, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation3PVModules", "ESG Values", "Aus_Solar_PV", 42, 1);
+		selectDropdown("AusSolarPV", "IsThereA3rdOrientation1", "IsThereA3rdOrientation1", "ESG Values", "Aus_Solar_PV", 37, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		threadWait(2000);
+		clickWebelement("AusSolarPV", "Orientation3ArrayAzimuth");
+		//Enter(KeyEvent.VK_TAB);
+		//threadWait(2000);
+		//Enter(KeyEvent.VK_TAB);
+		enterTextboxValue("AusSolarPV", "Orientation3ArrayAzimuth", "ESG Values", "Aus_Solar_PV", 38, 1);
 		Enter(KeyEvent.VK_TAB);
-		enterValueByActionClass("AusSolarPV", "Orientation3PVModules", "ESG Values", "Aus_Solar_PV", 43, 1);
-		Enter(KeyEvent.VK_ENTER);
+		enterTextboxValue("AusSolarPV", "Orientation3ArrayTilt", "ESG Values", "Aus_Solar_PV", 39, 1);
+		Enter(KeyEvent.VK_TAB);
+		selectDropdown("AusSolarPV", "Orientation3PVModuleManufacturer", "Orientation3PVModuleManufacturer"
+					, "ESG Values", "Aus_Solar_PV", 40, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
+		Enter(KeyEvent.VK_TAB);
+		selectDropdown("AusSolarPV", "Orientation3PVModuleModel", "Orientation3PVModuleModel", "ESG Values", "Aus_Solar_PV", 41, 1);
+		//Enter(KeyEvent.VK_ENTER);
+		//threadWait(2000);
+		Enter(KeyEvent.VK_TAB);
+		enterTextboxValue("AusSolarPV", "Orientation3PVModules", "ESG Values", "Aus_Solar_PV", 42, 1);
+		Enter(KeyEvent.VK_TAB);
+		selectDropdown("AusSolarPV", "IsThereA4thOrientation1","IsThereA4thOrientation1", "ESG Values", "Aus_Solar_PV", 43, 1);
+		
+		
 		clickonSave();
 	}
 	public static void VerifyAndProcessApplicationWorkflowStep() {
@@ -144,11 +175,12 @@ public class AusSolarPvTestClass extends HelperClass {
 		threadWait(5000);
 	}
 	public static void ReviewAndProcess_ApplicationWorkflowStep() {
-		defineLogs("Open - In Review", "Open - In Review", "Open - In Review", "Application Review Status was Validated", "Application Review Status was not Validated","AusSolarPV", "ApplicationReviewStatus");
-		clickWebelement("AusSolarPV", "ApplicationWorkflowStep");
+
+		
+			clickWebelement("AusSolarPV", "ApplicationWorkflowStep");
 		threadWait(2000);
 		clickWebelement("AusSolarPV", "ApplicationOutcome");
-		enterValueByActionClass("AusSolarPV", "ApplicationOutcome", "ESG Values", "Aus_Solar_PV", 61, 1);
+		enterTextboxValue("AusSolarPV", "ApplicationOutcome", "ESG Values", "Aus_Solar_PV", 61, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -156,7 +188,7 @@ public class AusSolarPvTestClass extends HelperClass {
 		clickWebelement("AusSolarPV", "ApplicationWorkflowStep");
 		threadWait(2000);
 		clickWebelement("AusSolarPV", "ApplicationOutcome");
-		enterValueByActionClass("AusSolarPV", "ApplicationOutcome", "ESG Values", "Aus_Solar_PV", 62, 1);
+		enterTextboxValue("AusSolarPV", "ApplicationOutcome", "ESG Values", "Aus_Solar_PV", 62, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonProcess();
 		defineLogs("Open - Unscheduled / Awaiting Results", "Open - Unscheduled / Awaiting Results", "Open - Unscheduled / Awaiting Results", "Application Workflow Step was Validated", "Application Workflow Step was not Validated", "AusSolarPV", "OpenStatus");
@@ -167,12 +199,12 @@ public class AusSolarPvTestClass extends HelperClass {
 		selectActualVisitDate();
 		selectLOIApprovedDate();
 		clickWebelement("AusSolarPV", "AssignTo");
-		enterValueByActionClass("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
+		enterTextboxValue("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		threadWait(3000);
 		clickWebelement("AusSolarPV", "Employee");
-		enterValueByActionClass("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
+		enterTextboxValue("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -191,12 +223,12 @@ public class AusSolarPvTestClass extends HelperClass {
 		threadWait(2000);
 		selectActualVisitDate();
 		clickWebelement("AusSolarPV", "AssignTo");
-		enterValueByActionClass("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
+		enterTextboxValue("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		threadWait(3000);
 		clickWebelement("AusSolarPV", "Employee");
-		enterValueByActionClass("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
+		enterTextboxValue("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		clickonProcess();
@@ -207,17 +239,18 @@ public class AusSolarPvTestClass extends HelperClass {
 		threadWait(2000);
 		selectActualVisitDate();
 		clickWebelement("AusSolarPV", "AssignTo");
-		enterValueByActionClass("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
+		enterTextboxValue("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		threadWait(3000);
 		clickWebelement("AusSolarPV", "Employee");
-		enterValueByActionClass("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
+		enterTextboxValue("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
 		Enter(KeyEvent.VK_ENTER);
+		scrollToElement("AusSolarPV", "FailedQtySection");
 		clickWebelement("AusSolarPV", "FailedQtySection");
 		threadWait(3000);
 		//clickWebelement("AusSolarPV", "EnterFailedQty");
-		enterValueByActionClass("AusSolarPV", "EnterFailedQty", "ESG Values", "Aus_Solar_PV", 69, 1);
+		enterTextboxValue("AusSolarPV", "EnterFailedQty", "ESG Values", "Aus_Solar_PV", 69, 1);
 		clickonSave();
 		clickonProcess();
 		defineLogs("Open - Unscheduled / Awaiting Results", "Open - Unscheduled / Awaiting Results", "Open - Unscheduled / Awaiting Results", "Inspection Workflow Step was Validated", "Inspection Workflow Step was not Validated", "AusSolarPV", "OpenStatus");
@@ -227,12 +260,12 @@ public class AusSolarPvTestClass extends HelperClass {
 		threadWait(2000);
 		selectActualVisitDate();
 		clickWebelement("AusSolarPV", "AssignTo");
-		enterValueByActionClass("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
+		enterTextboxValue("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		threadWait(3000);
 		clickWebelement("AusSolarPV", "Employee");
-		enterValueByActionClass("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
+		enterTextboxValue("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
 		Enter(KeyEvent.VK_ENTER);
 		selectReadyForPayment();
 		clickonSave();
@@ -244,12 +277,12 @@ public class AusSolarPvTestClass extends HelperClass {
 		threadWait(2000);
 		selectActualVisitDate();
 		clickWebelement("AusSolarPV", "AssignTo");
-		enterValueByActionClass("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
+		enterTextboxValue("AusSolarPV", "AssignTo", "ESG Values", "Aus_Solar_PV", 65, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickonSave();
 		threadWait(3000);
 		clickWebelement("AusSolarPV", "Employee");
-		enterValueByActionClass("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
+		enterTextboxValue("AusSolarPV", "Employee", "ESG Values", "Aus_Solar_PV", 66, 1);
 		Enter(KeyEvent.VK_ENTER);
 		selectReadyForPayment();
 		clickonSave();
@@ -264,7 +297,7 @@ public class AusSolarPvTestClass extends HelperClass {
 		threadWait(2000);
 		//Enter Address Sequence
 		/*clickWebelement("AusSolarPV", "AddressSequenceNumber");
-		enterValueByActionClass("AusSolarPV", "AddressSequenceNumber", "ESG Values", "Aus_Solar_PV", 71, 1);
+		enterTextboxValue("AusSolarPV", "AddressSequenceNumber", "ESG Values", "Aus_Solar_PV", 71, 1);
 		Enter(KeyEvent.VK_ENTER);*/
 		defineLogs("Invoice Total", "Invoice Total", "Invoice Total", "Invoice Total was Validated", "Invoice Total was not Validated", "AusSolarPV", "InvoiceTotal");
 		clickWebelement("AusSolarPV", "ApproveButton");

@@ -19,6 +19,7 @@ public class CreateAndSearchLeadExecutableClass extends CreateAndSearchLeadTestC
 			}
 	@Test(priority=1)
 	public static void CreateAndSearchLead_Login() {
+		 test=Report.startTest("Login EECP");
 		    login(); 
 	
 	}

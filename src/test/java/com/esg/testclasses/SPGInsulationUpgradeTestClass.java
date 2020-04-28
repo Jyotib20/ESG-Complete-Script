@@ -29,15 +29,15 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 		threadWait(2500);
 		
 		//Step 2 - Customer Information
-		selectDropdownByVisibleText("SPGInsulationUpgrade", "RebatePaymentMethod", "ESG Values", "SPGInsulationUpgrade", 6, 1);
+		selectDropdown("SPGInsulationUpgrade", "RebatePaymentMethod","RebatePaymentMethod", "ESG Values", "SPGInsulationUpgrade", 6, 1);
 		//enterTextboxValue("SPGInsulationUpgrade", "FirstName", "ESG Values", "SPGInsulationUpgrade", 4, 1);
 		//enterTextboxValue("SPGInsulationUpgrade", "LastName", "ESG Values", "SPGInsulationUpgrade", 5, 1);
 		enterTextboxValue("SPGInsulationUpgrade", "EmailID", "ESG Values", "SPGInsulationUpgrade", 7, 1);
 		scrollToElement("SPGInsulationUpgrade", "BuildingType");
 		threadWait(2500);
-		selectDropdownByVisibleText("SPGInsulationUpgrade", "BuildingType", "ESG Values", "SPGInsulationUpgrade", 8, 1);
-		selectDropdownByVisibleText("SPGInsulationUpgrade", "OccupancyType", "ESG Values", "SPGInsulationUpgrade", 9, 1);
-		selectDropdownByVisibleText("SPGInsulationUpgrade", "ConstructionType", "ESG Values", "SPGInsulationUpgrade", 10, 1);
+		selectDropdown("SPGInsulationUpgrade", "BuildingType","BuildingType", "ESG Values", "SPGInsulationUpgrade", 8, 1);
+		selectDropdown("SPGInsulationUpgrade", "OccupancyType", "OccupancyType", "ESG Values", "SPGInsulationUpgrade", 9, 1);
+		selectDropdown("SPGInsulationUpgrade", "ConstructionType","ConstructionType", "ESG Values", "SPGInsulationUpgrade", 10, 1);
 		clickWebelement("SPGInsulationUpgrade", "Next");
 		threadWait(2500);
 		
@@ -56,10 +56,10 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 		clickWebelement("SPGInsulationUpgrade", "SquareFoot");
 		enterTextboxValue("SPGInsulationUpgrade", "SquareFoot", "ESG Values", "SPGInsulationUpgrade", 11, 1);
 		enterTextboxValue("SPGInsulationUpgrade", "TotalCost", "ESG Values", "SPGInsulationUpgrade", 13, 1);
-		selectDropdownByVisibleText("SPGInsulationUpgrade", "TypeofExisitingInsulation", "ESG Values", "SPGInsulationUpgrade", 16, 1);
+		selectDropdown("SPGInsulationUpgrade", "TypeofExisitingInsulation","TypeofExisitingInsulation", "ESG Values", "SPGInsulationUpgrade", 16, 1);
 		enterTextboxValue("SPGInsulationUpgrade", "InchesExisitingInsulation", "ESG Values", "SPGInsulationUpgrade", 14, 1);
 		enterTextboxValue("SPGInsulationUpgrade", "InsulationBagsRolls", "ESG Values", "SPGInsulationUpgrade", 12, 1);
-		selectDropdownByVisibleText("SPGInsulationUpgrade", "TypeofNewInsulation", "ESG Values", "SPGInsulationUpgrade", 17, 1);
+		selectDropdown("SPGInsulationUpgrade", "TypeofNewInsulation","TypeofNewInsulation", "ESG Values", "SPGInsulationUpgrade", 17, 1);
 		enterTextboxValue("SPGInsulationUpgrade", "InchesofInstallationInsulation", "ESG Values", "SPGInsulationUpgrade", 15, 1);
 		clickWebelement("SPGInsulationUpgrade", "Next");
 		threadWait(10000);
@@ -100,7 +100,9 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 		
 		//Login to ESG site
 		login2(1, 0, 1, 1);
-		ClickByActionClass("SPGInsulationUpgrade", "MainMenu", "ESG Values", "SPGInsulationUpgrade", 18, 1);
+		//enterTextboxValue("SPGInsulationUpgrade", "MainMenu", "ESG Values", "SPGInsulationUpgrade", 18, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		WriteExcel.WriteData("ESG Values", "SPGInsulationUpgrade", lastFourDigits, 28, 3);
 		enterTextboxValue("SPGInsulationUpgrade", "EnrollmentNumber", "ESG Values", "SPGInsulationUpgrade", 28, 3);
 		threadWait(5000);
@@ -142,15 +144,15 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 				threadWait(2500);
 				
 				//Step 2 - Customer Information
-				selectDropdownByVisibleText("SPGInsulationUpgrade", "RebatePaymentMethod", "ESG Values", "SPGInsulationUpgrade", 6, 1);
+				selectDropdown("SPGInsulationUpgrade", "RebatePaymentMethod","RebatePaymentMethod", "ESG Values", "SPGInsulationUpgrade", 6, 1);
 				//enterTextboxValue("SPGInsulationUpgrade", "FirstName", "ESG Values", "SPGInsulationUpgrade", 4, 1);
 				//enterTextboxValue("SPGInsulationUpgrade", "LastName", "ESG Values", "SPGInsulationUpgrade", 5, 1);
 				enterTextboxValue("SPGInsulationUpgrade", "EmailID", "ESG Values", "SPGInsulationUpgrade", 7, 1);
 				scrollToElement("SPGInsulationUpgrade", "BuildingType");
 				threadWait(2500);
-				selectDropdownByVisibleText("SPGInsulationUpgrade", "BuildingType", "ESG Values", "SPGInsulationUpgrade", 8, 1);
-				selectDropdownByVisibleText("SPGInsulationUpgrade", "OccupancyType", "ESG Values", "SPGInsulationUpgrade", 9, 1);
-				selectDropdownByVisibleText("SPGInsulationUpgrade", "ConstructionType", "ESG Values", "SPGInsulationUpgrade", 10, 1);
+				selectDropdown("SPGInsulationUpgrade", "BuildingType", "BuildingType", "ESG Values", "SPGInsulationUpgrade", 8, 1);
+				selectDropdown("SPGInsulationUpgrade", "OccupancyType","OccupancyType", "ESG Values", "SPGInsulationUpgrade", 9, 1);
+				selectDropdown("SPGInsulationUpgrade", "ConstructionType","ConstructionType", "ESG Values", "SPGInsulationUpgrade", 10, 1);
 				clickWebelement("SPGInsulationUpgrade", "Next");
 				threadWait(2500);
 				
@@ -174,7 +176,7 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 				enterTextboxValue("SPGInsulationUpgrade", "NewSystemModel", "ESG Values", "SPGInsulationUpgrade", 25, 1);
 				clickWebelement("SPGInsulationUpgrade", "TwoStage");
 				clickWebelement("SPGInsulationUpgrade", "Next");
-				threadWait(3500);
+				threadWait(4500);
 				//Step 5 - Incentive Summary Verification
 				defineLogs("$48,000.00", "$48,000.00", "$48,000.00", "The Message has been Verified Successfully", "Failed to Verify the Message", "SPGInsulationUpgrade", "IncentiveVerification");
 				threadWait(2500);
@@ -210,7 +212,9 @@ public class SPGInsulationUpgradeTestClass extends HelperClass{
 				
 				//Login to ESG site
 				login2(1, 0, 1, 1);
-				ClickByActionClass("SPGInsulationUpgrade", "MainMenu", "ESG Values", "SPGInsulationUpgrade", 18, 1);
+				//enterTextboxValue("SPGInsulationUpgrade", "MainMenu", "ESG Values", "SPGInsulationUpgrade", 18, 1);
+				linkText("Main Menu").click();
+				linkText("Enrollments").click();
 				WriteExcel.WriteData("ESG Values", "SPGInsulationUpgrade", lastFourDigits, 29, 3);
 				enterTextboxValue("SPGInsulationUpgrade", "EnrollmentNumber", "ESG Values", "SPGInsulationUpgrade", 29, 3);
 				threadWait(10000);

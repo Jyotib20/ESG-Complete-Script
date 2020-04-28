@@ -15,9 +15,13 @@ public class ExtentReport extends BaseClass {
 		// test = Report.startTest(Test);
 	}
 
-	public static void ExecutingAgainst(String Fname, String Version) {
-		test.log(LogStatus.INFO, "Test is running against the version = https://esg-eecp-qa2.directapps.int/"
+	/*public static void ExecutingAgainst(String Fname, String Version) {
+		test.log(LogStatus.INFO, "Test is running against the version = "+ReadConfig.ReadFile(Fname, "BaseURL")
 				+ ReadConfig.ReadFile(Fname, Version) + "/");
+	}*/
+	
+	public static void ExecutingAgainst(String Fname, String Version) {
+		test.log(LogStatus.INFO, "Test is running against the version = "+ReadConfig.ReadFile(Fname, "BaseURL"));
 	}
 
 	/*
@@ -52,7 +56,20 @@ public class ExtentReport extends BaseClass {
 		}
 	}
 	
-	public static void VarifyElementForExistingValueWithText(String filename, String webelement, String ExcelFname, String Sheetname, int Rowno, int Colno) {
+	public static void defineLogswith_Negetive_Scenario(String PageSourceContent, String ActualComment, String ExpectedComment,
+			String PassLogs, String FailLogs, String filename, String webelement) {
+		
+		element = Xpath(filename, webelement).getText();
+		
+		if (driver.getPageSource().contains(PageSourceContent)) {
+			test.log(LogStatus.PASS, PassLogs + ".     " + "The Validated element is  --->   " + element);
+		} else {
+			test.log(LogStatus.WARNING,FailLogs+".     "+"The Actual Value of the Validated element is  --->   "+element);
+			Assert.assertEquals(ExpectedComment, ActualComment);
+		}
+	}
+	
+	public static void VerifyElementForExistingValueWithText(String filename, String webelement, String ExcelFname, String Sheetname, int Rowno, int Colno) {
 		 
 		 String Value = Xpath(filename, webelement).getText();
 		 String Givenelement = ReadExcel.readData(ExcelFname, Sheetname, Rowno, Colno);
@@ -64,7 +81,7 @@ public class ExtentReport extends BaseClass {
 				test.log(LogStatus.FAIL, ".     "+"The Given value   :-  "+Givenelement+", does not match with the reflected Value   :-  "+ Value);
 			}
 		}
-	public static void VarifyElementForExistingValueWithAttribute(String filename, String webelement, String ExcelFname, String Sheetname, int Rowno, int Colno) {
+	public static void VerifyElementForExistingValueWithAttribute(String filename, String webelement, String ExcelFname, String Sheetname, int Rowno, int Colno) {
 		 
 		 String Value = Xpath(filename, webelement).getAttribute("value");
 		 String Givenelement = ReadExcel.readData(ExcelFname, Sheetname, Rowno, Colno);
@@ -76,7 +93,7 @@ public class ExtentReport extends BaseClass {
 				test.log(LogStatus.FAIL, ".     "+"The Given value   :-  "+Givenelement+", does not match with the reflected Value   :-  "+ Value);
 			}
 		}
-	public static void VarifyElementForExistingValueWithCSSValue(String filename, String webelement, String ExcelFname, String Sheetname, int Rowno, int Colno) {
+	public static void VerifyElementForExistingValueWithCSSValue(String filename, String webelement, String ExcelFname, String Sheetname, int Rowno, int Colno) {
 		 
 		 String Value = Xpath(filename, webelement).getCssValue("value");
 		 String Givenelement = ReadExcel.readData(ExcelFname, Sheetname, Rowno, Colno);
@@ -138,6 +155,7 @@ public class ExtentReport extends BaseClass {
 
 		Alert alt = driver.switchTo().alert();
 		String PopUp = alt.getText();
+		System.out.println(PopUp);
 		if (PopUp.equalsIgnoreCase(PopUp)) {
 			test.log(LogStatus.PASS, PopUp);
 			alt.accept();
@@ -148,7 +166,33 @@ public class ExtentReport extends BaseClass {
 
 		}
 	}
+		public static void Pass_Message(String PassComment) {
+				test.log(LogStatus.INFO, PassComment);
+				
+			} 
+		 
 
+		public static void Verify_Button_Enabled(String filename, String Xpath, String PassLog, String FailLog) {
+			WebElement Element = Xpath(filename, Xpath);
+			if (Element.isEnabled()) {
+				
+				test.log(LogStatus.PASS, PassLog);
+				
+			} else {
+				test.log(LogStatus.FAIL, FailLog);
+			}
+		}
+		
+		public static void Verify_Button_Disabled(String filename, String Xpath, String PassLog, String FailLog) {
+			WebElement Element = Xpath(filename, Xpath);
+			if (Element.isEnabled()) {
+				
+				test.log(LogStatus.FAIL, FailLog);
+				
+			} else {
+				test.log(LogStatus.PASS, PassLog);
+			}
+		}
 	public static void generateReport() {
 		// driver.close();
 		Report.flush();

@@ -18,16 +18,17 @@ public class CompressedFileUploadWith100MeasuresTestClass extends HelperClass {
 		threadWait(5000);
 		UploadFile("CompressedFileUploadWith100Measures", "Filepath");
 		threadWait(2500);
-		selectDropdownByVisibleText("CompressedFileUploadWith100Measures", "UploadType", "ESG Values", "Compressed File Upload With 100", 2, 1);
+		selectDropdown("CompressedFileUploadWith100Measures", "UploadType","", "ESG Values", "Compressed File Upload With 100", 2, 1);
 		clickWebelement("CompressedFileUploadWith100Measures", "UploadButton");
-		explicitWait(3000, "CompressedFileUploadWith100Measures", "StatusWait");
+		WaitForElement(3000, "CompressedFileUploadWith100Measures", "StatusWait");
 		test.log(LogStatus.INFO, "File is uploaded successfully");
 	}
 	public static void Enrollment() {
 		ClickByActionClass("CompressedFileUploadWith100Measures", "MainMenu", "ESG Values", "Compressed File Upload With 100", 3, 1);
 		enterTextboxValue("CompressedFileUploadWith100Measures", "ReferenceNumber", "ESG Values", "Compressed File Upload With 100", 4, 1);
 		clickWebelement("CompressedFileUploadWith100Measures", "SearchButton");
-		threadWait(5000);
+		//threadWait(5000);
+		WaitForElement(3000, "CompressedFileUploadWith100Measures", "EnrollmentList");
 		clickWebelement("CompressedFileUploadWith100Measures", "EnrollmentList");
 		defineLogs("Application", "Closed - Work Completed", "Closed - Work Completed", "Workflow step is displayed", "Workflow step is not displayed", "CompressedFileUploadWith100Measures", "ValidateApplicationstep");
 	}
@@ -61,14 +62,17 @@ public class CompressedFileUploadWith100MeasuresTestClass extends HelperClass {
 		clickWebelement("CompressedFileUploadWith100Measures", "JobCostClose");
 	}
 	public static void QAReviewProcess() {
-		threadWait(5000);
+		//threadWait(5000);
+		WaitForElement(30, "CompressedFileUploadWith100Measures", "QAReview");
 		clickWebelement("CompressedFileUploadWith100Measures", "QAReview");
-		threadWait(5000);
+		//threadWait(5000);
+		WaitForElement(30, "CompressedFileUploadWith100Measures", "OutcomePass");
 		clickWebelement("CompressedFileUploadWith100Measures", "OutcomePass");
 		clickWebelement("CompressedFileUploadWith100Measures", "PaymentRequest");
 		selectActualReviewDate();
 		clickWebelement("CompressedFileUploadWith100Measures", "QAReviewSave");
-		threadWait(2500);
+		//threadWait(2500);
+		WaitForElement(30, "CompressedFileUploadWith100Measures", "QAReviewProcess");
 		clickWebelement("CompressedFileUploadWith100Measures", "QAReviewProcess");
 		threadWait(5000);
 		test.log(LogStatus.PASS, "QA review Step has been Processed Successfully");
@@ -76,7 +80,8 @@ public class CompressedFileUploadWith100MeasuresTestClass extends HelperClass {
 	public static void InitiatePaymentProcess() {
 		clickWebelement("CompressedFileUploadWith100Measures", "Initiatepayment");
 		threadWait(2500);
-		selectActualReviewDate();
+		WaitForElement(30, "CompressedFileUploadWith100Measures", "Payee");
+	//	selectActualReviewDate();
 		defineLogs("Howards - ALTN", "Howards - ALTN", "Howards - ALTN", "Payee Name is successfully validated", "Wrong Payee Name is selected", "CompressedFileUploadWith100Measures", "Payee");
 		scrollToElement("CompressedFileUploadWith100Measures", "InitiatepaymentTotalCost");
 		defineLogs("$4,000.00", "$4,000.00", "$4,000.00", "Job Cost Summary Total value is validated", "Job Cost Summary Total is failed to validate", "CompressedFileUploadWith100Measures", "InitiatepaymentTotalCost");
@@ -84,7 +89,8 @@ public class CompressedFileUploadWith100MeasuresTestClass extends HelperClass {
 		clickWebelement("CompressedFileUploadWith100Measures", "InitiatepaymentRadioButton");
 		scrollToElement("CompressedFileUploadWith100Measures", "QAReviewSave");
 		clickWebelement("CompressedFileUploadWith100Measures", "QAReviewSave");
-		threadWait(5000);
+		//threadWait(5000);
+		WaitForElement(30, "CompressedFileUploadWith100Measures", "Payee");
 		defineLogs("Howards - ALTN", "Howards - ALTN", "Howards - ALTN", "Payee Name is successfully validated", "Wrong Payee Name is selected", "CompressedFileUploadWith100Measures", "Payee");
 		scrollToElement("CompressedFileUploadWith100Measures", "InitiatepaymentTotalCost");
 		defineLogs("$4,000.00", "$4,000.00", "$4,000.00", "Job Cost Summary Total value is validated", "Job Cost Summary Total is failed to validate", "CompressedFileUploadWith100Measures", "InitiatepaymentTotalCost");

@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [esg by groups]">
-  <test thread-count="5" name="GRP-Automated_Interconnect_Workflow(failed)">
+  <test verbose="2" name="GRP-Air_Conditioner">
     <groups>
       <run>
-        <include name="Automated_Interconnect_Workflow"/>
+        <include name="Air_Conditioner"/>
       </run>
     </groups>
     <classes>
-      <class name="com.esg.executableclasses.UserDefinedWorkflowExecutableClass">
+      <class name="com.esg.executableclasses.Certified_Product_List_CPL_ExecutableClass"/>
+    </classes>
+  </test> <!-- GRP-Air_Conditioner -->
+  <test name="GRP-Air_Conditioner(failed)">
+    <groups>
+      <run>
+        <include name="Air_Conditioner"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.esg.executableclasses.Certified_Product_List_CPL_ExecutableClass">
         <methods>
-          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_EnrollmentStep_3"/>
-          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_EnrollmentStep_2"/>
-          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_Pre_Engineering"/>
-          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_Pre_InspectionStep"/>
-          <include name="UserDefinedWorkflow_AutomatedWorkflow_Interconnect_Workflow_EnrollmentStep_1"/>
-          <include name="Initialization"/>
-          <include name="Report"/>
+          <include name="AHRI_Air_Conditioner_Residential_Mobile_Application"/>
+          <include name="AHRI_Air_Conditioner_Residential"/>
+          <include name="Initialization_EECP"/>
+          <include name="AHRI_Air_Conditioner_Residential_Backend_Enrollment"/>
           <include name="getStatusWithScreenshot"/>
         </methods>
-      </class> <!-- com.esg.executableclasses.UserDefinedWorkflowExecutableClass -->
+      </class> <!-- com.esg.executableclasses.Certified_Product_List_CPL_ExecutableClass -->
     </classes>
-  </test> <!-- GRP-Automated_Interconnect_Workflow(failed) -->
+  </test> <!-- GRP-Air_Conditioner(failed) -->
 </suite> <!-- Failed suite [esg by groups] -->

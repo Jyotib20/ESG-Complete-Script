@@ -18,18 +18,22 @@ public class ConsolidatedStatusCheckTestClass extends HelperClass {
 		validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 		validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 		validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-		selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
-		threadWait(2500);
+		selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
+		WaitForElement(300, "ConsolidatedStatusCheck", "OnlineApplication");
+		//threadWait(2500);
 		clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 		threadWait(2500);
 		String parentWindowHandle = driver.getWindowHandle();
 		System.out.println("parentWindowHandle"+parentWindowHandle);
 		SwitchToChild();
-		threadWait(5000);
+		//threadWait(5000);
+		WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumber");
 		enterTextboxValue("ConsolidatedStatusCheck", "AccountNumber", "ESG Values", "Consolidated Status Check", 3, 1);
-		threadWait(2500);
+		//threadWait(2500);
+		WaitForElement(300, "ConsolidatedStatusCheck", "Search");
 		clickWebelement("ConsolidatedStatusCheck", "Search");
 		threadWait(2500);
+		WaitForElement(300, "ConsolidatedStatusCheck", "AccountResultsValidation");
 		defineLogs("Consolidated Status Check", "Consolidated Status Check", "Consolidated Status Check", "The Search results are successfully Displayed", "Search Results are not displayed", "ConsolidatedStatusCheck", "AccountResultsValidation");
 		threadWait(5000);
 		if (driver.getPageSource().contains("Edit")) {
@@ -45,22 +49,27 @@ public class ConsolidatedStatusCheckTestClass extends HelperClass {
 	//Record Module
 		ClickByActionClass("ConsolidatedStatusCheck", "MainMenu", "ESG Values", "Consolidated Status Check", 1, 1);
 	clickWebelement("ConsolidatedStatusCheck", "StatusCheckURL");
-	threadWait(2500);
+	//threadWait(2500);
+	WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumberCheckBoxEnabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "AccountNumberCheckBoxEnabled", "The Account Number Check box is Disabled", "The Account NumberCheckbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBoxEnabled", "The Email Address Check box is Disabled", "The Email Address Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-	selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
-	threadWait(2500);
+	selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
+	WaitForElement(300, "ConsolidatedStatusCheck", "OnlineApplication");
+	//threadWait(2500);
 	clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 	threadWait(2500);
 	SwitchToChild();
-	threadWait(5000);
+	//threadWait(5000);
+	WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumber");
 	enterTextboxValue("ConsolidatedStatusCheck", "AccountNumber", "ESG Values", "Consolidated Status Check", 3, 1);
-	threadWait(2500);
+	//threadWait(2500);
+	WaitForElement(300, "ConsolidatedStatusCheck", "Search");
 	clickWebelement("ConsolidatedStatusCheck", "Search");
-	threadWait(2500);
+	//threadWait(2500);
+	WaitForElement(300, "ConsolidatedStatusCheck", "AccountResultsValidation");
 	defineLogs("Consolidated Status Check", "Consolidated Status Check", "Consolidated Status Check", "The Search results are successfully Displayed", "Search Results are not displayed", "ConsolidatedStatusCheck", "AccountResultsValidation");
 	threadWait(5000);
 	if (driver.getPageSource().contains("Record Installation Results")) {
@@ -78,22 +87,27 @@ public class ConsolidatedStatusCheckTestClass extends HelperClass {
 	//Cancel Module
 	ClickByActionClass("ConsolidatedStatusCheck", "MainMenu", "ESG Values", "Consolidated Status Check", 1, 1);
 clickWebelement("ConsolidatedStatusCheck", "StatusCheckURL");
-threadWait(2500);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumberCheckBoxEnabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "AccountNumberCheckBoxEnabled", "The Account Number Check box is Disabled", "The Account NumberCheckbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBoxEnabled", "The Email Address Check box is Disabled", "The Email Address Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
-threadWait(2500);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "OnlineApplication");
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
 SwitchToChild();
-threadWait(5000);
+//threadWait(5000);
+WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumber");
 enterTextboxValue("ConsolidatedStatusCheck", "AccountNumber", "ESG Values", "Consolidated Status Check", 3, 1);
-threadWait(2500);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "Search");
 clickWebelement("ConsolidatedStatusCheck", "Search");
-threadWait(2500);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "AccountResultsValidation");
 defineLogs("Consolidated Status Check", "Consolidated Status Check", "Consolidated Status Check", "The Search results are successfully Displayed", "Search Results are not displayed", "ConsolidatedStatusCheck", "AccountResultsValidation");
 threadWait(5000);
 if (driver.getPageSource().contains("Cancel Application")) {
@@ -112,22 +126,27 @@ clickWebelement("ConsolidatedStatusCheck", "ConsolidationStatusOk");
 //Invalid Module
 	ClickByActionClass("ConsolidatedStatusCheck", "MainMenu", "ESG Values", "Consolidated Status Check", 1, 1);
 clickWebelement("ConsolidatedStatusCheck", "StatusCheckURL");
-threadWait(2500);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumberCheckBoxEnabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "AccountNumberCheckBoxEnabled", "The Account Number Check box is Disabled", "The Account NumberCheckbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBoxEnabled", "The Email Address Check box is Disabled", "The Email Address Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
-threadWait(2500);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "OnlineApplication");
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
 SwitchToChild();
 threadWait(5000);
+WaitForElement(300, "ConsolidatedStatusCheck", "AccountNumber");
 enterTextboxValue("ConsolidatedStatusCheck", "AccountNumber", "ESG Values", "Consolidated Status Check", 4, 1);
-threadWait(2500);
+//threadWait(2500);
+WaitForElement(300, "ConsolidatedStatusCheck", "Search");
 clickWebelement("ConsolidatedStatusCheck", "Search");
 threadWait(2500);
+
 //defineLogs("Consolidated Status Check", "Consolidated Status Check", "Consolidated Status Check", "The Search results are successfully Displayed", "Search Results are not displayed", "ConsolidatedStatusCheck", "AccountResultsValidation");
 threadWait(5000);
 if (driver.getPageSource().contains("We could not find any enrollments that matched your search criteria")) {
@@ -150,7 +169,7 @@ public static void EmailModule() {
 	validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-	selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+	selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 	threadWait(2500);
 	clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 	threadWait(2500);
@@ -182,7 +201,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -215,7 +234,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -249,7 +268,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -279,7 +298,7 @@ public static void PhoneModule() {
 	validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-	selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+	selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 	threadWait(2500);
 	clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 	threadWait(2500);
@@ -311,7 +330,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -344,7 +363,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -378,7 +397,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -407,7 +426,7 @@ public static void EnrollmentModule() {
 	validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 	validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-	selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+	selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 	threadWait(2500);
 	clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 	threadWait(2500);
@@ -440,7 +459,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -473,7 +492,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -507,7 +526,7 @@ validationWithelementVisibility("ConsolidatedStatusCheck", "EmailAddressCheckBox
 validationWithelementVisibility("ConsolidatedStatusCheck", "PhoneNumberCheckBoxEnabled", "The Phone Number Check box is Disabled", "The Phone Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "EnrollmentNumberCheckBoxEnabled", "The Enrollment Number Check box is Disabled", "The Enrollment Number Checkbox is Enabled");
 validationWithelementVisibility("ConsolidatedStatusCheck", "UrlEnabled", "The Url Enabled Check box is Disabled", "The Url Enabled Checkbox is Enabled");
-selectDropdownByVisibleText("ConsolidatedStatusCheck", "ServiceProvider", "ESG Values", "Consolidated Status Check", 2, 1);
+selectDropdown("ConsolidatedStatusCheck", "ServiceProvider","", "ESG Values", "Consolidated Status Check", 2, 1);
 threadWait(2500);
 clickWebelement("ConsolidatedStatusCheck", "OnlineApplication");
 threadWait(2500);
@@ -528,4 +547,3 @@ threadWait(5000);
 driver.quit();
 }
 }
-

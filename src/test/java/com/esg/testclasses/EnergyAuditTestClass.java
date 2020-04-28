@@ -9,7 +9,7 @@ public class EnergyAuditTestClass extends HelperClass {
 
 	public static void login(int UsernameRow,int UsernameColumn,int PasswordRow,int PasswordColumn) 
 	{
-		  test.log(LogStatus.INFO, "This test is running against version = https://esg-eecp-qa2.directapps.int/45.0/");
+		  test.log(LogStatus.INFO, "This test is running against version = https://esg-eecp-qa.directapps.int/50.0");
 		  setProperty("helper", "chrome", "Chrome_Path");	  
 		  openChrome();
 		  enterLogs("Browser was Opened Successfully");
@@ -20,9 +20,9 @@ public class EnergyAuditTestClass extends HelperClass {
 		  enterTextboxValue("helper", "Username_Xpath", "LoginData", "Login", UsernameRow, UsernameColumn);
 		  enterTextboxValue("helper", "Password_Xpath", "LoginData", "Login", PasswordRow, PasswordColumn);
 		  clickWebelement("helper","Login_Xpath");
-		  enterLogs("User was Loggedin Successfully");
+		 /* enterLogs("User was Loggedin Successfully");
 		  defineLogs("Logou", "Logou", "Logout", "Login is successfully validated", "Login is Failed", "Configuration", "Logout");
-		  validationWithTitle("login", "EECP");
+		  validationWithTitle("login", "EECP");*/
 		}   	
 	
 
@@ -33,7 +33,7 @@ public class EnergyAuditTestClass extends HelperClass {
 		clickWebelement("Configuration", "SearchButton");
 		clickWebelement("Configuration", "CheckBox");
 		clickWebelement("Configuration", "NextButton");
-		selectDropdownByVisibleText("Configuration", "AuditType", "ESG Values", "Energy Audit", 5, 1);
+		selectDropdown("Configuration", "AuditType", "", "ESG Values", "Energy Audit", 5, 1);
 		clickWebelement("Configuration", "CheckBox2");
 		clickWebelement("Configuration", "NextButton2");
 		clickWebelement("Configuration", "ErrorOk");
@@ -56,18 +56,19 @@ public class EnergyAuditTestClass extends HelperClass {
 		TextBoxvalue("Location to Attic Access Point", "Location to Attic Access Point", "Location to Attic Access Point", "Location to Attic Access Point Value is Validated", "Location to Attic Access Point Value is Failed to validate", "Configuration", "LocationToAttic");
 		enterTextboxValue("Configuration", "NumberOfAcUnits", "ESG Values", "Energy Audit", 21, 1);
 		TextBoxvalue("Number of AC Units", "Number of AC Units", "Number of AC Units", "Number of AC Units are Validated", "Number of AC Units are Failed to validate", "Configuration", "NumberOfAcUnits");
-		selectDropdownByVisibleText("Configuration", "OccupancyStatus", "ESG Values", "Energy Audit", 32, 1);
+		selectDropdown("Configuration", "OccupancyStatus","", "ESG Values", "Energy Audit", 32, 1);
 		TextBoxvalue("Occupancy Status", "Occupancy Status", "Occupancy Status", "Occupancy Status Value is Validated", "Occupancy Status Value is Failed to validate", "Configuration", "OccupancyStatus");
 		scrollToElement("Configuration", "Construction");
-		selectDropdownByVisibleText("Configuration", "BuildingType", "ESG Values", "Energy Audit", 9, 1);
+		selectDropdown("Configuration", "BuildingType","", "ESG Values", "Energy Audit", 9, 1);
 		TextBoxvalue("Building Type", "Building Type", "Building Type", "Building Type Value is Validated", "Building Type Value is Failed to validate", "Configuration", "BuildingType");
-		selectDropdownByVisibleText("Configuration", "ConstructionType", "ESG Values", "Energy Audit", 10, 1);
+		selectDropdown("Configuration", "ConstructionType", "","ESG Values", "Energy Audit", 10, 1);
 		TextBoxvalue("Construction Type", "Construction Type", "Construction Type", "Construction Type Value is Validated", "Construction Type Value is Failed to validate", "Configuration", "ConstructionType");
 		enterTextboxValue("Configuration", "NumberOfoccupants", "ESG Values", "Energy Audit", 11, 1);
 		TextBoxvalue("Number of Occupants", "Number of Occupants", "Number of Occupants", "Number of Occupants Value is Validated", "Number of Occupants Value is Failed to validate", "Configuration", "NumberOfoccupants");
-		selectDropdownByVisibleText("Configuration", "ThermostatType", "ESG Values", "Energy Audit", 12, 1);
+		selectDropdown("Configuration", "ThermostatType","", "ESG Values", "Energy Audit", 12, 1);
 		TextBoxvalue("Thermostat Types", "Thermostat Types", "Thermostat Types", "Thermostat Types Value is Validated", "Thermostat Types Value is Failed to validate", "Configuration", "ThermostatType");
-		selectDropdownByVisibleText("Configuration", "GasApplianceType", "ESG Values", "Energy Audit", 16, 1);
+		selectDropdown("Configuration", "GasApplianceType","", "ESG Values", "Energy Audit", 16, 1);
+		
 		TextBoxvalue("Gas Appliance Types", "Gas Appliance Types", "Gas Appliance Types", "Gas Appliance Types Value is Validated", "Gas Appliance Types Value is Failed to validate", "Configuration", "GasApplianceType");
 		enterTextboxValue("Configuration", "ThermostatSettingHeat", "ESG Values", "Energy Audit", 13, 1);
 		TextBoxvalue("Thermostat Setting - Heat", "Thermostat Setting - Heat", "Thermostat Setting - Heat", "Thermostat Setting - Heat Value is Validated", "Thermostat Setting - Heat Value is Failed to validate", "Configuration", "ThermostatSettingHeat");
@@ -78,7 +79,8 @@ public class EnergyAuditTestClass extends HelperClass {
 		scrollToElement("Configuration", "AnimalsOnPermises");
 		clickWebelement("Configuration", "AnimalsOnPermises");
 		clickWebelement("Configuration", "EnergyPlannerInstalled");
-		selectDropdownByVisibleText("Configuration", "ACunitType", "ESG Values", "Energy Audit", 22, 1);
+		
+		selectDropdown("Configuration", "ACunitType","", "ESG Values", "Energy Audit", 22, 1);
 		TextBoxvalue("AC Unit Types", "AC Unit Types", "AC Unit Types", "AC Unit Types Value is Validated", "AC Unit Types Value is Failed to validate", "Configuration", "ACunitType");
 		enterTextboxValue("Configuration", "NumberOfPoolPumps", "ESG Values", "Energy Audit", 23, 1);
 		TextBoxvalue("Number of Pool Pumps", "Number of Pool Pumps", "Number of Pool Pumps", "Number of Pool Pumps Value is Validated", "Number of Pool Pumps Value is Failed to validate", "Configuration", "NumberOfPoolPumps");
@@ -93,11 +95,13 @@ public class EnergyAuditTestClass extends HelperClass {
 		clickWebelement("Configuration", "ScheduleAppointment");
 		threadWait(2500);
 		scrollToElement("Configuration", "ScheduleDate");
-		selectDropdownByVisibleText("Configuration", "TradeAlly", "ESG Values", "Energy Audit", 29, 1);
+		selectDropdown("Configuration", "TradeAlly","", "ESG Values", "Energy Audit", 29, 1);
+		
 		TextBoxvalue("Trade Ally", "Trade Ally", "Trade Ally", "Trade Ally Value is Validated", "Trade Ally Value is Failed to validate", "Configuration", "TradeAlly");
 		clickWebelement("Configuration", "residentialEnergy");
 		clickWebelement("Configuration", "AppointentschedulerSearch");
-		threadWait(2500);
+		WaitForElement(300, "Configuration", "Analyst1");
+		//threadWait(2500);
 		clickWebelement("Configuration", "Analyst1");
 		clickWebelement("Configuration", "AppointentschedulerSave");
 		scrollToElement("Configuration", "RequestForFirstName");
@@ -113,7 +117,7 @@ public class EnergyAuditTestClass extends HelperClass {
 	TextBoxvalue("Number of Occupants", "Number of Occupants", "Number of Occupants", "Number of Occupants Value is Validated", "Number of Occupants Value is Failed to validate", "Configuration", "NumberOFOcuppancy");
 	enterTextboxValue("Configuration", "ActualDate", "ESG Values", "Energy Audit", 36, 1);
 	TextBoxvalue("Actual Audit Date", "Actual Audit Date", "Actual Audit Date", "Actual Audit Date is Validated", "Actual Audit Date is Failed to validate", "Configuration", "ActualDate");
-	selectDropdownByVisibleText("Configuration", "HowLong", "ESG Values", "Energy Audit", 37, 1);
+	selectDropdown("Configuration", "HowLong","", "ESG Values", "Energy Audit", 37, 1);
 	TextBoxvalue("How long have you lived in home?", "How long have you lived in home?", "How long have you lived in home?", "How long have you lived in home? Value is Validated", "How long have you lived in home? Value is Failed to validate", "Configuration", "HowLong");
 	clickWebelement("Configuration", "FirePlace");
 	clickWebelement("Configuration", "CeilingFans");
@@ -130,7 +134,7 @@ public class EnergyAuditTestClass extends HelperClass {
   public static void InsulationInformation(){
 	  clickWebelement("Configuration", "InsulationInformation");
 	  clickWebelement("Configuration", "LimitedAccess");
-	  selectDropdownByVisibleText("Configuration", "InsulationType", "ESG Values", "Energy Audit", 38, 1);
+	  selectDropdown("Configuration", "InsulationType","", "ESG Values", "Energy Audit", 38, 1);
 	  TextBoxvalue("Insulation Type", "Insulation Type","Insulation Type", "Insulation Type Value is Validated", "Insulation Type Value is Failed to validate", "Configuration", "InsulationType");
 	  enterTextboxValue("Configuration", "OtherInsulation", "ESG Values", "Energy Audit", 39, 1);
 	  TextBoxvalue("Other Insulation Type R-Value", "Other Insulation Type R-Value", "Other Insulation Type R-Value", "Other Insulation Type R-Value Value is Validated", "Other Insulation Type R-Value Value is Failed to validate", "Configuration", "OtherInsulation");
@@ -153,7 +157,8 @@ public class EnergyAuditTestClass extends HelperClass {
   public static void DuctSealInformation() {
 	  clickWebelement("Configuration", "DuctSealInformation");
 	  clickWebelement("Configuration", "QualifiedForDuctWork");
-	  selectDropdownByVisibleText("Configuration", "Reason", "ESG Values", "Energy Audit", 44, 1);
+	
+	  selectDropdown("Configuration", "Reason","", "ESG Values", "Energy Audit", 44, 1);
 	  
 	  TextBoxvalue("Reason", "Reason", "Reason", "Reason Value is Validated", "Reason Value is Failed to validate", "Configuration", "Reason");
 	  clickWebelement("Configuration", "DamangedDuctwork");

@@ -30,7 +30,7 @@ public class SingleFileUploadExecutableClass extends SingleFileUploadTestClass {
 		try {
 			UploadFile();
 		} catch (AWTException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

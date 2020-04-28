@@ -21,6 +21,7 @@ public class ThresholdsExecutableClass extends ThresholdsTestClass{
 	}
 	@Test(priority = 1)
 	public static void Thresholds_Login() {
+		test = Report.startTest("Thresholds_Login");
 		login();
 	}
 
@@ -34,7 +35,7 @@ public class ThresholdsExecutableClass extends ThresholdsTestClass{
 		Verify_Post_Inspection_KickOff();
 	}
 	
-	@Test(priority = 3, invocationCount = 4)
+	/*@Test(priority = 3, invocationCount = 4)
 	public static void Thresholds_ProgramYearMeasures() {
 		test = Report.startTest("Thresholds_ProgramYearMeasures");
 		Program_Percent();
@@ -49,7 +50,7 @@ public class ThresholdsExecutableClass extends ThresholdsTestClass{
 		Zero_Percent();
 		Fifty_Percent();
 		Hundred_Percent();
-	}
+	}*/
 	
 	
 	

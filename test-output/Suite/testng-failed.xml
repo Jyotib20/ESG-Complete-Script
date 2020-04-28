@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <test thread-count="3" name="Testonchrome(failed)" parallel="methods">
-    <parameter name="browsername" value="chrome"/>
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="Browsername" value="IE"/>
+  <test name="ChromeTest">
+    <parameter name="Browsername" value="chrome"/>
     <classes>
-      <class name="com.esg.executableclasses.SampleParallelExecutableClass">
-        <methods>
-          <include name="Enrollment"/>
-          <include name="ToDoList"/>
-          <include name="BrowserSetup"/>
-          <include name="getResult"/>
-          <include name="init"/>
-          <include name="endreport"/>
-        </methods>
-      </class> <!-- com.esg.executableclasses.SampleParallelExecutableClass -->
+      <class name="com.esg.executableclasses.AddandtrackInventoryExecutableClass"/>
     </classes>
-  </test> <!-- Testonchrome(failed) -->
-  <test thread-count="3" name="Testonfirefox(failed)" parallel="methods">
-    <parameter name="browsername" value="firefox"/>
+  </test> <!-- ChromeTest -->
+  <test name="IETest">
+    <parameter name="Browsername" value="IE"/>
     <classes>
-      <class name="com.esg.executableclasses.SampleParallelExecutableClass">
-        <methods>
-          <include name="Enrollment"/>
-          <include name="ToDoList"/>
-          <include name="BrowserSetup"/>
-          <include name="getResult"/>
-          <include name="init"/>
-          <include name="endreport"/>
-        </methods>
-      </class> <!-- com.esg.executableclasses.SampleParallelExecutableClass -->
+      <class name="com.esg.executableclasses.AddandtrackInventoryExecutableClass"/>
     </classes>
-  </test> <!-- Testonfirefox(failed) -->
+  </test> <!-- IETest -->
+  <test name="ChromeTest(failed)">
+    <parameter name="Browsername" value="chrome"/>
+    <classes>
+      <class name="com.esg.executableclasses.AddandtrackInventoryExecutableClass">
+        <methods>
+          <include name="TrackInventory"/>
+          <include name="Initialization"/>
+          <include name="Initialization"/>
+          <include name="getResult"/>
+          <include name="Generate"/>
+          <include name="getResult"/>
+          <include name="AddInventory"/>
+        </methods>
+      </class> <!-- com.esg.executableclasses.AddandtrackInventoryExecutableClass -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test name="IETest(failed)">
+    <parameter name="Browsername" value="IE"/>
+    <classes>
+      <class name="com.esg.executableclasses.AddandtrackInventoryExecutableClass">
+        <methods>
+          <include name="TrackInventory"/>
+          <include name="Initialization"/>
+          <include name="Initialization"/>
+          <include name="getResult"/>
+          <include name="Generate"/>
+          <include name="getResult"/>
+          <include name="AddInventory"/>
+        </methods>
+      </class> <!-- com.esg.executableclasses.AddandtrackInventoryExecutableClass -->
+    </classes>
+  </test> <!-- IETest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

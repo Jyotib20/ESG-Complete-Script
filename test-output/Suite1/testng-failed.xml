@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="tests">
-  <test thread-count="5" name="Testonchrome(failed)" parallel="tests">
-    <parameter name="browsername" value="chrome"/>
+  <parameter name="Browsername" value="chrome"/>
+  <test name="Testonchrome">
+    <parameter name="Browsername" value="chrome"/>
     <classes>
-      <class name="com.esg.testclasses.Sample">
+      <class name="com.esg.executableclasses.AddandtrackInventoryExecutableClass"/>
+    </classes>
+  </test> <!-- Testonchrome -->
+  <test name="Testonchrome(failed)" parallel="tests">
+    <parameter name="Browsername" value="chrome"/>
+    <classes>
+      <class name="com.esg.executableclasses.AddandtrackInventoryExecutableClass">
         <methods>
-          <include name="Enrollment"/>
-          <include name="init"/>
-          <include name="BrowserSetup"/>
-          <include name="endreport"/>
+          <include name="TrackInventory"/>
+          <include name="Initialization"/>
           <include name="getResult"/>
-          <include name="ToDoList"/>
+          <include name="LoginMethod"/>
+          <include name="AddInventory"/>
         </methods>
-      </class> <!-- com.esg.testclasses.Sample -->
+      </class> <!-- com.esg.executableclasses.AddandtrackInventoryExecutableClass -->
     </classes>
   </test> <!-- Testonchrome(failed) -->
-  <test thread-count="5" name="Testonfirefox(failed)" parallel="tests">
-    <parameter name="browsername" value="firefox"/>
-    <classes>
-      <class name="com.esg.testclasses.Sample">
-        <methods>
-          <include name="Enrollment"/>
-          <include name="init"/>
-          <include name="BrowserSetup"/>
-          <include name="endreport"/>
-          <include name="getResult"/>
-          <include name="ToDoList"/>
-        </methods>
-      </class> <!-- com.esg.testclasses.Sample -->
-    </classes>
-  </test> <!-- Testonfirefox(failed) -->
-  <test thread-count="5" name="Testonie(failed)" parallel="tests">
-    <parameter name="browsername" value="ie"/>
-    <classes>
-      <class name="com.esg.testclasses.Sample">
-        <methods>
-          <include name="Enrollment"/>
-          <include name="init"/>
-          <include name="BrowserSetup"/>
-          <include name="endreport"/>
-          <include name="getResult"/>
-          <include name="ToDoList"/>
-        </methods>
-      </class> <!-- com.esg.testclasses.Sample -->
-    </classes>
-  </test> <!-- Testonie(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

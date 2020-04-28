@@ -12,14 +12,16 @@ public class CreateAndSearchLeadTestClass extends HelperClass {
 	}
 
 	public static void NavigateToLeadList() {
-		ClickByActionClass("Create_SearchLead", "MainMenu", "ESG Values", "CreateAndSearchLead", 1, 1);
+		//enterTextboxValue("Create_SearchLead", "MainMenu", "ESG Values", "CreateAndSearchLead", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Leads").click();
 		threadWait(2000);
-		selectDropdownByVisibleText("Create_SearchLead", "AssignedToTradeAlly", "ESG Values", "CreateAndSearchLead", 2,
+		selectDropdown("Create_SearchLead", "AssignedToTradeAlly", "AssignedToTradeAlly", "ESG Values", "CreateAndSearchLead", 2,
 				1);
 		threadWait(2000);
-		selectDropdownByVisibleText("Create_SearchLead", "LeadStatus", "ESG Values", "CreateAndSearchLead", 3, 1);
+		selectDropdown("Create_SearchLead", "LeadStatus","LeadStatus", "ESG Values", "CreateAndSearchLead", 3, 1);
 		threadWait(3000);
-		selectDropdownByVisibleText("Create_SearchLead", "Employee", "ESG Values", "CreateAndSearchLead", 4, 1);
+		selectDropdown("Create_SearchLead", "Employee","Employee", "ESG Values", "CreateAndSearchLead", 4, 1);
 		threadWait(2000);
 	}
 	public static void ClickonSearchButton() {
@@ -32,7 +34,7 @@ public class CreateAndSearchLeadTestClass extends HelperClass {
 	public static void Navigate_To_LeadDetailsPage() {
 		NavigateToLeadList();
 		clickWebelement("Create_SearchLead", "NewButton");
-		selectDropdownByVisibleText("Create_SearchLead", "SelectProgram", "ESG Values", "CreateAndSearchLead", 5, 1);
+		selectDropdown("Create_SearchLead", "SelectProgram","SelectProgram", "ESG Values", "CreateAndSearchLead", 5, 1);
 		threadWait(2000);
 		clickWebelement("Create_SearchLead", "NextButton");
 		threadWait(7000);
@@ -54,10 +56,10 @@ public class CreateAndSearchLeadTestClass extends HelperClass {
 		enterTextboxValue("Create_SearchLead", "Email", "ESG Values", "CreateAndSearchLead", 9, 1);
 
 		clickWebelement("Create_SearchLead", "PrimaryLanguage");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 10, 1);
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 10, 1);
 		Enter(KeyEvent.VK_ENTER);
 		clickWebelement("Create_SearchLead", "BuildingType");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 11, 1);
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 11, 1);
 		Enter(KeyEvent.VK_ENTER);
 
 		scrollToElement("Create_SearchLead", "AppointmentDateImage");
@@ -65,34 +67,34 @@ public class CreateAndSearchLeadTestClass extends HelperClass {
 		Enter(KeyEvent.VK_ENTER);
 		
 		threadWait(3000);
-		ClickWebelementByActionClass("Create_SearchLead", "AccountExecutive");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 12, 1);
+		clickWebelement("Create_SearchLead", "AccountExecutive");
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 12, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Create_SearchLead", "LeadSourceCategory");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 13, 1);
+		clickWebelement("Create_SearchLead", "LeadSourceCategory");
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 13, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Create_SearchLead", "LeadSource");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 14, 1);
+		clickWebelement("Create_SearchLead", "LeadSource");
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 14, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Create_SearchLead", "Campaign");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 15, 1);
+		clickWebelement("Create_SearchLead", "Campaign");
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 15, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Create_SearchLead", "OutreachSourceTradeAlly");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 16, 1);
+		clickWebelement("Create_SearchLead", "OutreachSourceTradeAlly");
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 16, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
-		ClickWebelementByActionClass("Create_SearchLead", "OutreachSourceEmployee");
-		enterValueByActionClass("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 17, 1);
+		clickWebelement("Create_SearchLead", "OutreachSourceEmployee");
+		enterTextboxValue("Create_SearchLead", "SearchFromList", "ESG Values", "CreateAndSearchLead", 17, 1);
 		Enter(KeyEvent.VK_ENTER);
 		threadWait(3000);
 		clickonSave();
-		ClickWebelementByActionClass("Create_SearchLead", "ResolveLead");
+		clickWebelement("Create_SearchLead", "ResolveLead");
 		clickWebelement("Create_SearchLead", "Completed");
-		enterValueByActionClass("Create_SearchLead", "Comments_Section", "ESG Values", "CreateAndSearchLead", 18, 1);
+		enterTextboxValue("Create_SearchLead", "Comments_Section", "ESG Values", "CreateAndSearchLead", 18, 1);
 		clickWebelement("Create_SearchLead", "OkButton");
 		threadWait(4000);
 		NavigateToLeadList();
@@ -165,7 +167,7 @@ public class CreateAndSearchLeadTestClass extends HelperClass {
 				"VerifyZip");
 		
 		NavigateToLeadList();
-		selectDropdownByVisibleText("Create_SearchLead", "EnterZone", "ESG Values", "CreateAndSearchLead", 27, 1);
+		selectDropdown("Create_SearchLead", "EnterZone","EnterZone", "ESG Values", "CreateAndSearchLead", 27, 1);
 		ClickonSearchButton();
 		defineLogs("Show Search Details...", "Show Search Details...", "Show Search Details...",
 				"Entered Zone validated Successfully", "Failed to validate Entered Zone", "Create_SearchLead",
@@ -196,35 +198,35 @@ public class CreateAndSearchLeadTestClass extends HelperClass {
 				"VerifyDueDate");
 		
 		NavigateToLeadList();
-		selectDropdownByVisibleText("Create_SearchLead", "EnterAssignedTradeAlly", "ESG Values", "CreateAndSearchLead", 31, 1);
+		selectDropdown("Create_SearchLead", "EnterAssignedTradeAlly","EnterAssignedTradeAlly", "ESG Values", "CreateAndSearchLead", 31, 1);
 		ClickonSearchButton();
 		defineLogs("Show Search Details...", "Show Search Details...", "Show Search Details...",
 				"Assigned TradeAlly validated Successfully", "Failed to validate Assigned TradeAlly", "Create_SearchLead",
 				"VerifyAssignedTradeAlly");
 		
 		NavigateToLeadList();
-		selectDropdownByVisibleText("Create_SearchLead", "EnterProgram", "ESG Values", "CreateAndSearchLead", 32, 1);
+		selectDropdown("Create_SearchLead", "EnterProgram","EnterProgram", "ESG Values", "CreateAndSearchLead", 32, 1);
 		ClickonSearchButton();
 		defineLogs("Show Search Details...", "Show Search Details...", "Show Search Details...",
 				"Program Name validated Successfully", "Failed to validate Program Name", "Create_SearchLead",
 				"VerifyProgram");
 		
 		NavigateToLeadList();
-		selectDropdownByVisibleText("Create_SearchLead", "EnterLeadType", "ESG Values", "CreateAndSearchLead", 33, 1);
+		selectDropdown("Create_SearchLead", "EnterLeadType","EnterLeadType", "ESG Values", "CreateAndSearchLead", 33, 1);
 		ClickonSearchButton();
 		defineLogs("Show Search Details...", "Show Search Details...", "Show Search Details...",
 				"Lead Type validated Successfully", "Failed to validate Lead Type", "Create_SearchLead",
 				"VerifyLeadType");
 		
 		NavigateToLeadList();
-		selectDropdownByVisibleText("Create_SearchLead", "EnterLeadStatus", "ESG Values", "CreateAndSearchLead", 34, 1);
+		selectDropdown("Create_SearchLead", "EnterLeadStatus","EnterLeadStatus", "ESG Values", "CreateAndSearchLead", 34, 1);
 		ClickonSearchButton();
 		defineLogs("Show Search Details...", "Show Search Details...", "Show Search Details...",
 				"Lead Status validated Successfully", "Failed to validate Lead Status", "Create_SearchLead",
 				"VerifyLeadStatus");
 		
 		NavigateToLeadList();
-		selectDropdownByVisibleText("Create_SearchLead", "EnterEmployee", "ESG Values", "CreateAndSearchLead", 35, 1);
+		selectDropdown("Create_SearchLead", "EnterEmployee","EnterEmployee", "ESG Values", "CreateAndSearchLead", 35, 1);
 		ClickonSearchButton();
 		defineLogs("Show Search Details...", "Show Search Details...", "Show Search Details...",
 				"Employee validated Successfully", "Failed to validate Employee", "Create_SearchLead",

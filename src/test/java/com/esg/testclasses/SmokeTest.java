@@ -55,7 +55,7 @@ public class SmokeTest extends HelperClass {
 			login("Helper","BaseURL", 1, 0, 1, 1);
 			test = Report.createTest("Enrollment");
 			test.log(Status.INFO, "Application is login");
-			ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 3, 1);
+			enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 3, 1);
 			test.log(Status.PASS, "Enrollment page is opened");
 			//enterlogs("Clicked on the Enrollment");
 			threadWait(2500);
@@ -173,7 +173,7 @@ public class SmokeTest extends HelperClass {
 					test = Report.createTest("ToDoList");
 					login("Helper","BaseURL", 1, 0, 1, 1);
 						test.log(Status.INFO, "Application is LoggedIn");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 50, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 50, 1);
 						test.log(Status.PASS, "To Do List page is opened");
 						driver.findElement(By.xpath("//input[@name='ctl00$cphSiteMaster$txtEnrollmentNumber']")).sendKeys("1032876");
 						test.log(Status.PASS, "Value is Entered");
@@ -190,7 +190,7 @@ public class SmokeTest extends HelperClass {
 		public static void DataModel() {
 						test = Report.createTest("DataModel");
 						
-						ClickByActionClass("Configuration", "Reports", "ESG Values", "Energy Audit", 51, 1);
+						enterValueByActionClass("Configuration", "Reports", "ESG Values", "Energy Audit", 51, 1);
 						threadWait(2500);
 						String parentWindowHandle = driver.getWindowHandle();
 						System.out.println("parentWindowHandle"+parentWindowHandle);
@@ -216,7 +216,7 @@ public class SmokeTest extends HelperClass {
 			public static void ApplicationReport() {
 				
 						test = Report.createTest("ApplicationReport");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 3, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 3, 1);
 						threadWait(2500);
 						String parentWindowHandle = driver.getWindowHandle();
 						System.out.println("parentWindowHandle"+parentWindowHandle);
@@ -228,7 +228,7 @@ public class SmokeTest extends HelperClass {
 						threadWait(2500);
 						clickWebelement("Configuration", "EnrollmentID");
 						clickWebelement("Configuration", "ApplicationToDO");
-						ClickByActionClass("Configuration", "Reports", "ESG Values", "Energy Audit", 51, 1);
+						enterValueByActionClass("Configuration", "Reports", "ESG Values", "Energy Audit", 51, 1);
 						threadWait(2500);
 						driver.switchTo().frame(0);
 						scrollToElement("Configuration", "Workflow");
@@ -244,7 +244,7 @@ public class SmokeTest extends HelperClass {
 							public static void CustomerModule() {
 							
 							test = Report.createTest("Customer Module");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 52, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 52, 1);
 						threadWait(2500);
 						enterTextboxValue("Configuration", "CustomerSearch", "ESG Values", "Energy Audit", 53, 1);
 						clickWebelement("Configuration", "CustomerGo");
@@ -307,7 +307,7 @@ public class SmokeTest extends HelperClass {
 						public static void LeadModule() {
 							login("Helper","BaseURL", 1, 0, 1, 1);
 						test = Report.createTest("Lead Module");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 54, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 54, 1);
 						threadWait(2500);
 						scrollToElement("Configuration", "CustomerSearch1");
 						clickWebelement("Configuration", "CustomerSearch1");
@@ -320,14 +320,14 @@ public class SmokeTest extends HelperClass {
 						//Invoicing Module: To open Invoice with the Invoice Number and to Search Invoice with the Enrollment Number
 						public static void InvoicingModule() {
 						test = Report.createTest("Invoicing Module");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 55, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 55, 1);
 						threadWait(2500);
 						enterTextboxValue("Configuration", "CreateDate", "ESG Values", "Energy Audit", 57, 1);
 						test.log(Status.PASS, "successfully Entered the Date");
 						scrollToElement("Configuration", "InvoiceSearch");
 						clickWebelement("Configuration", "InvoiceSearch");
 						threadWait(5000);
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 55, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 55, 1);
 						enterTextboxValue("Configuration", "Invoiceref", "ESG Values", "Energy Audit", 56, 1);
 						test.log(Status.PASS, "successfully Entered the Invoice Number");
 						scrollToElement("Configuration", "InvoiceSearch");
@@ -335,7 +335,7 @@ public class SmokeTest extends HelperClass {
 						threadWait(5000);
 						clickWebelement("Configuration", "InvoiceNum");
 						clickWebelement("Configuration", "EnrollmentClick");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 55, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 55, 1);
 						enterTextboxValue("Configuration", "EnrollMentNum1", "ESG Values", "Energy Audit", 58, 1);
 						test.log(Status.PASS, "successfully Entered the Invoice Enrollment Number");
 						scrollToElement("Configuration", "InvoiceSearch");
@@ -348,7 +348,7 @@ public class SmokeTest extends HelperClass {
 						public static void CalendarModule() {
 							test = Report.createTest("Calendar Module");
 						
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 59, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 59, 1);
 						String parentWindowHandle = driver.getWindowHandle();
 						System.out.println("parentWindowHandle"+parentWindowHandle);
 						if (driver.getPageSource().contains("Unscheduled Tasks")) {
@@ -366,7 +366,7 @@ public class SmokeTest extends HelperClass {
 						// Measure Module: To access the Measure Property
 						public static void MeasureModule() {
 						test = Report.createTest("Measure Module");
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 62, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 62, 1);
 						threadWait(5000);
 						enterTextboxValue("Configuration", "MeasureCode", "ESG Values", "Energy Audit", 61, 1);
 						test.log(Status.PASS, "Measure Code value is successfully Entered");
@@ -388,7 +388,7 @@ public class SmokeTest extends HelperClass {
 							
 							test = Report.createTest("Program Module");
 						
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 63, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 63, 1);
 						threadWait(5000);
 						enterTextboxValue("Configuration", "Programcode", "ESG Values", "Energy Audit", 64, 1);
 						test.log(Status.PASS, "Value is Entered Successfully");
@@ -423,7 +423,7 @@ public class SmokeTest extends HelperClass {
 						public static void ProgramYearModule() {
 						
 						test = Report.createTest("Program Year Module");
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 65, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 65, 1);
 						threadWait(5000);
 						enterTextboxValue("Configuration", "Programyear", "ESG Values", "Energy Audit", 66, 1);
 						clickWebelement("Configuration", "ProgramYearSearch");
@@ -451,7 +451,7 @@ public class SmokeTest extends HelperClass {
 						public static void PricingSchedule() {
 						
 						test = Report.createTest("Pricing schedule Module");
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 67, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 67, 1);
 						threadWait(5000);
 						scrollToElement("Configuration", "PricingScheduleSearch");
 						clickWebelement("Configuration", "PricingScheduleSearch");
@@ -465,7 +465,7 @@ public class SmokeTest extends HelperClass {
 						public static void SavingSchedule() {
 							
 						test = Report.createTest("Saving schedule Module");
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 68, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 68, 1);
 						threadWait(5000);
 						clickWebelement("Configuration", "Effectivedate");
 						test.log(Status.PASS, "Successfully opened Saving schedule Page");
@@ -477,7 +477,7 @@ public class SmokeTest extends HelperClass {
 							
 							test = Report.createTest("Mobile web Application Module");
 							
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 69, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 69, 1);
 						threadWait(5000);
 						clickWebelement("Configuration", "MobileProgramName");
 						test.log(Status.PASS, "Successfully Clicked on the Program Name");
@@ -519,7 +519,7 @@ public class SmokeTest extends HelperClass {
 						public static void EnergyAuditModule() {
 							
 							test = Report.createTest("Energy Audit Module");
-						ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 70, 1);
+						enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 70, 1);
 						enterTextboxValue("Configuration", "EnergyAudit", "ESG Values", "Energy Audit", 71, 1);
 						test.log(Status.PASS, "Value is Entered Successfully");
 						scrollToElement("Configuration", "EnergyAuditSearch");
@@ -537,7 +537,7 @@ public class SmokeTest extends HelperClass {
 					
 						test = Report.createTest("TradeAlly");
 						test.log(Status.INFO, "Application is login");
-						ClickByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 63, 1);
+						enterValueByActionClass("Configuration", "Configur", "ESG Values", "Energy Audit", 63, 1);
 						String parentWindowHandle = driver.getWindowHandle();
 						System.out.println("parentWindowHandle"+parentWindowHandle);
 						test.log(Status.PASS, "TradeAlly is Opened");
@@ -576,7 +576,7 @@ public class SmokeTest extends HelperClass {
 						public static void Helpset() {
 							test = Report.createTest("Helpset");
 							test.log(Status.INFO, "Application is login");
-							ClickByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 3, 1);
+							enterValueByActionClass("Configuration", "MainMenu", "ESG Values", "Energy Audit", 3, 1);
 							test.log(Status.PASS, "Enrollment page is Loaded");
 							String parentWindowHandle = driver.getWindowHandle();
 							System.out.println("parentWindowHandle"+parentWindowHandle);

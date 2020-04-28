@@ -1,17 +1,21 @@
 package com.esg.testclasses;
 
+import java.awt.event.KeyEvent;
+
 import com.esg.utilities.HelperClass;
 
 public class MultiServiceInstallationTestClass extends HelperClass{
 	
 	public static void LogintoPage() {
 		
-		login("Helper","BaseURL", 1, 0, 1, 1);
+		login("Helper","BaseURL", 2, 0, 2, 1);
 	}
 
 	public static void CreateEnrollment() {
 		
-		ClickByActionClass("MultiServiceInstallations", "MainMenu", "ESG Values", "Multi Service Installations", 1, 1);
+		//enterTextboxValue("MultiServiceInstallations", "MainMenu", "ESG Values", "Multi Service Installations", 1, 1);
+		linkText("Main Menu").click();
+		linkText("Enrollments").click();
 		defineLogs("Enrollment List", "Enrollment List", "Enrollment List", "Enrollment Page is successfully opened", "Enrollment Page is failed to open", "MultiServiceInstallations", "VerifyEnrollmentPage");
 		clickWebelement("MultiServiceInstallations", "NewEnrollment");
 		enterTextboxValue("MultiServiceInstallations", "SelectProgram", "ESG Values", "Multi Service Installations", 2, 1);
@@ -32,7 +36,7 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 	}
 	public static void Application1() {
 		scrollToElement("MultiServiceInstallations", "BuildingType");
-		selectDropdownByVisibleText("MultiServiceInstallations", "BuildingType", "ESG Values", "Multi Service Installations", 4, 1);
+		selectDropdown("MultiServiceInstallations", "BuildingType","BuildingType", "ESG Values", "Multi Service Installations", 4, 1);
 		defineLogs("Workflow Step Costs", "$10.00", "$10.00", "Application Workflow Step Cost is validated", "Application Workflow Step Cost is failed to validated", "MultiServiceInstallations", "TotalCostSummary");
 		clickWebelement("MultiServiceInstallations", "ApplicationSave");
 		
@@ -41,11 +45,11 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 		scrollToElement("MultiServiceInstallations", "Measure");
 		clickWebelement("MultiServiceInstallations", "Measure");
 		clickWebelement("MultiServiceInstallations", "Measurepqt1");
-		enterValueByActionClass("MultiServiceInstallations", "Measurepqt", "ESG Values", "Multi Service Installations", 5, 1);
+		enterTextboxValue("MultiServiceInstallations", "Measurepqt", "ESG Values", "Multi Service Installations", 5, 1);
 		clickWebelement("MultiServiceInstallations", "Measureiqt1");
-		enterValueByActionClass("MultiServiceInstallations", "Measureiqt", "ESG Values", "Multi Service Installations", 6, 1);
+		enterTextboxValue("MultiServiceInstallations", "Measureiqt", "ESG Values", "Multi Service Installations", 6, 1);
 		clickWebelement("MultiServiceInstallations", "Measurepqt21");
-		enterValueByActionClass("MultiServiceInstallations", "Measurepqt2", "ESG Values", "Multi Service Installations", 7, 1);
+		enterTextboxValue("MultiServiceInstallations", "Measurepqt2", "ESG Values", "Multi Service Installations", 7, 1);
 		clickWebelement("MultiServiceInstallations", "Save");
 		threadWait(2500);
 		scrollToElement("MultiServiceInstallations", "ApplicationInformation");
@@ -93,18 +97,25 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 		clickWebelement("MultiServiceInstallations", "InspectionStep");
 		threadWait(2500);
 		clickWebelement("MultiServiceInstallations", "Measurepqt1");
-		enterValueByActionClass("MultiServiceInstallations", "InspectionMeasurePassQty1", "ESG Values", "Multi Service Installations", 8, 1);
 		threadWait(2500);
+		enterTextboxValue("MultiServiceInstallations", "InspectionMeasurePassQty1", "ESG Values", "Multi Service Installations", 8, 1);
+		//threadWait(2500);
+		Enter(KeyEvent.VK_TAB);
 		enterTextboxValue("MultiServiceInstallations", "InspectionMeasureFailQty1", "ESG Values", "Multi Service Installations", 8, 2);
-		threadWait(5000);
+		//threadWait(5000);
+		scrollToElement("MultiServiceInstallations", "Measurepqt21");
 		clickWebelement("MultiServiceInstallations", "Measureiqt1");
-		enterValueByActionClass("MultiServiceInstallations", "InspectionMeasurePassQty2", "ESG Values", "Multi Service Installations", 9, 1);
-		threadWait(5000);
+		threadWait(2500);
+		enterTextboxValue("MultiServiceInstallations", "InspectionMeasurePassQty2", "ESG Values", "Multi Service Installations", 9, 1);
+		//threadWait(5000);
+		Enter(KeyEvent.VK_TAB);
 		enterTextboxValue("MultiServiceInstallations", "InspectionMeasureFailQty2", "ESG Values", "Multi Service Installations", 9, 2);
-		threadWait(5000);
+		//threadWait(5000);
 		clickWebelement("MultiServiceInstallations", "Measurepqt21");
-		enterValueByActionClass("MultiServiceInstallations", "InspectionMeasurePassQty3", "ESG Values", "Multi Service Installations", 10, 1);
-		threadWait(2000);
+		threadWait(2500);
+		enterTextboxValue("MultiServiceInstallations", "InspectionMeasurePassQty3", "ESG Values", "Multi Service Installations", 10, 1);
+		//threadWait(2000);
+		Enter(KeyEvent.VK_TAB);
 		enterTextboxValue("MultiServiceInstallations", "InspectionMeasureFailQty3", "ESG Values", "Multi Service Installations", 10, 2);
 		threadWait(2500);
 		defineLogs("Workflow Step Costs", "$0.00", "$0.00", "Workflow Step Cost is validated", "Workflow Step Cost is failed to validated", "MultiServiceInstallations", "TotalCostSummary");
@@ -120,11 +131,12 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 		threadWait(5000);
 		doubleClickWebelement("MultiServiceInstallations", "MeasureCorrectionInfo");
 		threadWait(2500);
-		enterValueByActionClass("MultiServiceInstallations", "CorrectDrop1","ESG Values", "Multi Service Installations", 12, 1);
+		enterTextboxValue("MultiServiceInstallations", "CorrectDrop1","ESG Values", "Multi Service Installations", 12, 1);
 		defineLogs("Workflow Step Costs", "$1,000.00", "$1,000.00", "Workflow Step Cost is validated", "Workflow Step Cost is failed to validated", "MultiServiceInstallations", "TotalCostSummary");
-		selectDropdownByVisibleText("MultiServiceInstallations", "EmployeeDropDown", "ESG Values", "Multi Service Installations", 11, 1);
+		selectDropdown("MultiServiceInstallations", "EmployeeDropDown","EmployeeDropDown", "ESG Values", "Multi Service Installations", 11, 1);
 		clickWebelement("MultiServiceInstallations", "ActualReviewDateImage");
-		clickWebelement("MultiServiceInstallations", "selectdate");
+		Enter(KeyEvent.VK_ENTER);
+		//clickWebelement("MultiServiceInstallations", "selectdate");
 		clickWebelement("MultiServiceInstallations", "InstallationProcess");
 		threadWait(5000);
 		defineLogs("Enrollment Profile - Workflow", "Closed - Work Completed", "Closed - Work Completed", "Regression - Electric Appliance Workflow step is completed Successfully", "Regression - Electric Appliance Workflow step is not completed", "MultiServiceInstallations", "RegressionElectricAppliance");
@@ -134,8 +146,8 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 		threadWait(5000);
 		doubleClickWebelement("MultiServiceInstallations", "MeasureCorrectionInfo");
 		threadWait(2500);
-		enterValueByActionClass("MultiServiceInstallations", "CorrectDrop1","ESG Values", "Multi Service Installations", 12, 1);
-		selectDropdownByVisibleText("MultiServiceInstallations", "EmployeeDropDown", "ESG Values", "Multi Service Installations", 13, 1);
+		enterTextboxValue("MultiServiceInstallations", "CorrectDrop1","ESG Values", "Multi Service Installations", 12, 1);
+		selectDropdown("MultiServiceInstallations", "EmployeeDropDown","EmployeeDropDown", "ESG Values", "Multi Service Installations", 13, 1);
 		defineLogs("Workflow Step Costs", "$10.00", "$10.00", "Workflow Step Cost is validated", "Workflow Step Cost is failed to validated", "MultiServiceInstallations", "TotalCostSummary");
 		clickWebelement("MultiServiceInstallations", "ActualReviewDateImage");
 		clickWebelement("MultiServiceInstallations", "selectdate");
@@ -148,8 +160,8 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 		threadWait(5000);
 		doubleClickWebelement("MultiServiceInstallations", "MeasureCorrectionInfo");
 		threadWait(2500);
-		enterValueByActionClass("MultiServiceInstallations", "CorrectDrop1","ESG Values", "Multi Service Installations", 12, 1);
-		selectDropdownByVisibleText("MultiServiceInstallations", "EmployeeDropDown", "ESG Values", "Multi Service Installations", 14, 1);
+		enterTextboxValue("MultiServiceInstallations", "CorrectDrop1","ESG Values", "Multi Service Installations", 12, 1);
+		selectDropdown("MultiServiceInstallations", "EmployeeDropDown","EmployeeDropDown", "ESG Values", "Multi Service Installations", 14, 1);
 		clickWebelement("MultiServiceInstallations", "ActualReviewDateImage");
 		clickWebelement("MultiServiceInstallations", "selectdate");
 		defineLogs("Workflow Step Costs", "$100.00", "$100.00", "Workflow Step Cost is validated", "Workflow Step Cost is failed to validated", "MultiServiceInstallations", "TotalCostSummary");
@@ -163,21 +175,21 @@ public class MultiServiceInstallationTestClass extends HelperClass{
 		clickWebelement("MultiServiceInstallations", "Reinspection");
 		threadWait(2500);
 		clickWebelement("MultiServiceInstallations", "Measurepqt1");
-		enterValueByActionClass("MultiServiceInstallations", "InspectionMeasurePassQty1", "ESG Values", "Multi Service Installations", 15, 1);
+		enterTextboxValue("MultiServiceInstallations", "InspectionMeasurePassQty1", "ESG Values", "Multi Service Installations", 15, 1);
 		threadWait(2500);
 		enterTextboxValue("MultiServiceInstallations", "InspectionMeasureFailQty1", "ESG Values", "Multi Service Installations", 15, 2);
 		threadWait(5000);
 		clickWebelement("MultiServiceInstallations", "Measureiqt1");
-		enterValueByActionClass("MultiServiceInstallations", "InspectionMeasurePassQty2", "ESG Values", "Multi Service Installations", 16, 1);
+		enterTextboxValue("MultiServiceInstallations", "InspectionMeasurePassQty2", "ESG Values", "Multi Service Installations", 16, 1);
 		threadWait(5000);
 		enterTextboxValue("MultiServiceInstallations", "InspectionMeasureFailQty2", "ESG Values", "Multi Service Installations", 16, 2);
 		threadWait(5000);
 		clickWebelement("MultiServiceInstallations", "Measurepqt21");
-		enterValueByActionClass("MultiServiceInstallations", "InspectionMeasurePassQty3", "ESG Values", "Multi Service Installations", 17, 1);
+		enterTextboxValue("MultiServiceInstallations", "InspectionMeasurePassQty3", "ESG Values", "Multi Service Installations", 17, 1);
 		threadWait(2000);
 		enterTextboxValue("MultiServiceInstallations", "InspectionMeasureFailQty3", "ESG Values", "Multi Service Installations", 17, 2);
 		threadWait(2500);
-		selectDropdownByVisibleText("MultiServiceInstallations", "EmployeeDropDown", "ESG Values", "Multi Service Installations", 18, 1);
+		selectDropdown("MultiServiceInstallations", "EmployeeDropDown","EmployeeDropDown", "ESG Values", "Multi Service Installations", 18, 1);
 		clickWebelement("MultiServiceInstallations", "ActualReviewDateImage");
 		clickWebelement("MultiServiceInstallations", "selectdate");
 		clickWebelement("MultiServiceInstallations", "InstallationProcess");
